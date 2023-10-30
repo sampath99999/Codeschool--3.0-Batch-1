@@ -52,11 +52,6 @@ img:hover{
     height: 50px;
     object-fit: cover;
 }
-.image1{
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-}
 .section h2{
     font-size:24; 
     font-weight:700; 
@@ -86,12 +81,6 @@ ul li h5:hover{
     position: relative;
     top: -35px;
     left: -20px;
-}
-.bi-chevron-up{
-    display: none;
-    position: relative;
-    top: -35px;
-    left: -40px;
 }
 .address{
     width: 550px;
