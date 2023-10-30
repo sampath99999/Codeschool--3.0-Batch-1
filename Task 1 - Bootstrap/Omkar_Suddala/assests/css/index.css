@@ -17,10 +17,10 @@ nav {
   color: white;
 }
 #intro {
-  background-color: #fef8f5;
+  background-color: #fedcca;
 }
 #services {
-  background-color: #fef8f5;
+  background-color: #fedcca;
 }
 .border-line {
   width: 4%;
@@ -28,7 +28,7 @@ nav {
   background-color: #f4540a;
 }
 .contact-items {
-  background-color: #fef8f5;
+  background-color: #fedcca;
   text-align: center;
 }
 .contact-items .icons {
@@ -40,13 +40,13 @@ nav {
   box-shadow: 1px 1px 5px rgb(228, 219, 219);
 }
 .faq {
-  background-color: #fef8f5;
+  background-color: #fedcca;
 }
 .client {
-  background-color: #fef8f5;
+  background-color: #fedcca;
 }
 .newsletter {
-  background-color: #fef8f5;
+  background-color: #fedcca;
 }
 .usefullinks > li {
   margin-bottom: 10px;
@@ -55,11 +55,11 @@ nav {
   color: #eb5f20;
 }
 .arrow {
-  background-color: #fef8f5;
+  background-color: #fedcca;
 }
 .copyright {
   position: relative;
-  background-color: #fef8f5;
+  background-color: #fedcca;
 }
 
 .nav-tabs {
