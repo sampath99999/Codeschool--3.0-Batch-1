@@ -52,6 +52,10 @@
     padding-right: 15px;
     font-size: 18px;
   }
+ 
+  .list-group-item a:hover ,.list-group-item span:hover ,.list-group-item i:hover{
+    color: gray;
+  }
 
   #page-content-wrapper{
     max-width:100vw;
@@ -61,12 +65,16 @@
   }
 
 .input-group{
+   padding: 5px;
     background-color: white;
     border-radius: 5px;
     border: none;
 }
+.input-group input{
+  border:0px;
+}
 form .input-group{
-    border: none;
+    border: 0px white solid;
     outline: none;  }
 
 form{
@@ -117,7 +125,9 @@ i{
 .table tbody tr td btn{
         width: 50px;
 }
-
+/* .table tbody tr td i{
+  color: blue;
+}  */
 
 
 @media (min-width: 768px) {

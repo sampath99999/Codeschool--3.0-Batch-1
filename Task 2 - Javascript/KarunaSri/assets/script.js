@@ -18,7 +18,12 @@ fetch("https://fakestoreapi.com/products?limit=10")
       <td scope="col"><i class="bi bi-app"></i></td>
       <td><img src="${value.image}"/></td>
       <td>${value.category}</td>
-      <td>Colors</td>
+      <td>
+      <i class="bi bi-circle-fill" style="color: brown"></i>
+      <i class="bi bi-circle-fill" style="color: olive"></i>
+      <i class="bi bi-circle-fill" style="color: purple"></i>
+      <i class="bi bi-circle-fill" style="color: goldenrod"></i>
+    </td>
       <td>${value.price}</td>
       <td>50</td>
       <td>⭐⭐⭐⭐</td>
