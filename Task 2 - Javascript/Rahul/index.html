@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="reponse.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>MassKit</title>
+</head>
+<body>
+    <!--  ==== Sidebar ====  -->
+    <aside class="sidebar" >
+        <div class="title">
+            <img src="assets/icon-title-4.png"/>
+            <h3><strong>Mass</strong>Kit</h3>
+        </div>
+        <ul>
+            <li class="profile">
+                <div class="d-flex">
+                    <img src="assets/photo-rahul2.jpg" class="profile-pic"/>
+                        <div class="w-50">
+                            <h6 id="profile-name">Rahul Kaushik</h6>
+                            <label for="profile-name">Developer</label>
+                        </div>
+                    <i class="bi bi-person-badge"></i>
+                </div>
+            </li>
+            <li class="sidebar-menu">
+                <div class="d-flex align-items-baseline">
+                    <i class="bi bi-compass-fill"></i>
+                    <h6>Dashboard</h6>
+                </div>
+            </li>
+            <li class="sidebar-menu">
+                <div class="d-flex align-items-baseline text-primary">
+                    <i class="bi bi-grid-fill"></i>
+                    <h6>Products</h6>
+                </div>
+            </li>
+            <li class="sidebar-menu">
+                <div class="d-flex align-items-baseline">
+                    <i class="bi bi-bag-check-fill"></i>
+                    <h6>Orders</h6>
+                </div>
+            </li>
+            <li class="sidebar-menu">
+                <div class="d-flex align-items-baseline">
+                    <i class="bi bi-backpack4-fill"></i>
+                    <h6>Coupons</h6>
+                </div>
+            </li>
+            <li class="sidebar-menu">
+                <div class="d-flex align-items-baseline">
+                    <i class="bi bi-people-fill"></i>
+                    <h6>Customers</h6>
+                </div>
+            </li>
+            <li class="sidebar-menu">
+                <div class="d-flex align-items-baseline">
+                    <i class="bi bi-pie-chart-fill"></i>
+                    <h6>Marketing</h6>
+                </div>
+            </li>
+            <li class="sidebar-menu">
+                <div class="d-flex align-items-baseline">
+                    <i class="bi bi-envelope-fill"></i>
+                    <h6>Messages</h6>
+                </div>
+            </li>
+            <li class="list-box d-flex justify-content-center align-items-center">
+                <div class="grey-box">
+                    <i class="bi bi-slash-square-fill text-primary"></i>
+                    <p>Complete above settings to get better analytics to your shop</p>
+                    <div class="d-flex">
+                        <button class="btn btn-primary me-1">COMPLETE</button>
+                        <button class="btn bg-white text-secondary">LATER</button>
+                    </div>
+                </div>
+            </li>
+            <li class="ps-4">
+                <label>STORE PREFRENCES</label>
+            </li>
+            <li class="sidebar-menu">
+                <div class="d-flex align-items-baseline">
+                    <i class="bi bi-gear"></i>
+                    <h6>Settings</h6>
+                </div>
+            </li>
+            <li class="sidebar-menu">
+                <div class="d-flex align-items-baseline">
+                    <i class="bi bi-exclamation-circle"></i>
+                    <h6>Help</h6>
+                </div>
+            </li>
+            <li class="ps-4 mb-1">
+                <label>@ 2023 MassKit</label>
+            </li>
+
+        </ul>
+    </aside>
+    <!--  ==== Sidebar Ends ====  -->
+
+    <!--  ==== Main Body ====  -->
+    <div class="main-body">
+        <!-- Header -->
+        <div class="d-flex align-items-center justify-content-between header">
+            <div class="d-flex  search rounded-3">
+                <button class="search-button"><i class="bi bi-search"></i></button>
+                <input  type="text" id="search" placeholder="Search"/>
+                
+            </div>
+            <div class="d-flex align-items-center icon-profile justify-content-between">
+                <i class="bi bi-three-dots"></i>
+                <i class="bi bi-bell"></i>
+                <img src="assets/photo-rahul2.jpg" alt="" class="profile-pic" >
+                <h6>Rahul</h6>
+                <i class="bi bi-chevron-down" style="font-size: 10px;"></i>
+                <i class="bi bi-menu-button-wide"></i>
+            </div>
+        </div>
+        <!-- Header -->
+
+        <!-- Content Title-->
+        <div class="main-content">
+            <h1>Products</h1>
+        </div>
+        <!-- Content Title End-->
+        
+        <!-- Content Buttons -->
+        <div class="buttons d-flex justify-content-between">
+            <div>
+                <button class="btn btn-primary">
+                    <i class="bi bi-plus-square-fill"></i>
+                    <span>NEW PRODUCT</span>
+                </button>
+            </div>
+            <div class="d-flex justify-content-around button-menu">
+                <div class="d-flex bg-white search rounded-3">
+                    <button class="search-button bg-white"><i class="bi bi-search"></i></button>
+                    <input  type="text" id="search" placeholder="Search" class="bg-white w-75"/>
+                    
+                </div>
+                <button class="btn bg-white ">
+                    <span class="me-3">Sort by</span>
+                    <i class="bi bi-chevron-down" style="font-size: 10px;"></i>
+                </button>
+                <button class="btn bg-white ">
+                    <span class="me-3">Collection Type</span>
+                    <i class="bi bi-ui-checks-grid" style="font-size: 10px;"></i>
+                </button>
+                <button class="btn bg-white ">
+                    <span class="me-3">Price Range</span>
+                    <i class="bi bi-toggles2" style="font-size: 10px;"></i>
+                </button>
+            </div>
+
+        </div>
+        <!--  Content Buttons End  -->
+
+        <!-- Table  -->
+
+        <div class="content-table table-responsive">
+            <table id="data-table" >
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" class="ms-4"/>&nbsp;</th>
+                        <th>PRODUCT DETAILS</th>
+                        <th>CATEGORY</th>
+                        <th>OPTIONS/COLORS</th>
+                        <th>PRICE</th>
+                        <th>STOCK</th>
+                        <th>KEY</th>
+                        <th>RATE</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="tableBody" class="table-responsive">
+                    <tr class="table-rows" >
+                        <!-- <td><input type="checkbox"/>&nbsp;</td>
+                        <td>
+                            <div class="table-data d-flex align-items-center">
+                                <img src="assets/photo-rahul2.jpg" class="profile-pic"/>
+                                    <div class="w-50">
+                                        <p>Rahul Kaushik</p>
+                                        <label for="profile-name">Click for more</label>
+                                    </div>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="btn category-button">Category</button>
+                        </td>
+                        <td>
+                            <div class="d-flex ">
+                                <div class="circle bg-primary"></div>
+                                <div class="circle bg-secondary"></div>
+                                <div class="circle bg-danger"></div>
+                            </div>
+                        </td>
+                        <td>$1000</td>
+                        <td>1</td>
+                        <td>UY3749</td>
+                        <td>3.9</td>
+                        <td>
+                            <button class="btn category-button">Edit</button>
+                        </td> -->
+    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    
+</body>
+</html>
