@@ -5,10 +5,8 @@ function fetchData() {
         .then(response => response.json())
         .then(data => {
             const productDetails = document.getElementById('product');
-
-            // Iterate through the data and create list items
-            data.forEach(item => {
-                productDetails.innerHTML=`
+            
+            productDetails.innerHTML=`
                 <tr class='text-secondary'>
                     <th>
                         <div class="custom-control custom-checkbox">
@@ -39,7 +37,7 @@ function fetchData() {
                         </td>
                         <td>
                             <p class='fw-bold fs-5'>'${each.title}'</p> 
-                            <span class= 'solid'>${each.description}</span> 
+                            <p class= 'solid' id='description'>${each.description}</p> 
                         </td>
                         <td>
                             <span class= 'bg-secondary text-light ms-lg-2 p-lg-2 d-block h-25' id='category'>'${each.category}'</span>
@@ -72,7 +70,6 @@ function fetchData() {
                     </tr>
                     `;
                 }
-            });
         })
 }
 fetchData();
