@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="d-flex" id="wrapper">
+      <!-- Sidebar -->
+      <div
+        class="bg-white d-xl-block d-lg-block d-md-mone d-none"
+        id="sidebar-wrapper"
+      >
+        <div
+          class="sidebar-heading text-center py-4 primary-text fs-fold text-uppecase border-bottom"
+        >
+          <img
+            src="images.jpg"
+            alt="Logo Image"
+            width="80px"
+            height="80px"
+          /><span
+            style="
+              color: grey;
+              padding-left: 10px;
+              font: bold 30px Georgia, serif;
+            "
+            >SHOP</span
+          >
+        </div>
+        <ul
+          class="list-group list-group-horizontal list-group-flush sidebar_profile"
+        >
+          <li class="list-group-item sidebar_profile_pic">
+            <img
+              src="images.jpg"
+              alt="Profile-Image"
+              width="60px"
+              height="60px"
+              class="rounded-circle"
+            />
+          </li>
+          <li class="list-group-item">
+            <span>Sri lekha</span><br />
+            <span>Front end</span>
+          </li>
+          <li class="list-group-item">
+            <span style="padding: 14px 5px; font-size: 12px"
+              ><i class="bi bi-stars"></i
+            ></span>
+          </li>
+        </ul>
+
+        <div class="list-group list-group-flush my-3">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent"
+            ><i class="bi bi-layers"></i><span>Dashboard</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent"
+          >
+            <i class="bi bi-grid-fill"></i><span>Products</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text-active"
+          >
+            <i class="bi bi-bag-fill"></i><span>Orders</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text-active"
+          >
+            <i class="bi bi-coin"></i><span>Coupons</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text-active"
+          >
+            <i class="bi bi-person-plus-fill"></i><span>Customers</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text-active"
+          >
+            <i class="bi bi-pie-chart-fill"></i><span>Marketing</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text-active"
+          >
+            <i class="bi bi-envelope-fill"></i><span>Messages</span></a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action second-text-active bg-transparent"
+          >
+            <i class="bi bi-gear-fill"></i><span>Settings</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Page Content & Top Navbar -->
+      <div id="page-content-wrapper">
+        <nav
+          class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-3"
+        >
+          <div class="d-flex d-xl-block d-lg-block d-md-mone d-none">
+            <i
+              class="bi bi-caret-left-fill"
+              id="menu-toggle"
+              style="font-size: 16px; padding: 15px"
+            ></i>
+          </div>
+
+          <form class="d-flex d-sm-inline-block">
+            <div class="input-group">
+              <a href="#" class="btn btn" type="submit">
+                <i class="bi bi-search" style="color: grey"></i>
+              </a>
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Search for.."
+                aria-label="Search"
+              />
+            </div>
+          </form>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="#" class="nav-link"
+                  ><i class="bi bi-three-dots"></i
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="bi bi-bell-fill"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle second-text fw-bold"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="images.jpg"
+                    alt="Profile-Image"
+                    width="50px"
+                    height="50px"
+                    class="rounded-circle"
+                  />
+                  <span>Srilekha</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Title</a></li>
+                  <li><a class="dropdown-item" href="#">Description</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Footer</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div>
+          <nav class="navbar navbar-expand-lg bg-transparent">
+            <a href="#" class="btn btn-primary">
+              <i
+                class="bi bi-plus-circle-fill"
+                style="color: white; padding: 10px; font-size: 20px"
+              ></i
+              ><span>New Product</span>
+            </a>
+
+            <ul
+              class="navbar-nav me-auto my-2 my-lg-0"
+              style="--bs-scroll-height: 100px"
+            ></ul>
+
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <button type="button" class="btn rounded">Sort By</button>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Price</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">New Trend</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">More options</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="navlink">
+                    <span>Collection</span>
+                    <i class="bi bi-collection-fill"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </nav>
+        </div>
+        <div class="container" id="content">
+          <!-- <button id="sidebarCollapse" class="btn btn-dark d-lg-none">
+        <i class="bi bi-list"></i>Hello
+      </button> -->
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col"><i class="bi bi-app"></i></th>
+                  <th scope="col">product details</th>
+                  <th scope="col">category</th>
+                  <th scope="col">optional colors</th>
+                  <th scope="col">price</th>
+                  <th scope="col">stock</th>
+                  <th scope="col">rating</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="table_body">
+                <tr class="table-warning">
+                  <td scope="col"><i class="bi bi-app"></i></td>
+                  <td><img src="ring.webp" alt="image"  /></td>
+                  <td>row1</td>
+                  <td>row1</td>
+                  <td>row</td>
+                  <td>row1</td>
+                  <td>row</td>
+                  <td>
+                    <a href="#" class="btn btn-secondary">Edit</a>
+                    <a href="#" class="btn">
+                      <i class="bi bi-three-dots"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
