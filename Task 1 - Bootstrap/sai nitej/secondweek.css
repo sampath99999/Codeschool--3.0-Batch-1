@@ -1,0 +1,33 @@
+*{
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+.orange-btn{
+    background-color: hsl(18, 84%, 52%);
+}
+.sec-cont{
+    background-color: hsl(20, 82%, 98%);
+}
+.heading{
+    color: hsl(20, 16%, 26%);
+    font-family: "Raleway", sans-serif;
+
+}
+.heading2{
+    color: hsl(19, 15%, 38%);
+
+}
+.line{
+    background-color: #EB5D1E;
+    height: 2px;
+    width: 5%;
+}
+.active-line{
+    color: #EB5D1E;
+}
+.color-border{
+    border-color: #EB5D1E !important;
+}
+.placement{
+    z-index: 1;
+}

@@ -1,0 +1,14 @@
+table tr td .choices{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: black;
+   float: left;
+   margin-right: 8px;
+
+}
+
+ul li i{
+    margin-right: 15px;
+    padding: 8px;
+}
