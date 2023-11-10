@@ -1,0 +1,68 @@
+body {
+  background-color: rgb(246, 203, 159);
+}
+.border-line {
+  height: 3px;
+  width: 45px;
+  margin: auto;
+  background-color: rgb(182, 83, 3);
+  color: rgb(240, 104, 55);
+}
+ul,
+li {
+  list-style-type: none;
+}
+.icon {
+  width: 54px;
+  height: 48px;
+  background: #f3ccb0;
+}
+.icon:hover {
+  background-color: rgb(242, 116, 26);
+  color: #fff;
+}
+.brd {
+  border-style: solid none solid none;
+  border-color: rgb(219, 59, 6);
+}
+.b-title {
+  color: #fff;
+  background-color: rgb(216, 78, 18);
+}
+.icon-f {
+  width: 34px;
+  height: 28px;
+  background: #dc6109;
+  color: #fff;
+  text-align: center;
+  margin: 2%;
+}
+.b-nav {
+  background-color: #dc6109;
+  color: #fff;
+  width: 200px;
+}
+.b-nav:hover {
+  background-color: #f0b58a;
+  color: black;
+}
+.acc-s {
+  background: rgb(246, 203, 159);
+  color: #dc6109;
+}
+.bg-f {
+  background-color: #e8cdba;
+}
+.map {
+  width: 25%;
+  height: auto;
+}
+.map-in {
+  width: 375px;
+  height: 250px;
+  padding: 0 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
