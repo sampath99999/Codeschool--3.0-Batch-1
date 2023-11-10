@@ -22,8 +22,8 @@ CREATE TABLE
         CustomerID INT NOT NULL,
         CustomerName VARCHAR(45) NOT NULL,
         CustomerNumber VARCHAR(45) NOT NULL,
-        CustomerAddress VARCHAR(45)NOT NULL,
-        CustomerCity VARCHAR(45)NOT NULL,
+        CustomerAddress VARCHAR(45) NOT NULL,
+        CustomerCity VARCHAR(45) NOT NULL,
         PRIMARY KEY (CustomerID)
     );
 
