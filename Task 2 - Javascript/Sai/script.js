@@ -1,12 +1,12 @@
+function display() {
+  fetch("https://fakestoreapi.com/products") // Example API endpoint
+    .then((response) => response.json())
+    .then((data) => {
+      const productsList = document.getElementById("list");
 
-// Function to fetch and display data
-function fetchData() {
-    fetch('https://fakestoreapi.com/products') 
-        .then(response => response.json())
-        .then(data => {
-            const productDetails = document.getElementById('product');
-            
-            productDetails.innerHTML=`
+      // Iterate through the data and create list items
+      data.forEach((item) => {
+        productsList.innerHTML = `
                 <tr class='text-secondary'>
                     <th>
                         <div class="custom-control custom-checkbox">
@@ -23,9 +23,9 @@ function fetchData() {
                     <th class="px-lg-5">RATE</th>
                     <th class="px-lg-5">ACTIONS</th>
                 </tr>`;
-                for (let each of data){
-                    productDetails.innerHTML += `
-                    <tr class="bg-white">
+        for (let every of data) {
+          productsList.innerHTML += `
+                    <tr class="bg-light">
                         <td>
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customCheckbox">
@@ -33,43 +33,42 @@ function fetchData() {
                             </div>                      
                         </td>
                         <td>
-                            <img src='${each.image}' alt='Product Image' class='mt-4' width='100px' height='100px' />
+                            <img src='${every.image}' alt='Product Image' class='mt-4' width='100px' height='100px' />
                         </td>
                         <td>
-                            <p class='fw-bold fs-5'>'${each.title}'</p> 
-                            <p class= 'solid' id='description'>${each.description}</p> 
+                            <p class='fw-bold'>'${every.title}'</p> 
+                            <span class= 'solid'>${every.description}</span> 
                         </td>
                         <td>
-                            <span class= 'bg-secondary text-light ms-lg-2 p-lg-2 d-block h-25' id='category'>'${each.category}'</span>
+                            <span class= 'bg-secondary text-light ms-lg-2 p-lg-2 d-block h-25' id='category'>'${every.category}'</span>
                         </td>
                         <td> 
-                            <div class="option1 ms-3"></div>
-                            <div class="option2"></div>
-                            <div class="option3"></div>
+                            <p class="choices"></p>
+                            <p class="choices"></p>
+                            <p class="choices"></p>
                         </td>
                         <td> 
-                            <p><b>'${each.price}'</b></p>
+                            <p>'${every.price}'</p>
                         </td>
                         <td> 
-                            <p class="ps-lg-4"><b>25</b></p>
+                            <p class="ps-lg-4">25</p>
                         </td>
                         <td> 
-                            <p><b>UK5894</b></p>
+                            <p>UK5894</p>
                         </td>
                         <td>
-                            <p><b>'${each.rating.rate}'('${each.rating.count}')</b></p>
+                            <p>'${every.rating.rate}'('${every.rating.count}')</p>
                         </td>
                         <td> 
-                            <button><b>Edit</b></button> 
+                            <button>Edit</button> 
                             <button>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
-                                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                                </svg>
+                            <i class="fa-solid fa-ellipsis"></i>
                             </button>
                         </td>
                     </tr>
                     `;
-                }
-        })
+        }
+      });
+    });
 }
-fetchData();
+display();
