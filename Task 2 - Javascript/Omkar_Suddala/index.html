@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <title>MassKit</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row position-relative">
+        <div class="col-lg-2 d-none d-lg-block nav-side">
+          <div class="d-flex position-fixed flex-column side-nav">
+            <div class="p-2">
+              <i class="bi bi-front btn-icon fs-2 me-1"></i
+              ><span class="fs-5"><b>Mass</b>Kit</span>
+            </div>
+            <div class="d-flex mx-1 p-2 icon-bg-color rounded-3">
+              <div class="profile m-1 me-1">
+                <img
+                  class="rounded-3"
+                  src="./assets/img/profile-pic1.png"
+                  width="40px"
+                  alt=""
+                />
+              </div>
+              <div class="me-2">
+                <span class="fs-6 fw-bold">Omkar Royal</span> <br />
+                <span class="text-secondary">Web Developer</span>
+              </div>
+              <div class="me-2">
+                <i class="bi bi-arrow-down-up fw-bold fs-4 text-secondary"></i>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column my-2 p-3">
+              <div class="my-1">
+                <a href="" class="text-decoration-none icon-color">
+                  <i class="bi bi-compass-fill me-4 fs-4"></i>
+                  <span class="fs-6 fw-bold text-black">Dashboard</span>
+                </a>
+              </div>
+              <div class="my-1">
+                <a href="" class="text-decoration-none btn-icon active" active>
+                  <i class="bi bi-grid-fill me-4 fs-4"></i>
+                  <span class="fs-6 fw-bold">Products</span>
+                </a>
+              </div>
+              <div class="my-1">
+                <a href="" class="text-decoration-none icon-color">
+                  <i class="bi bi-bag-fill me-4 fs-4"></i>
+                  <span class="fs-6 fw-bold text-black">Orders</span>
+                </a>
+              </div>
+              <div class="my-1">
+                <a href="" class="text-decoration-none icon-color">
+                  <i class="bi bi-ticket-perforated-fill me-4 fs-4"></i>
+                  <span class="fs-6 fw-bold text-black">Coupons</span>
+                </a>
+              </div>
+              <div class="my-1">
+                <a href="" class="text-decoration-none icon-color">
+                  <i class="bi bi-people-fill me-4 fs-4"></i>
+                  <span class="fs-6 fw-bold text-black">Customers</span>
+                </a>
+              </div>
+              <div class="my-1">
+                <a href="" class="text-decoration-none icon-color">
+                  <i class="bi bi-pie-chart-fill me-4 fs-4"></i>
+                  <span class="fs-6 fw-bold text-black">Marketing</span>
+                </a>
+              </div>
+              <div class="my-1">
+                <a href="" class="text-decoration-none icon-color">
+                  <i class="bi bi-envelope-paper-heart-fill me-4 fs-4"></i>
+                  <span class="fs-6 fw-bold text-black">Messages</span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="mt-auto text-center icon-bg-color rounded-3 p-2 m-2 mt-auto"
+            >
+              <h6>
+                <i class="bi bi-exclude btn-icon fs-4"></i>
+              </h6>
+              <small class="text-black">
+                Complete store settings to get <br />
+                better analytics to your shop <br />
+              </small>
+              <span class="badge btn-bg me-4">COMPLETE</span>
+              <span class="badge text-secondary">LATER</span>
+            </div>
+            <div class="mx-2">
+              <small class="icon-color fw-bold">STORE PREFERENCES</small><br />
+              <div class="my-1">
+                <a href="" class="text-decoration-none icon-color">
+                  <i class="bi bi-gear-fill me-4 fs-4"></i>
+                  <span class="fs-6 fw-bold text-black">Settings</span>
+                </a>
+              </div>
+              <div class="mt-1">
+                <a href="" class="text-decoration-none icon-color">
+                  <i class="bi bi-question-circle-fill me-4 fs-4"></i>
+                  <span class="fs-6 fw-bold text-black">Help</span>
+                </a>
+              </div>
+              <small class="text-center icon-color">
+                &copy; 2023 Masskit.</small
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-12 main col-lg-10 rounded-5 px-lg-4 px-1 d-block">
+          <header class="my-4 col-12">
+            <div class="d-flex mt-4">
+              <div class="p-lg-2 d-block d-lg-none">
+                <i class="bi bi-front btn-icon fs-2 me-1"></i
+                ><span class="fs-5"><b>Mass</b>Kit</span>
+              </div>
+              <div
+                class="me-lg-auto form-outline d-lg-block d-none me-1 ms-lg-1"
+              >
+                <input
+                  type="search"
+                  class="form-control"
+                  id="datatable-search-input"
+                  placeholder="Search"
+                />
+              </div>
+
+              <div class="messages ms-auto icon-bg-color rounded-3 me-2">
+                <a
+                  href="#"
+                  class="position-relative text-secondary position-relative"
+                  data-bs-toggle="dropdown"
+                >
+                  <i class="bi bi-chat-dots-fill m-1 fs-4"></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow border-white bg-white"
+                >
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    You have 4 new messages
+                    <a href="#"
+                      ><span class="badge rounded-pill bg-primary p-2 ms-2"
+                        >View all</span
+                      ></a
+                    >
+                  </li>
+                  <li
+                    class="notification-item dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1 p-1"
+                  >
+                    <p>Lorem Ipsum</p>
+                  </li>
+                  <li class="text-dark icon-bg-color rounded-3 my-1 mx-1 p-1">
+                    <p>Atque rerum nesciunt</p>
+                  </li>
+                  <li class="text-dark icon-bg-color rounded-3 my-1 mx-1 p-1">
+                    <p>Sit rerum fuga</p>
+                  </li>
+                  <li class="p-1 text-dark icon-bg-color rounded-3 my-1 mx-1">
+                    <p>Dicta reprehenderit</p>
+                  </li>
+                  <li
+                    class="dropdown-footer text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <a class="text-decoration-none" href="#"
+                      >Show all messages</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="notifications icon-bg-color rounded-3 me-2">
+                <a href="#" class="position-relative" data-bs-toggle="dropdown">
+                  <i class="bi bi-bell-fill fs-4 m-1 text-secondary"></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow border-white bg-white"
+                >
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    You have 4 new notifications
+                    <a href="#"
+                      ><span class="badge rounded-pill bg-primary p-2 ms-2"
+                        >View all</span
+                      ></a
+                    >
+                  </li>
+                  <li
+                    class="notification-item dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1 p-1"
+                  >
+                    <p>Lorem Ipsum</p>
+                  </li>
+                  <li class="text-dark icon-bg-color rounded-3 my-1 mx-1 p-1">
+                    <p>Atque rerum nesciunt</p>
+                  </li>
+                  <li class="text-dark icon-bg-color rounded-3 my-1 mx-1 p-1">
+                    <p>Sit rerum fuga</p>
+                  </li>
+                  <li class="p-1 text-dark icon-bg-color rounded-3 my-1 mx-1">
+                    <p>Dicta reprehenderit</p>
+                  </li>
+                  <li
+                    class="dropdown-footer text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <a class="text-decoration-none" href="#"
+                      >Show all notifications</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="profile icon-bg-color d-flex rounded-3 me-lg-2 me-1">
+                <a
+                  href="#"
+                  class="dropdown text-decoration-none"
+                  data-bs-toggle="dropdown"
+                >
+                  <img
+                    src="./assets/img/profile-pic1.png"
+                    class="rounded-3"
+                    alt=""
+                    width="35px"
+                    height="35px"
+                  />
+                  <span
+                    class="float fs-6 text-secondary text-center me-lg-3 d-lg-inline d-none"
+                    >Omkar Royal </span
+                  ><i
+                    class="text-secondary bi bi-chevron-down fs-6 me-lg-3 d-lg-inline d-none"
+                  ></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow border-white bg-white"
+                >
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <h5>Omkar Royal</h5>
+                    <span>Web Developer</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <i class="bi bi-person"></i>
+                    <span>My Profile</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <i class="bi bi-gear"></i>
+                    <span>Account Settings</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <i class="bi bi-question-circle"></i>
+                    <span>Need Help?</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Sign Out</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu icon-bg-color rounded-3 me-lg-2 me-1">
+                <a href="#" class="position-relative text-secondary">
+                  <i class="bi bi-three-dots fs-5 m-1"></i>
+                </a>
+              </div>
+            </div>
+          </header>
+          <section>
+            <p class="lead fs-1">Products</p>
+            <div class="d-flex">
+              <div class="">
+                <button
+                  href=""
+                  class="btn-primary btn-bg btn text-white rounded-3 me-2 text-decoration-none"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  <i class="bi bi-plus-square-fill fw-bold"></i>
+                  <span class="d-none fs-6 d-lg-inline"> NEW PRODUCTS</span>
+                </button>
+              </div>
+
+              <div class="ms-auto form-outline me-1">
+                <input
+                  type="search"
+                  class="form-control"
+                  id="datatable-search-input"
+                  placeholder="Search"
+                />
+              </div>
+
+              <div class="me-lg-2 me-1 d-flex">
+                <a
+                  href=""
+                  data-bs-toggle="dropdown"
+                  class="text-black text-decoration-none bg-white p-1 d-none d-lg-inline rounded-start me-1"
+                >
+                  <span class="me-1 small">Sort by</span>
+                </a>
+                <a
+                  href=""
+                  data-bs-toggle="dropdown"
+                  class="p-2 bg-white text-black rounded-end d-lg-block d-none text-decoration-none"
+                >
+                  <i
+                    class="bi bi-chevron-down d-none d-lg-inline bg-white text-secondary"
+                  ></i>
+                </a>
+                <a
+                  href=""
+                  class="p-1 bg-white text-black rounded d-lg-none text-decoration-none"
+                  data-bs-toggle="dropdown"
+                  ><i class="bi bi-sort-up d-lg-none"></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow border-white bg-white mt-1"
+                >
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>Popular</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>Price Low to High</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>Price High to Low </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="me-lg-2 me-1 d-flex">
+                <a
+                  href=""
+                  data-bs-toggle="dropdown"
+                  class="text-black text-decoration-none d-none d-lg-block bg-white p-2 rounded-start me-1"
+                >
+                  <span class="me-1">Collection Type</span>
+                </a>
+                <a
+                  href=""
+                  data-bs-toggle="dropdown"
+                  class="p-2 bg-white text-black rounded-end d-lg-inline d-none text-decoration-none"
+                >
+                  <i class="bi bi-grid bg-white text-secondary"></i>
+                </a>
+                <a
+                  href=""
+                  data-bs-toggle="dropdown"
+                  class="p-1 bg-white text-black rounded d-lg-none text-decoration-none"
+                >
+                  <i class="bi bi-grid bg-white text-secondary"></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow border-white bg-white mt-1"
+                >
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>Men's Clothing</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>Women's Clothing</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>Jewelery</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>Electronics </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="me-lg-3 d-flex">
+                <a
+                  href=""
+                  data-bs-toggle="dropdown"
+                  class="text-black text-decoration-none bg-white p-2 d-none d-lg-block rounded-start me-1"
+                >
+                  <span class="me-1">Price Range</span>
+                </a>
+                <a
+                  href=""
+                  data-bs-toggle="dropdown"
+                  class="p-2 bg-white text-black rounded-end d-lg-inline d-none text-decoration-none"
+                >
+                  <i class="bi bi-toggles2 bg-white text-secondary"></i>
+                </a>
+                <a
+                  href=""
+                  data-bs-toggle="dropdown"
+                  class="p-1 bg-white text-black rounded d-lg-none text-decoration-none"
+                >
+                  <i class="bi bi-toggles2 bg-white text-secondary"></i>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end dropdown-menu-arrow shadow border-white bg-white mt-1"
+                >
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>₹0-₹1000</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>₹1000-₹2500</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>₹2500-₹5000</span>
+                  </li>
+                  <li
+                    class="dropdown-header text-dark icon-bg-color rounded-3 my-1 mx-1"
+                  >
+                    <span>₹5000-₹10000</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="table-responsive position-relative mt-4">
+              <table
+                class="table custom-table js-check-all"
+                id="productsDetails"
+                style="overflow-x: scroll"
+              >
+                <thead>
+                  <tr class="text-secondary">
+                    <th scope="row" style="width: 30px">
+                      <label class="control control--checkbox">
+                        <input type="checkbox" />
+                        <div class="control__indicator"></div>
+                      </label>
+                    </th>
+                    <th class="col-3">PRODUCT DETAILS</th>
+                    <th class="">CATEGORY</th>
+                    <th class="">OPTION COLORS</th>
+                    <th class="">PRICE</th>
+                    <th class="">STOCK</th>
+                    <th class="">SKU</th>
+                    <th class="">RATE</th>
+                    <th class="">ACTIONS</th>
+                  </tr>
+                </thead>
+                <tbody class="table-responsive tabledata"></tbody>
+                <tbody id="newProducts"></tbody>
+              </table>
+            </div>
+
+            <!--Modals For Add , Update , Delete and View Product-->
+
+            <!--New PRoduct Modal-->
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 fw-bold badge bg-primary"
+                      id="staticBackdropLabel"
+                    >
+                      Adding New Product
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="addProductForm">
+                      <label for="productName">Product Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="newProductTitle"
+                        placeholder="Title"
+                        name="productName"
+                      />
+
+                      <label for="productPrice">Product Price:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="newProductPrice"
+                        placeholder="Price"
+                        name="productPrice"
+                      />
+
+                      <label for="productThumbnail">Product Image URL:</label>
+                      <input
+                        type="text"
+                        id="newProductImage"
+                        placeholder="Image URL"
+                        class="form-control my-2"
+                        name="productThumbnail"
+                      />
+                      <label for="productThumbnail">Product Category:</label>
+                      <input
+                        type="text"
+                        id="newProductCategory"
+                        placeholder="Category"
+                        class="form-control my-2"
+                        name="productCategory"
+                      />
+
+                      <label for="productThumbnail">Product Rating:</label>
+                      <input
+                        type="text"
+                        id="newProductRating"
+                        placeholder="Rating"
+                        class="form-control my-2"
+                        name="productRating"
+                      />
+                      <label for="productThumbnail">Product Description:</label>
+                      <input
+                        type="text"
+                        id="newProductDescription"
+                        placeholder="Description"
+                        class="form-control my-2"
+                        name="productDescription"
+                      />
+                      <hr />
+                      <div class="d-flex">
+                        <button
+                          type="button"
+                          class="btn btn-danger ms-auto me-3"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                          Add Product
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Update Product Modal-->
+            <div
+              class="modal fade"
+              id="productUpdate"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 fw-bold badge bg-primary"
+                      id="staticBackdropLabel"
+                    >
+                      Update Product
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="updateProductForm">
+                      <label for="productName">Product Name:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="updateProductTitle"
+                        placeholder="Title"
+                        name="productName"
+                      />
+
+                      <label for="productPrice">Product Price:</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="updateProductPrice"
+                        placeholder="Price"
+                        name="productPrice"
+                      />
+
+                      <label for="productThumbnail">Product Image URL:</label>
+                      <input
+                        type="text"
+                        id="updateProductImage"
+                        placeholder="Image URL"
+                        class="form-control my-2"
+                        name="productThumbnail"
+                      />
+                      <label for="productThumbnail">Product Category:</label>
+                      <input
+                        type="text"
+                        id="updateProductCategory"
+                        placeholder="Category"
+                        class="form-control my-2"
+                        name="productCategory"
+                      />
+
+                      <label for="productThumbnail">Product Rating:</label>
+                      <input
+                        type="text"
+                        id="updateProductRating"
+                        placeholder="Rating"
+                        class="form-control my-2"
+                        name="productRating"
+                      />
+                      <label for="productThumbnail">Product Description:</label>
+                      <input
+                        type="text"
+                        id="updateProductDescription"
+                        placeholder="Description"
+                        class="form-control my-2"
+                        name="productDescription"
+                      />
+                      <hr />
+                      <div class="d-flex">
+                        <button
+                          type="button"
+                          class="btn btn-danger ms-auto me-3"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                          Update Product
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Delete Product-->
+            <div
+              class="modal fade"
+              id="deleteProduct"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bold badge bg-danger">
+                      Delete Product
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="deleteProductForm">
+                      <p>Are you sure you want to delete this product?</p>
+                      <div class="d-flex">
+                        <button
+                          type="button"
+                          class="btn btn-secondary ms-auto me-3"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="submit" class="btn btn-danger">
+                          Delete Product
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--View Product-->
+            <div id="productsView"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/js/main.js"></script>
+</html>
