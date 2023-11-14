@@ -1,0 +1,126 @@
+
+
+
+-- database
+create database employees_management;
+
+
+
+-- location table
+create table location (id serial primary key, description varchar(64),created_at timestamp default now());
+
+
+--working_status table
+
+create table working_status (id serial primary key, description varchar(64),created_at timestamp default now());
+
+--designation table
+
+create table designation (id serial primary key, description varchar(64),created_at timestamp default now());
+
+
+--empcode sequence
+create sequence empcode_sq start with 20001 increment by 1;
+
+-- employees table
+create table employees( id serial primary key ,empcode int default nextval('empcode_sq') check (empcode >= 20001 and empcode < 300000) ,f_name varchar(32),l_name varchar(32),surname varchar(64),dob date,doj date,gender varchar(32),phone int,working_status_id int references working_status (id),designation_id int references designation(id),location_id int references location(id),net int,created_at timestamp default now());
+
+--salary_type table
+create table salary_type (id serial primary key, types varchar(64),created_at timestamp default now());
+
+
+
+--salary_components_types table
+create table salary_components_types( id serial primary key, salary_type_id int references salary_type(id),components_name varchar(64),created_at timestamp default now());
+
+
+--employee_salary_breakup table
+
+create table employee_salary_breakup(id serial primary key,employee_id int references employees(id),salary_type_id int references salary_type(id),salary_components_types_id int references salary_components_types(id),amount int,created_at timestamp default now());
+
+
+--salary_details table
+
+create table salary_details (id serial primary key,employee_id int references employees(id),month int, year int,paid_on date,gross int,deduction int,net int,created_at timestamp default now());
+    
+	
+-- insert value to locationction
+	
+insert into location (description) values ('hyderabad') ,('bbsr'),('mumbai'),('delhi'),('kochi'),('pune'),('bhopal');
+
+-- insert value to  working_status
+insert into working_status(description) values ('working'),('expired'),('retired'),('suspended');
+
+
+-- insert value to  designation	
+insert into designation (description) values ('developer'),('tester'),('maneger'),('tech-lead'),('devops-eng'), ('ui-designer');
+
+	
+-- insert value to  salary_type
+	
+insert into salary_type (types) values ('earning'),('deduction');
+
+-- insert value to salary_components_types
+
+
+
+insert into salary_components_types ( salary_type_id,components_name) values (1,'Basic_pay'),(1,'HRA'),(1,'CCA'),(2,'PT'),(2,'IT');
+
+
+
+
+-- insert value to  employees
+
+
+insert into employees (f_name,l_name,surname,dob,doj,gender,phone,working_status_id,designation_id,location_id,net)
+values ('john','doe','ebraham','1999-04-20','2020-06-24','male',9856072,1,1,3,48200),
+('nick','sam','jonas','1993-12-12','2018-03-20','male',9766072,1,3,5,19400),
+('subha','darshini','patra','1980-10-22','2015-09-04','female',8985072,3,4,1,9700),
+('shivani','kumari','mishra','1993-06-12','2019-03-11','female',9834045,4,5,2,29100),
+('swastik','ranjan','sahoo','1982-01-29','2013-11-18','male',7656232,2,2,4,9700),
+('suchi','smita','das','1970-03-12','2010-01-22','female',8856342,4,2,3,48200),
+('kisore','charan','padhi','1995-05-30','2022-10-02','male',7682072,2,1,1,48200),
+('lal','bahadur','singh','1989-01-31','2020-06-30','male',9845382,1,2,4,29100),
+('sussri','sovita','sahu','2000-07-24','2020-06-30','female',63882833,1,1,3,19400),
+('sanjay','kumar','rout','2001-01-09','2020-06-2','male',8797403,4,3,1,48200),
+('lalita','sovita','lenka','1993-04-23','2013-06-04','female',6456072,1,3,1,29100),
+('swarna','lata','mishra','1999-12-15','2022-03-04','female',6856772,1,5,3,9700);
+
+
+
+
+
+-- insert value to employee_salary_breakup
+
+
+insert into employee_salary_breakup ( employee_id,salary_type_id,salary_components_types_id,amount)
+ values (1,1,1,30000),(1,1,2,15000),(1,1,3,5000),(1,2,4,1000),(1,2,5,500),
+ (2,1,1,12000),(2,1,2,6000),(2,1,3,2000),(2,2,4,400),(2,2,5,200),
+ (3,1,1,6000),(3,1,2,3000),(3,1,3,1000),(3,2,4,200),(3,2,5,100),
+ (4,1,1,18000),(4,1,2,9000),(4,1,3,3000),(4,2,4,600),(4,2,5,300),
+ (5,1,1,6000),(5,1,2,3000),(5,1,3,1000),(5,2,4,200),(5,2,5,100),
+ (6,1,1,30000),(6,1,2,15000),(6,1,3,5000),(6,2,4,1000),(6,2,5,500),
+ (7,1,1,30000),(7,1,2,15000),(7,1,3,5000),(7,2,4,1000),(7,2,5,500),
+ (8,1,1,18000),(8,1,2,9000),(8,1,3,3000),(8,2,4,600),(8,2,5,300),
+ (9,1,1,12000),(9,1,2,6000),(9,1,3,2000),(9,2,4,400),(9,2,5,200),
+ (10,1,1,30000),(10,1,2,15000),(10,1,3,5000),(10,2,4,1000),(10,2,5,500),
+ (11,1,1,18000),(11,1,2,9000),(11,1,3,3000),(11,2,4,600),(11,2,5,300),
+ (12,1,1,6000),(12,1,2,3000),(12,1,3,1000),(12,2,4,200),(12,2,5,100);
+ 
+ 
+ -- insert value to salary_details
+ 
+ insert into salary_details (employee_id,month, year,paid_on,gross,deduction,net)
+ values (2,10,2022,'2022-10-30',10000,300,9700),(4,11,2023,'2023-11-30',30000,900,29100),
+ (12,06,2022,'2022-06-26',10000,300,9700),(6,07,2023,'2023-07-29',50000,1800,48500),
+ (7,09,2022,'2022-09-26',30000,900,29100),(10,10,2023,'2023-10-29',50000,1800,48500),
+ (9,11,2022,'2022-11-30',20000,600,19400),(12,08,2022,'2022-08-29',10000,300,9700),
+ (2,09,2023,'2023-09-30',20000,600,19400),(1,11,2023,'2023-11-30',50000,1800,48500),
+ (3,11,2023,'2023-11-30',10000,300,9700),(5,10,2023,'2023-10-30',10000,300,9700),
+ (6,08,2023,'2023-08-29',50000,1800,48200),(7,10,2023,'2023-10-29',50000,1800,48500),
+ (11,11,2023,'2022-11-30',30000,900,29100),(10,11,2022,'2022-11-30',30000,900,29100),
+ (12,09,2020,'2020-09-24',10000,300,9700),(6,09,2020,'2020-09-24',10000,300,9700),
+ (2,11,2023,'2023-11-30',20000,600,19400),(3,10,2023,'2023-10-30',50000,1800,48500);
+ 
+ 
+ 
