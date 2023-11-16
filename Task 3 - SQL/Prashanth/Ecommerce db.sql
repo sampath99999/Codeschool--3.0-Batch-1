@@ -2,11 +2,11 @@
 -- Customers table
 CREATE TABLE Customers(
     CustomerID INT NOT NULL, 
-	CustomersName VARCHAR(40) NOT NULL, 
-	Address VARCHAR(25) NOT NULL, 
-	City CHAR(15) NOT NULL, 
-	PostalCode INT NOT NULL, 
-	Country CHAR(20) NOT NULL
+    CustomersName VARCHAR(40) NOT NULL, 
+    Address VARCHAR(25) NOT NULL, 
+    City CHAR(15) NOT NULL, 
+    PostalCode INT NOT NULL, 
+    Country CHAR(20) NOT NULL
 );
 
 INSERT INTO 
@@ -20,7 +20,7 @@ VALUES
         501510, 
         'INDIA'
     ),
-	(
+    (
         2, 
         'Sridhar', 
         'BN Reddy', 
@@ -28,7 +28,7 @@ VALUES
         501510, 
         'INDIA'
     ),
-	(
+    (
         3, 
         'Mani Kumar', 
         '2732 Baker Blvd', 
@@ -36,7 +36,7 @@ VALUES
         97403, 
         'USA'
     ),
-	(
+    (
         4, 
         'Bhanu Kiran', 
         '1900 Oak St.', 
@@ -44,7 +44,7 @@ VALUES
         31000, 
         'Canada'
     ),
-	(
+    (
         5, 
         'Jaya Prakash', 
         'Garden House Crowther Way', 
@@ -52,7 +52,7 @@ VALUES
         97827, 
         'UK'
     ),
-	(
+    (
         6, 
         'Pradeep', 
         'LB Nagar', 
@@ -60,7 +60,7 @@ VALUES
         501510, 
         'INDIA'
     ),
-	(
+    (
         7, 
         'Gopinath', 
         'Yamjal', 
@@ -68,7 +68,7 @@ VALUES
         501510, 
         'INDIA'
     ),
-	(
+    (
         8, 
         'Sai', 
         'Mangaluru', 
@@ -76,7 +76,7 @@ VALUES
         574142, 
         'INDIA'
     ),
-	(
+    (
         9, 
         'Manasa', 
         'Malkapur', 
@@ -84,7 +84,7 @@ VALUES
         501101, 
         'INDIA'
     ),
-	(
+    (
         10, 
         'Sandhya', 
         'Bramanpally', 
@@ -92,7 +92,7 @@ VALUES
         501510, 
         'INDIA'
     ),
-	(
+    (
         11, 
         'Essra', 
         'Madurai', 
@@ -104,9 +104,9 @@ VALUES
 -- products table
 CREATE TABLE Products(
     ProductID INT, 
-	ProductName VARCHAR(40) NOT NULL, 
-	ShippingID INT, 
-	Units INT, 
+    ProductName VARCHAR(40) NOT NULL, 
+    ShippingID INT, 
+    Units INT, 
     Price INT
 );
 
@@ -114,20 +114,20 @@ INSERT INTO
     Products
 VALUES 
     (1, 'Lenovo AMD Ryzen 5 Laptop', 1, 100, 35990),
-	(2, 'Acer Aspire Lite i3 Laptop', 1, 150, 29990),
-	(3, 'Vivo Y35 Phone', 2, 20, 15990),
-	(4, 'OnePlus 11R 5G Phone', 3, 78, 39990),
-	(5, 'Fire-Boltt Ring 3 Smart Watch', 3, 40, 1499),
-	(6, 'Noise Twist Round Dial Smart Watch', 2, 40, 1299),
-	(7, 'Java Programming Book', 2, 50, 350),
-	(8, 'T-shirt', 3, 30, 250),
-	(9, 'Chess', 3, 110, 150),
-	(10, 'Sofa', 1, 130, 20000),
-	(11, 'Charger', 2, 25, 200),
-	(12, 'Ipad', 1, 70, 750),
-	(13, 'Keyboard', 1, 60, 3500),
-	(14, 'Chicken', 3, 10, 350),
-	(15, 'VolleyBall', 2, 45, 450);
+    (2, 'Acer Aspire Lite i3 Laptop', 1, 150, 29990),
+    (3, 'Vivo Y35 Phone', 2, 20, 15990),
+    (4, 'OnePlus 11R 5G Phone', 3, 78, 39990),
+    (5, 'Fire-Boltt Ring 3 Smart Watch', 3, 40, 1499),
+    (6, 'Noise Twist Round Dial Smart Watch', 2, 40, 1299),
+    (7, 'Java Programming Book', 2, 50, 350),
+    (8, 'T-shirt', 3, 30, 250),
+    (9, 'Chess', 3, 110, 150),
+    (10, 'Sofa', 1, 130, 20000),
+    (11, 'Charger', 2, 25, 200),
+    (12, 'Ipad', 1, 70, 750),
+    (13, 'Keyboard', 1, 60, 3500),
+    (14, 'Chicken', 3, 10, 350),
+    (15, 'VolleyBall', 2, 45, 450);
 
 -- orders table
 CREATE TABLE Orders(
@@ -140,21 +140,21 @@ CREATE TABLE Orders(
 INSERT INTO 
     Orders
 VALUES
-    (10208,	'2023-02-14', 9, 1),
-    (10209,	'2023-03-08', 4, 3),
-    (10210,	'2023-03-29', 5, 2),
-    (10211,	'2023-04-08', 5, 2),
-    (10212,	'2023-05-10', 1, 4),
-    (10213,	'2023-05-30', 3, 2),
-    (10214,	'2023-06-01', 4, 1),
-    (10215,	'2023-06-15', 4, 3),
-    (10216,	'2023-06-25', 6, 3),
-    (10217,	'2022-08-15', 7, 2),
-    (10218,	'2022-12-07', 9, 1),
-    (10219,	'2023-07-13', 1, 4),
-    (10220,	'2023-07-28', 4, 2),
-    (10221,	'2023-08-08', 3, 1),
-    (10222,	'2023-08-15', 7, 3);
+    (10208, '2023-02-14', 9, 1),
+    (10209, '2023-03-08', 4, 3),
+    (10210, '2023-03-29', 5, 2),
+    (10211, '2023-04-08', 5, 2),
+    (10212, '2023-05-10', 1, 4),
+    (10213, '2023-05-30', 3, 2),
+    (10214, '2023-06-01', 4, 1),
+    (10215, '2023-06-15', 4, 3),
+    (10216, '2023-06-25', 6, 3),
+    (10217, '2022-08-15', 7, 2),
+    (10218, '2022-12-07', 9, 1),
+    (10219, '2023-07-13', 1, 4),
+    (10220, '2023-07-28', 4, 2),
+    (10221, '2023-08-08', 3, 1),
+    (10222, '2023-08-15', 7, 3);
 
 -- OrderDetails
 create table OrderDetails(
