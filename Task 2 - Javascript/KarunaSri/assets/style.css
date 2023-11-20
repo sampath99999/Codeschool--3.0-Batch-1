@@ -81,10 +81,13 @@ form{
 border: none;
 outline: none;
 }
-.second-topbar .navbar a .btn{
+.second-topbar  a .btn{
   background-color: white;
-  
 }
+.second-topbar a{
+  padding-left: 10px;
+}
+
 
 
 

@@ -194,9 +194,7 @@ section {
     padding-right: 15px;
     padding-left: 15px;
 }
-.pt-lg-0 {
-    padding-top: 0;
-}
+
 .col-lg-6 {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
