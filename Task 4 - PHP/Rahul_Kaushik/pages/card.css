@@ -1,0 +1,70 @@
+
+
+
+body{
+    background-color: rgb(58, 57, 57);
+    
+}
+section{
+    margin-top: 40px;
+    padding: 50px;
+}
+
+
+label{
+    color:lightblue;
+}   
+.container{
+    padding: 50px;
+    border-radius: 20px;
+}
+
+
+
+header{
+    padding: 10px 50px;
+    background-color: #1a2c42;
+    color: black;
+}
+.header-content>div{
+    height: 100%;
+}
+.header-content h1{
+    margin: 0;
+    font-family: 'Raleway',sans-serif;
+    color:aliceblue;
+}
+
+.header-content i{
+    font-size: 30px;
+}
+.header-content h2{
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+.header-content a:hover{
+    color:lightblue;
+}
+.header-content a{
+    text-decoration: none;
+    color:rgb(28, 28, 138);
+}
+
+.container{
+    background-color:#1a2c42 ;
+}
+
+.card-text{
+    padding: 0px 50px;
+    width: 100%;
+    color:lightblue;
+}
+
+.card-img{
+    width: auto;
+    
+}
+.card-img img{
+    max-width: 500px;
+}
