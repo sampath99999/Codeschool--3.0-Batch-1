@@ -1,0 +1,38 @@
+.blue-bg{
+    background-color: hsl(208, 47%, 21%);
+}
+.side-bar-width{
+    width: 20%;
+}
+.bg-image{
+    background-image: url("https://d20exy1ygbh3sg.cloudfront.net/fms/images/newUi/header-bg.jpg");
+}
+.full-screen{
+    height: 100vh;
+}
+.sideBar {
+    transition: margin-left  2s ease-out;
+}
+
+.show-sidebar {
+    margin-left: -25%;
+}
+
+@media (max-width: 991.98px) {
+    .sideBar {
+        margin-left: -250px; 
+        position: fixed; 
+        z-index: 1000;
+        overflow-y: auto; 
+        width: 250px; 
+        height: 100%;
+    }
+
+    .show-sidebar {
+        margin-left: 0; 
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* Add styles specific to screens smaller than 768px if needed */
+}

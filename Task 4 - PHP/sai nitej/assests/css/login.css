@@ -1,0 +1,7 @@
+.gradient-color{
+    background: rgb(252,225,69);
+    background: linear-gradient(0deg, rgba(252,225,69,1) 0%, rgba(253,29,29,1) 83%);
+}
+.bg-image{
+    background-image: url("https://d20exy1ygbh3sg.cloudfront.net/fms/images/newUi/header-bg.jpg");
+}
