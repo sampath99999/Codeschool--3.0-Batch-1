@@ -15,7 +15,7 @@ if(!$userId || !$token){
 }
 $current_DateTime=date("Y-m-d H:i:s");
 try{
-$checkVaildToken=$pdo->prepare("select * from session_token where user_tokan=? and users_id=? and expire_time<?");
+$checkVaildToken=$pdo->prepare("select * from session_token where user_tokan=? and users_id=? and expire_time>?");
 $checkVaildToken->execute([$token,$userId,$current_DateTime]);
 $isVaildToken= $checkVaildToken->fetchAll(PDO::FETCH_ASSOC);
    if(count($isVaildToken)==0){
@@ -31,6 +31,9 @@ $isUserRole= $checkUserRole->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($response);
     return;
    }
+
+    $response=["status"=>true,"message"=> "User verified successfully"];
+echo json_encode($response);
 
 }
 catch(PDOException $e){

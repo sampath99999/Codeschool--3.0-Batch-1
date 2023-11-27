@@ -1,7 +1,29 @@
 
 
 
+let userInfo;
+userInfo = localStorage.getItem('user_info');
+userInfo = JSON.parse(userInfo );
+if(userInfo){
 
+   alert("you are already logged in please cilck log-out to do login ");
+    if(userInfo.user_types_id ==2){
+
+alert("you are already logged in please cilck log-out to do login ");
+
+setTimeout(function(){ 
+window.location.replace("http://localhost/week7/users.html");
+}, 3000);
+    
+
+}else{
+setTimeout(function(){ 
+window.location.replace("http://localhost/week7/admin.html");
+
+}, 3000);
+}
+  
+}
 
 
 
@@ -59,7 +81,7 @@ if (passWord.length <8 || passWord.length>12) {
                       
                 window.location.replace("http://localhost/week7/admin.html");
                      }else{
-                    window.location.replace("http://localhost/week7/user.html");
+                    window.location.replace("http://localhost/week7/users.html");
 
                           }
                 

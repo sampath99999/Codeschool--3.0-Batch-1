@@ -138,7 +138,7 @@
 
                                     <td scope="row">1</td>
                                     <td>test</td>
-                                    <td> <button class="btn btn-primary text-white" id="deleteBtn">View</button></td>
+                                    <td> <button class="btn btn-primary text-white">View</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -215,7 +215,7 @@
 
                         </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" >
                         <button class="btn btn-primary" onclick="addQuestions();" id="addQuestionsButton">
                             NEXT
                         </button>
@@ -223,6 +223,49 @@
                 </div>
             </div>
         </div>
+
+        <!--viewmodal-->
+        <div class="modal fade" id="viewTestModal" aria-hidden="true" aria-labelledby="viewTestModalToggleLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewTestModalToggleLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="viewTest">
+
+                        <div class=" mb-3">
+                            <div class="d-flex"><span>Q.</span>
+                                <div class="text-white">hftfvhyiu</div>
+                            </div>
+
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Serial No.</th>
+                                    <th scope="col">QustionName</th>
+                                    <th scope="col">Answer</th>
+                                    <th scope="col">isAnswer</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="viewOption">
+                                <tr>
+
+
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
 
     </section>
 

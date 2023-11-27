@@ -8,6 +8,21 @@ $qustions_Count = $_POST['qustionCount'];
 $qustions = $_POST['qustions'];
 
 
+ if(! is_numeric($subject_id)){
+    $response=["status"=>false,"message"=> "subject_id only contain numbers"];
+    echo json_encode($response);
+    return;
+
+  }
+
+ if(! is_numeric($qustions_Count)){
+    $response=["status"=>false,"message"=> "qustions_Count only contain numbers"];
+    echo json_encode($response);
+    return;
+
+  }
+
+
 
 
 try {
