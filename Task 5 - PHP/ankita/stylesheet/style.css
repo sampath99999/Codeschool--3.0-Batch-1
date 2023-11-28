@@ -1,0 +1,21 @@
+.bkg-color{
+  background-color:rebeccapurple;
+}
+
+.buttonColor{
+background-color:#fcbcbc;
+}
+
+.buttonTextColor{
+color:rebeccapurple;
+}
+
+.bkg-image{
+
+ background: url("images/background.jpeg");
+}
+
+.modal-content{
+ background: #3e0f47;
+color: white;
+}
