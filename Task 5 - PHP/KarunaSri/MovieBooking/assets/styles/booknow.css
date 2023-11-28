@@ -1,0 +1,57 @@
+body {
+    background-color: #DEDEDE;
+}
+
+.navbar {
+    background-color: black;
+
+}
+
+.navbar a {
+    padding-right: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: rgb(185, 185, 185);
+}
+
+select{
+    box-sizing: border-box;
+    background-color: #f4f1f1;
+   border: 2px solid #757070;
+    border-radius: 9px;
+    width: 400px;
+    height:45px ;
+    padding: 10px;
+}
+input:not([type=submit]){
+    box-sizing: border-box;
+    background-color: #f4f1f1;
+   border: 2px solid #757070;
+    border-radius: 9px;
+    width: 400px;
+    height:45px ;
+    padding: 10px;
+}
+
+      .btn{
+            position: absolute;
+            background: #1E1E1E;
+            height: 40px;
+            width: 400px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+            color: white;
+            font-family: 'Poppins';
+        }
+        .btn:hover{
+            background-color: #000000;
+            cursor: pointer;
+        }
+        /* ::placeholder {
+            font-family: 'Poppins';
+            font-weight: 700;
+        } */

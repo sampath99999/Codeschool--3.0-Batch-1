@@ -1,41 +1,52 @@
-Movie Booking Database Design
+Movie Booking Database Design:
+
+CREATE SEQUENCE movie_id_seq START WITH 501;
+CREATE SEQUENCE branch_id_seq START WITH 101;
+CREATE SEQUENCE show_id_seq START WITH 1001;
+CREATE SEQUENCE slot_id_seq START WITH 2001;
+CREATE SEQUENCE book_id_seq START WITH 3001;
+CREATE SEQUENCE booking_id_seq START WITH 4001;
 
 CREATE TABLE Theaters (
-    TheaterID INT PRIMARY KEY,
+    TheaterID SERIAL PRIMARY KEY,
     TheaterName VARCHAR(255),
     Address VARCHAR(255),
-    
+ 
 );
 
 CREATE TABLE TheaterBranches (
-    BranchID INT PRIMARY KEY,
+    BranchID SERIAL DEFAULT nextval('branch_id_seq'),
     TheaterID INT,
     BranchName VARCHAR(255),
     Location VARCHAR(255),
     Capacity INT,
+    PRIMARY KEY (BranchID),
     FOREIGN KEY (TheaterID) REFERENCES Theaters(TheaterID)
 );
 
-CREATE TABLE Movies (
-    MovieID INT PRIMARY KEY,
+CREATE TABLE Movie (
+    MovieID SERIAL PRIMARY KEY,
     Title VARCHAR(255),
     Genre VARCHAR(50),
     ReleaseDate DATE,
-    Duration INT
+    Duration INT,
+    Image VARCHAR(255)
 );
 
+SET DEFAULT nextval('show_id_seq')
 CREATE TABLE TheaterBranchMovieShows (
-    ShowID INT PRIMARY KEY,
+    ShowID SERIAL ,
     BranchID INT,
     MovieID INT,
-    ShowTime DATETIME,
+    ShowTime TIME,
     ShowDate DATE,
+    PRIMARY KEY(ShowID),
     FOREIGN KEY (BranchID) REFERENCES TheaterBranches(BranchID),
     FOREIGN KEY (MovieID) REFERENCES Movies(MovieID)
 );
 
 CREATE TABLE SlotSeats (
-    SeatID INT PRIMARY KEY,
+    SeatID SERIAL PRIMARY KEY,
     ShowID INT,
     SeatNumber VARCHAR(10),
     Status VARCHAR(20),
@@ -43,18 +54,18 @@ CREATE TABLE SlotSeats (
 );
 
 CREATE TABLE Bookings (
-    BookingID INT PRIMARY KEY,
+    BookingID SERIAL PRIMARY KEY,
     ShowID INT,
-    UserID INT, -- Assuming you have a separate table for users
+    User_ID INT, 
     PaymentMethod VARCHAR(50),
-    BookingTime DATETIME,
+    BookingTime TIME,
     TotalPrice DECIMAL(10, 2),
     FOREIGN KEY (ShowID) REFERENCES TheaterBranchMovieShows(ShowID),
-    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+    FOREIGN KEY (User_ID) REFERENCES Users(User_ID)
 );
 
 CREATE TABLE BookingAgainstSlots (
-    BookingSlotID INT PRIMARY KEY,
+    BookingSlotID SERIAL PRIMARY KEY,
     BookingID INT,
     SeatID INT,
     FOREIGN KEY (BookingID) REFERENCES Bookings(BookingID),
@@ -71,27 +82,27 @@ CREATE TABLE Users (
 
 
 -- Theaters table
-INSERT INTO Theaters (TheaterID, TheaterName, Address)
+INSERT INTO Theaters (TheaterName, Address)
 VALUES
-(1, 'Cinemax', '123 Main Street'),
-(2, 'Starplex', '456 City Plazo'),
-(3, 'MoviePlex', '789 Hitech City'),
-(4, 'FilmCity',   '101 FilmCity'),
-(5,  'MovieMax',   '373 AMR Planet Mall'),
-(6, 'AMB Cinemas',  '999 Gachibowli');
+('Cinemax', '123 Main Street'),
+('Starplex', '456 City Plazo'),
+('MoviePlex', '789 Hitech City'),
+('FilmCity',   '101 FilmCity'),
+( 'MovieMax',   '373 AMR Planet Mall'),
+( 'AMB Cinemas',  '999 Gachibowli');
 
 -- TheaterBranches table
-INSERT INTO TheaterBranches (BranchID, TheaterID, BranchName, Location,Capacity)
+INSERT INTO TheaterBranches (TheaterID, BranchName, Location,Capacity)
 VALUES
-(101, 1, 'Cinemax A', 'City Center',500),
-(102, 1, 'Cinemax B', 'Mall Plaza',500),
-(201, 2, 'Starplex X', 'DilsukNagar',500),
-(301, 3, 'MoviePlex C', 'DilsukNagar',500),
-(302, 3, 'MoviePlex D', 'HitechCity',500),
-(401, 4, 'FilmCity Y', 'Madhapur',500),
-(402, 4, 'FilmCity Z', 'FilmCity',500),
-(501, 5, 'MovieMax X', 'Ameerpet',500),
-(502, 5, 'MovieMax I', 'Punjagutta',500);
+( 1, 'Cinemax A', 'City Center',500),
+(1, 'Cinemax B', 'Mall Plaza',500),
+( 2, 'Starplex X', 'DilsukNagar',500),
+( 3, 'MoviePlex C', 'DilsukNagar',500),
+( 3, 'MoviePlex D', 'HitechCity',500),
+( 4, 'FilmCity Y', 'Madhapur',500),
+( 4, 'FilmCity Z', 'FilmCity',500),
+( 5, 'MovieMax X', 'Ameerpet',500),
+(5, 'MovieMax I', 'Punjagutta',500);
 
 -- Movies table
 INSERT INTO Movies (MovieID, Title, Genre, ReleaseDate, Duration)
@@ -109,52 +120,52 @@ VALUES
 
 
 -- TheaterBranchMovieShows table
-INSERT INTO TheaterBranchMovieShows (ShowID, BranchID, MovieID, ShowTime, ShowDate)
+INSERT INTO TheaterBranchMovieShows ( BranchID, MovieID, ShowTime, ShowDate)
 VALUES
-(1001, 101, 501, '18:00:00', '2023-11-15'),
-(1002, 102, 502, '20:00:00', '2023-11-16'),
-(1003, 301, 503, '19:30:00', '2023-11-17'),
-(1004, 302, 504, '21:15:00', '2023-11-18'),
- (1005, 302,  504,'18:00:00','2023-11-16'),
- (1006, 401, 505, '18:00:00', '2023-10-12'),
- (1007, 402,  506,'11:00:00', '2023-11-12'),
- (1008, 501,  507,'14:00:00 ','2023-10-03'),
- (1009, 502,  508,'18:00:00 ','2023-09-12');
+( 101, 501, '18:00:00', '2023-11-15'),
+( 102, 502, '20:00:00', '2023-11-16'),
+( 103, 503, '19:30:00', '2023-11-17'),
+( 104, 504, '21:15:00', '2023-11-18'),
+( 105,  504,'18:00:00','2023-11-16'),
+( 106, 505, '18:00:00', '2023-10-12'),
+( 107,  506,'11:00:00', '2023-11-12'),
+( 108,  507,'14:00:00 ','2023-10-03'),
+( 109,  508,'18:00:00 ','2023-09-12');
 
 -- SlotSeats table
-INSERT INTO SlotSeats (SeatID, ShowID, SeatNumber, Status)
+INSERT INTO SlotSeats ( ShowID, SeatNumber, Status)
 VALUES
-(2001, 1001, 'A1', 'Booked'),
-(2002, 1001, 'A2', 'Booked'),
-(2003, 1001, 'B1', 'Booked'),
-(2004, 1001, 'B2', 'Booked'),
-(2005, 1002, 'C1', 'Available'),
-(2006, 1002, 'C2', 'Available'),
-(2007, 1003, 'D1', 'Available'),
-(2008, 1003, 'D2', 'Available'),
-(2009, 1004, 'E1', 'Available'),
-(2010, 1004, 'E2', 'Available');
+( 1010, 'A1', 'Booked'),
+( 1010, 'A2', 'Booked'),
+( 1010, 'B1', 'Booked'),
+( 1010, 'B2', 'Booked'),
+( 1012, 'C1', 'Available'),
+( 1012, 'C2', 'Available'),
+( 1013, 'D1', 'Available'),
+(1013, 'D2', 'Available'),
+( 1014, 'E1', 'Available'),
+( 1014, 'E2', 'Available');
 
 -- Bookings table
-INSERT INTO Bookings (BookingID, ShowID, UserID, PaymentMethod, BookingTime, TotalPrice)
+INSERT INTO Bookings ( ShowID, User_ID, PaymentMethod, BookingTime, TotalPrice)
 VALUES
-(3001, 1001, 100, 'Credit Card', '2023-11-15 14:30:00', 25.00),
-(3002, 1002, 101, 'PayPal', '2023-11-16 15:45:00', 30.00),
-(3003, 1003, 102, 'Credit Card', '2023-11-17 16:00:00', 22.50),
-(3004, 1004, 103, 'PayPal', '2023-11-18 17:30:00', 28.00);
+( 1010, 11, 'Credit Card', '2023-11-15 14:30:00', 25.00),
+( 1012, 3, 'PayPal', '2023-11-16 15:45:00', 30.00),
+( 1013, 7, 'Credit Card', '2023-11-17 16:00:00', 22.50),
+( 1014, 9, 'PayPal', '2023-11-18 17:30:00', 28.00);
 
 -- BookingAgainstSlots table
-INSERT INTO BookingAgainstSlots (BookingSlotID, BookingID, SeatID)
+INSERT INTO BookingAgainstSlots ( BookingID, SeatID)
 VALUES
-(4001, 3001, 2001),
-(4002, 3001, 2003),
-(4003, 3002, 2005),
-(4004, 3003, 2007),
-(4005, 3003, 2008),
-(4006, 3004, 2009);
+(3004, 2011),
+( 3004, 2013),
+(3005, 2015),
+(3006, 2017),
+(3007, 2018),
+(3007, 2019);
 
 -- Users table
-INSERT INTO Users (UserID, UserName, Email, Password, RegistrationDate,  PhoneNumber)
+INSERT INTO Users (User_ID, UserName, Email, Password, RegistrationDate,  PhoneNumber)
 VALUES
 (100, 'john_doe', 'john.doe@email.com', 'hashed_password_123', '2023-01-15 08:30:00', '123-456-7890'),
 (101, 'jane_smith', 'jane.smith@email.com', 'hashed_password_456', '2023-02-20 12:45:00','987-654-3210'),
