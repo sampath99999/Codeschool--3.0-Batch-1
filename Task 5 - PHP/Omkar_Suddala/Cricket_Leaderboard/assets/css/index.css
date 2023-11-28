@@ -1,0 +1,22 @@
+.main-content {
+  margin-top: 200px;
+}
+body {
+  background-image: url("https://i.pinimg.com/originals/81/dd/d3/81ddd367e580ac8909ea032cca1a50ca.jpg");
+  background-size: 100% 100vh;
+  background-blend-mode: saturation(100%);
+}
+.table-style {
+  backdrop-filter: blur(30px) contrast(150%);
+}
+.modal-content {
+  backdrop-filter: blur(30px) contrast(150%);
+  background-image: url("https://i.pinimg.com/736x/bf/68/69/bf6869d88d36a4f43c01e828c6aaf65a.jpg");
+  background-size: 100% 100vh;
+  background-blend-mode: saturation(100%);
+}
+.tr-style {
+  background-color: #746f6f6b;
+  color: aliceblue;
+  font-weight: bold;
+}

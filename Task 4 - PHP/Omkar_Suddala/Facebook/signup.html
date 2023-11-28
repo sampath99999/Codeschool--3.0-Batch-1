@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </head>
+  <body>
+   
+    <div class="row">
+      <!--header-->
+      <div class="col-12 bg-light text-center">
+        <img
+          class="fb_logo _agiv img"
+          src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"
+          alt="Facebook" width="300px"
+        />
+      </div>
+      <!--main-->
+      <div class="col-12  d-flex  bg-light justify-content-center p-4 ">
+        <div class="bg-white  ms-lg-5 me-lg-5 py-2 px-3 rounded-3 " style="width: 420px;">
+        <div class="text-center">
+          <span class="fs-3 fw-bold">Create a new account</span> <br>
+          <span>It's quick and easy.</span>
+        </div>
+        <hr />
+        <form action="" id="signupForm" >
+        <div class="d-flex flex-row gap-2 mb-2 ">
+          <div class="fullName col mb-2">
+            <span id="firstrequiredUser" class="text-danger"></span>
+            <input
+              type="text"
+              class="form-control"
+              name="firstName"
+              id="firstName"
+              placeholder="First name"
+            />
+          <span id="firstnameError"></span></div>
+            <div class="fullName col mb-2 ">
+            <span id="lastrequiredUser" class="text-danger"></span>
+            <input
+              type="text"
+              class="form-control"
+              name="lastName"
+              id="lastName"
+              placeholder="Surname"
+            />
+            <span id="lastnameError"></span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <span id="requiredEmail" class="text-danger"></span>
+
+          <input
+            type="text"
+            name="email-or-contact"
+            id="email-or-contact"
+            class="form-control"
+            placeholder="Mobile number or email address"
+          /><span id="emailError"></span>
+        </div>
+        <div class="mb-3">
+          <span id="requiredPassword" class="text-danger"></span>
+
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            id="password"
+            placeholder="New password"
+          /><span id="passwordError"></span>
+        </div>
+        <div class="mb-3">
+          <span><small>Date of birth  <i class="bi bi-question-circle-fill text-secondary"></i></small></span><br>
+          <div class="d-flex gap-2">
+          <select class="form-select" aria-label="Default select example" id="day">
+            <option selected>01</option>
+          </select>
+          <select class="form-select" aria-label="Default select example" id="month">
+            <option selected>01</option>
+          </select>
+          <select class="form-select" aria-label="Default select example" id="year">
+            <option selected>2000</option>
+          </select></div>
+        </div>
+        <span><small>Gender  <i class="bi bi-question-circle-fill text-secondary"></i></small></span><br>
+        <div class="d-flex gap-3 mb-3 ">
+         
+        <div  class=" rounded-3 col p-2 form-control">
+          <label class="form-check-label me-lg-2" for="gender"> Female </label>
+
+          <input
+            type="radio"
+            class="form-check-input ms-lg-2 "
+            name="gender"
+            id="gender"
+            value="Female"
+            class="gender"
+          />
+        </div>
+          <div  class=" rounded-3 col p-2 form-control">
+          <label class="form-check-label me-lg-2" for="gender"> Male </label>
+
+             <input
+            type="radio"
+            class="form-check-input ms-lg-2"
+            name="gender"
+            id="gender"
+            class="gender"
+            value="Male"
+          />
+        </div>
+          <div  class=" rounded-3 col p-2 form-control">
+          <label class="form-check-label me-lg-2" for="gender"> Custom </label>
+
+          <input
+            type="radio"
+            class="form-check-input ms-lg-2 "
+            name="gender"
+            id="gender"
+            class="gender"
+            value="Custom"
+          />
+        </div>
+        </div>
+        <div class="">
+          <span style="font-size: 12px;">
+            
+              People who use our service may have uploaded your contact
+              information to Facebook.
+              <a class="d-inline" href="https://www.facebook.com/help/637205020878504"
+                >Learn more</a
+              >
+          </span><br>
+          <span style="font-size: 12px;    line-height: 1.34; ">By clicking Sign Up, you agree to our
+              <a href="https://www.facebook.com/legal/terms/update">Terms</a>,
+              <a
+                href="https://www.facebook.com/privacy/policy/?entry_point=data_policy_redirect&entry=0"
+                >Privacy Policy</a
+              >
+              and
+              <a
+                href="https://www.facebook.com/privacy/policies/cookies/?entry_point=cookie_policy_redirect&entry=0"
+                >Cookies Policy</a
+              >.
+          
+          </span> <br>
+          <span class="d-lg-block d-none" style="font-size: 12px; ">You may receive SMS notifications from us and can opt out at any
+              time.</span
+          >
+        </div>
+        <div class="text-center my-3">
+          <button type="submit" class="btn  rounded-3" onclick="register()" style="
+            background-color: #00a400;
+            color: #fff;
+            width: 200px;
+            font-size: 18px;
+            font-weight: 600;
+            height: 36px;
+            overflow: hidden;
+            padding: 0 32px;
+            text-shadow: none;">Sign Up</button>
+            </div>
+            <div class="text-center mb-3">
+            </form>
+          <span><a class="text-decoration-none " href="./login.html">Already have an account?</a></span>
+        </div>
+        </div>
+      </div>
+      <!--footer-->
+      <div class="col-12  justify-content-center">
+        <div class="">
+          <ul class="list-group-horizontal d-flex ">
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">English (UK)</a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">తెలుగు</a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">हिन्दी</a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">اردو</a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">தமிழ்</a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">বাংলা </a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">मराठी</a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">ગુજરાતી </a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">ಕನ್ನಡ </a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">മലയാളം</a>
+            </li>
+            <li class="list-group-item">
+              <a class="text-decoration-none" href="">Español </a>
+            </li>
+            <li class="list-group-item">
+             
+            <a class="text-decoration-none" href=""><i class="bi bi-plus-square-fill"></i></a></li>
+          </ul>
+        </div>
+        <hr>
+        <div>
+          <ul class="list-group-horizontal">
+         
+            <li class="list-group-item">
+              <a href="/reg/" title="Sign up for Facebook">Sign Up</a>
+            <a class="text-decoration-none" href="/login/" title="Log in to Facebook">Log in</a>
+            <a class="text-decoration-none" href="https://messenger.com/" title="Take a look at Messenger.">Messenger</a>
+            <a class="text-decoration-none" href="/lite/" title="Facebook Lite for Android.">Facebook Lite</a>
+            <a class="text-decoration-none" href="https://te-in.facebook.com/watch/" title="Browse in Video">Video</a>
+            <a class="text-decoration-none" href="/places/" title="Take a look at popular places on Facebook.">Places</a>
+            <a class="text-decoration-none" href="/games/" title="Check out Facebook games.">Games</a>
+            <a class="text-decoration-none" href="/marketplace/" title="Buy and sell on Facebook Marketplace.">Marketplace</a>
+            <a class="text-decoration-none" href="https://pay.facebook.com/" title="Learn more about Meta Pay" target="_blank">Meta Pay</a>
+            <a class="text-decoration-none" href="https://www.meta.com/" title="Discover Meta" target="_blank">Meta Store</a>
+            <a class="text-decoration-none" href="https://www.meta.com/quest/" title="Learn more about Meta Quest" target="_blank">Meta Quest</a>
+            <a class="text-decoration-none" href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&amp;h=AT28K9fTkJbcIRO-FS4CVz9iKBjD4bdL7dimQgESaCsezFdcssHD0yM_-hBfTgm2xWEo-fz0N9qh1GUNYWpV0wjBa0XJT6lJHch_r2ALA16Dhq6W5s3u0M-7Xx6wCfb3QRH8kJyuu15tu-bnL3O11XBthjjZSnOHdU5-wQ" title="Take a look at Instagram" target="_blank" rel="noreferrer nofollow" data-lynx-mode="asynclazy">Instagram</a></li>
+            <a class="text-decoration-none" href="https://www.threads.net/" title="Check out Threads">Threads</a>
+            <a class="text-decoration-none" href="/fundraisers/" title="Donate to worthy causes.">Fundraisers</a>
+            <a class="text-decoration-none" href="/biz/directory/" title="Browse our Facebook Services directory.">Services</a>
+            <a class="text-decoration-none" href="/votinginformationcenter/?entry_point=c2l0ZQ%3D%3D" title="See the Voting Information Centre">Voting Information Centre</a>
+            <a class="text-decoration-none" href="/privacy/policy/?entry_point=facebook_page_footer" title="Learn how we collect, use and share information to support Facebook.">Privacy Policy</a>
+            <a class="text-decoration-none" href="/privacy/center/?entry_point=facebook_page_footer" title="Learn how to manage and control your privacy on Facebook.">Privacy Centre</a>
+            <a class="text-decoration-none" href="/groups/discover/" title="Explore our groups.">Groups</a>
+            <a class="text-decoration-none" href="https://about.meta.com/" accesskey="8" title="Read our blog, discover the resource centre and find job opportunities.">About</a>
+            <a class="text-decoration-none" href="/ad_campaign/landing.php?placement=pflo&amp;campaign_id=402047449186&amp;nav_source=unknown&amp;extra_1=auto" title="Advertise on Facebook">Create ad</a>
+            <a class="text-decoration-none" href="/pages/create/?ref_type=site_footer" title="Create a Page">Create Page</a>
+            <a class="text-decoration-none" href="https://developers.facebook.com/?ref=pf" title="Develop on our platform.">Developers</a>
+            <a class="text-decoration-none" href="/careers/?ref=pf" title="Make your next career move to our brilliant company.">Careers</a>
+            <a class="text-decoration-none" href="/policies/cookies/" title="Learn about cookies and Facebook." data-nocookies="1">Cookies</a>
+            <a class="text-decoration-none" class="_41ug" data-nocookies="1" href="https://www.facebook.com/help/568137493302217" title="Learn about AdChoices.">AdChoices<i class="img sp_EP9wX8qDDvu_1_5x sx_77fffd"></i></a>
+            <a class="text-decoration-none" data-nocookies="1" href="/policies?ref=pf" accesskey="9" title="Review our terms and policies.">Terms</a>
+            <a class="text-decoration-none" href="/help/?ref=pf" accesskey="0" title="Visit our Help Centre.">Help</a>
+            <a class="text-decoration-none" href="help/637205020878504" title="Visit our contact uploading and non-users notice.">Contact uploading and non-users</a>
+            <a class="text-decoration-none" accesskey="6" class="accessible_elem" href="/settings" title="View and edit your Facebook settings.">Settings</a>
+            <a class="text-decoration-none" accesskey="7" class="accessible_elem" href="/allactivity?privacy_source=activity_log_top_menu" title="View your activity log">Activity log</a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/js/dob.js"></script>
+  <script src="./assets/js/register.js"></script>
+</html>
