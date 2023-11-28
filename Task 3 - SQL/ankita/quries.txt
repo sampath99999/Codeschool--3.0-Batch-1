@@ -1,0 +1,46 @@
+ 
+ 
+ 
+ 
+ 
+ --Q1
+ select concat(f_name, ' ', l_name, ' ', surname) as name, doj, gender, phone, ws.description as working_status, l.description as location, d.description as designation
+from employees as e join working_status as ws on ws.id = e.working_status_id   join designation as d on d.id =e.designation_id  join location as l on  l.id =e.location_id ;
+ 
+ --Q2
+ select  l.description,count(e.id)as numberofemployees  from employees as e  join location as l on l.id=e.location_id group by l.description;
+ 
+ 
+ --Q3
+ 
+ select  d.description,count(e.id)as numberofemployees  from employees as e  join designation as d on d.id=e.designation_id group by d.description;
+ 
+ --Q4
+ select  ws.description,count(e.id)as numberofemployees  from employees as e  join working_status as ws on ws.id=e.working_status_id group by ws.description;
+ 
+ --Q5
+ select  empcode, concat(f_name, ' ', l_name, ' ', surname) as name,dob,doj ,dob + interval '60years' as retirement_date from employees;
+
+ 
+ 
+ --Q6
+ select empcode,concat(f_name,' ',l_name,' ',surname) as name,sum(case when esb.salary_components_types_id = 1 then esb.amount else 0 end) as basic_pay,sum(case when esb.salary_components_types_id = 2 then esb.amount else 0 end) as HRA ,sum(case when esb.salary_components_types_id = 3 then esb.amount else 0 end) as CCA,sum(case when esb.salary_components_types_id = 4 then esb.amount else 0 end) as PT ,sum(case when esb.salary_components_types_id = 5 then esb.amount else 0 end) as IT from employees as e join employee_salary_breakup as esb on esb.employee_id = e.id  group by empcode ,concat(f_name,' ',l_name,' ',surname) order by empcode;
+  
+ --Q7
+ 
+ select e.empcode,concat(f_name,' ',l_name,' ',surname) as name,sum(case when esb.salary_type_id = 1 then esb.amount else 0 end) as gross,sum(case when esb.salary_type_id = 2 then esb.amount else 0 end) as deduction,sum(case when esb.salary_type_id = 1 then esb.amount else 0 end) - sum(case when esb.salary_type_id = 2 then esb.amount else 0 end) as net from employees as e join employee_salary_breakup as esb on esb.employee_id = e.id group by empcode,concat(f_name,' ',l_name,' ',surname) order by empcode;
+ --Q8
+ 
+ select   empcode,concat(f_name,' ',l_name,' ',surname) as name,year as salary_year, month as salary_month,gross,deduction,sd.net from employees as e  join salary_details as sd on sd.employee_id = e.id  where sd.year = 2023 and sd.month = 11;
+ 
+ 
+ 
+ --Q9
+ 
+ select   empcode,concat(f_name,' ',l_name,' ',surname) as name,paid_on,gross,net from employees as e  left join salary_details as sd on sd.employee_id = e.id  where paid_on is null;
+ 
+ --Q10
+ 
+ select   e.empcode,concat(f_name, ' ', l_name, ' ', surname) as employee_name,e.net as actual_salry,sd.net as received_salary from employees as e join salary_details as sd on sd.employee_id = e.id  where sd.net <> e.net and sd.year = 2023 and sd.month = 11 ;
+ 
+ 
