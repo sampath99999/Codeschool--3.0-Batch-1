@@ -1,8 +1,8 @@
-let ele = document.getElementById("wrapper");
+let element_wrapper = document.getElementById("wrapper");
 let toggleButton = document.getElementById("menu-toggle");
 
 toggleButton.onclick = function () {
-  ele.classList.toggle("toggled");
+  element_wrapper.classList.toggle("toggled");
 };
 
 fetch("https://fakestoreapi.com/products?limit=10")

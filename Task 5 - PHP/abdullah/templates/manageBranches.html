@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-rfsU8vBZLIFhDDr5JF0FmUTjBAe9zQJtn1xAd2/4+67iLXdOhVZ5t9zZoL4zcu3l"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main class="header">
+      <!-- navigation bar -->
+      <nav class="container-fluid navbar-container">
+        <div class="container bg-transparent">
+          <nav class="navbar navbar-expand-lg bg-transparent">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="/assets/img/logo.png" class="img-fluid logo" alt="" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="input-group w-50">
+                  <input
+                    placeholder="Search for Movies, Events, Plays, Sports and Activities"
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                  />
+                </div>
+
+                <ul class="navbar-nav nav-buttons m-sm-auto">
+                  <li class="nav-item">
+                    <div class="dropdown city-dropdown">
+                      <button
+                        class="bg-transparent text-white dropdown-toggle"
+                        type="button"
+                        id="dropdownMenu2"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Hyderabad
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenu2"
+                      >
+                        <button class="dropdown-item" type="button">
+                          Delhi
+                        </button>
+                        <button class="dropdown-item" type="button">
+                          Bangalore
+                        </button>
+                        <button class="dropdown-item" type="button">
+                          Kolkata
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </nav>
+
+      <!-- navigation bar ends -->
+
+      <!-- sidebar  starts here-->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3">
+            <ul class="list-unstyled border h-100 bg-light sidebar">
+              <li>
+                <a
+                  href="http://localhost:3000/templates/home.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-house"></i><span class="ms-2">Home</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/adminDashboard.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-speedometer"></i
+                  ><span class="ms-2">Dashboard</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/manageMovies.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-film"></i
+                  ><span class="ms-2">Manage Movies</span></a
+                >
+              </li>
+              <li class="bg-secondary-subtle">
+                <a
+                  href="http://localhost:3000/templates/manageBranches.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-person"></i
+                  ><span class="ms-2">Manage Branches</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/manageShows.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-speedometer"></i
+                  ><span class="ms-2">Manage Shows</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/viewBookings.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-list-columns"></i
+                  ><span class="ms-2">View Bookings</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/viewCustomers.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-list"></i
+                  ><span class="ms-2">View Customers</span></a
+                >
+              </li>
+              <li>
+                <a href="/index.html" class="fs-4 btn"
+                  ><i class="bi bi-box-arrow-left"></i
+                  ><span class="ms-2">Logout</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- sidebar ends here -->
+
+
+          <!-- main content container starts-->
+
+          <div class="col-9">
+            <div class="container mt-5">
+                <h1>Manage Theatre Branches</h1>
+          
+                <nav>
+                  <ul class="nav gap-2">
+                    <li class="nav-item">
+                      <button class="btn btn-danger" id="listAllTheatres">
+                        List All Theatres
+                      </button>
+                    </li>
+                    <li class="nav-item">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#addTheatreBranchModal"
+                      >
+                        Add Theatres
+                      </button>
+                    </li>
+                    <!-- selector -->
+                    <select
+                      id="theatreSelect"
+                      class="form-select w-25 bg-danger text-white"
+                      aria-label="Default select example"
+                    >
+                      <option value="" selected>Remove a Theatre</option>
+                    </select>
+          
+                    <!-- all Theatres table -->
+          
+                    <div class="container mt-2 pt-2">
+                      <span class="allTheatres"><h1>All Theatres</h1></span>
+                      <table class="table">
+                        <thead class="table-dark theatresTable">
+                          <tr>
+                            <th scope="col">Branch ID</th>
+                            <th scope="col">Branch Name</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody class="theatresRender">
+                          <!-- Data will be dynamically added here --> 
+                          <!-- <tr>
+                      <th scope="row">1</th>
+                      <td>PVR Mumbai</td>
+                      <td>Mumbai</td>
+                      <td>Address Mumbai</td>
+                      <td>Open</td>
+                    </tr>
+                        </tbody>
+                      </table>
+                    </div>
+          
+                    <-- modal to add theatre branches -->
+                    <div class="modal fade" id="addTheatreBranchModal">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h4 class="modal-title">Enter Theatre Details</h4>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                              ></button>
+                            </div>
+            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                              <div class="mb-3">
+                                <label for="branchName" class="form-label">Branch Name</label>
+                                <input type="text" id="branchName" class="form-control" />
+                              </div>
+                              <div class="mb-3">
+                                <label for="city" class="form-label"
+                                  >City</label
+                                >
+                                <input type="text" id="city" class="form-control" />
+                              </div>
+                              <div class="mb-3">
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" id="address" class="form-control" />
+                              </div>
+                              <div class="mb-3">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="flexRadioDefault"
+                                    id="flexRadioDefault1"
+                                    value="Open"
+                                    checked
+                                  />
+                                  <label class="form-check-label" for="flexRadioDefault1">
+                                    Open
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="flexRadioDefault"
+                                    id="flexRadioDefault2"
+                                    value="Closed"
+                                    
+                                  />
+                                  <label class="form-check-label" for="flexRadioDefault2">
+                                    Closed
+                                    </label>
+                                </div>
+                              </div>
+                            </div>
+            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-danger addTheatreButton"
+                                data-bs-dismiss="modal"
+                              >
+                                Add
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-light btn-outline-dark"
+                                data-bs-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+          
+                  
+                  </ul>
+                </nav>
+              </div>
+          </div>
+        </div>
+
+        <!-- main content container ends-->
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="/assets/js/manageBranches.js"></script>
+  </body>
+</html>

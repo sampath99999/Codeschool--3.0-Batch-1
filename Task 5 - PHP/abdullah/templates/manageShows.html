@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main class="header">
+      <!-- navigation bar -->
+      <nav class="container-fluid navbar-container">
+        <div class="container bg-transparent">
+          <nav class="navbar navbar-expand-lg bg-transparent">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="/assets/img/logo.png" class="img-fluid logo" alt="" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="input-group w-50">
+                  <input
+                    placeholder="Search for Movies, Events, Plays, Sports and Activities"
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                  />
+                </div>
+
+                <ul class="navbar-nav nav-buttons m-sm-auto">
+                  <li class="nav-item">
+                    <div class="dropdown city-dropdown">
+                      <button
+                        class="bg-transparent text-white dropdown-toggle"
+                        type="button"
+                        id="dropdownMenu2"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Hyderabad
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenu2"
+                      >
+                        <button class="dropdown-item" type="button">
+                          Delhi
+                        </button>
+                        <button class="dropdown-item" type="button">
+                          Bangalore
+                        </button>
+                        <button class="dropdown-item" type="button">
+                          Kolkata
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </nav>
+
+      <!-- navigation bar ends -->
+
+      <!-- sidebar  starts here-->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3">
+            <ul class="list-unstyled border h-100 bg-light sidebar">
+              <li>
+                <a
+                  href="http://localhost:3000/templates/home.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-house"></i><span class="ms-2">Home</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/adminDashboard.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-speedometer"></i
+                  ><span class="ms-2">Dashboard</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/manageMovies.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-film"></i
+                  ><span class="ms-2">Manage Movies</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/manageBranches.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-person"></i
+                  ><span class="ms-2">Manage Branches</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/manageShows.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-speedometer"></i
+                  ><span class="ms-2">Manage Shows</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/viewBookings.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-list-columns"></i
+                  ><span class="ms-2">View Bookings</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="http://localhost:3000/templates/viewCustomers.html"
+                  class="fs-4 btn"
+                  ><i class="bi bi-list"></i
+                  ><span class="ms-2">View Customers</span></a
+                >
+              </li>
+              <li>
+                <a href="/index.html" class="fs-4 btn"
+                  ><i class="bi bi-box-arrow-left"></i
+                  ><span class="ms-2">Logout</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- sidebar ends here -->
+          <!-- main content container starts-->
+
+          <div class="col-9">
+            <div class="col-9">
+              <!-- manage Shows -->
+
+              <div class="container mt-5">
+                <h1>Manage Shows</h1>
+
+                <nav>
+                  <ul class="nav gap-2">
+                    <li class="nav-item">
+                      <button class="btn btn-danger" id="listAllShows">
+                        List All Shows
+                      </button>
+                    </li>
+                    <li class="nav-item">
+                      <!-- Button to Open the Modal -->
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-bs-toggle="modal"
+                        data-bs-target="#addShows"
+                      >
+                        Add Shows
+                      </button>
+                    </li>
+                    <!-- selector -->
+                    <select
+                      class="form-select w-25 bg-danger text-white showSelect"
+                      aria-label="Default select example"
+                    >
+                      <option value="" selected>Select a movie</option>
+                    </select>
+                  </ul>
+                </nav>
+              </div>
+
+              <!-- all Shows table -->
+
+              <div class="container mt-2 pt-2">
+                <span class="allShows"><h1>All Shows</h1></span>
+                <table class="table">
+                  <thead class="table-dark showsTable">
+                    <tr>
+                      <th scope="col">Show ID</th>
+                      <th scope="col">Theatre Branch Name</th>
+                      <th scope="col">Screen No</th>
+                      <th scope="col">Movie Name</th>
+                      <th scope="col">Time Slot</th>
+                      <th scope="col">Running Status</th>
+
+                    </tr>
+                  </thead>
+                  <tbody class="showsRender">
+                    <!-- Data will be dynamically added here -->
+                    <!-- <tr>
+                  <th scope="row">1</th>
+                  <td>Bahubali</td>
+                  <td>Epic movie about two brothers'</td>
+                  <td>Hindi</td>
+                  <td>Released</td>
+                </tr> -->
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- add Shows modal -->
+
+              <!-- The Modal -->
+              <div class="modal fade" id="addShows">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Enter Show Details</h4>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        modal-body
+                        data-bs-dismiss="modal"
+                      ></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="branchName" class="form-label"
+                          >Branch Name</label
+                        >
+                        <select
+                          class="form-select w-100 bg-danger text-white theatreSelect"
+                          aria-label="Default select example"
+                        >
+                          <option value="" selected>Select a branch</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                            value="1"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexRadioDefault1"
+                          >
+                            Screen No 1
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault2"
+                            value="2"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexRadioDefault2"
+                          >
+                            Screen No 2
+                          </label>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="movieName" class="form-label"
+                          >Movie Name</label
+                        >
+                        <select
+                          class="form-select w-100 bg-danger text-white movieSelect"
+                          aria-label="Default select example"
+                        >
+                          <option value="" selected>Select a Movie</option>
+                        </select>
+                      </div>
+                      <div class="mb-3">
+                        <label for="timeSlot" class="form-label"
+                          >Time Slot</label
+                        >
+                        <select
+                          class="form-select w-100 bg-danger text-white slotSelect"
+                          aria-label="Default select example"
+                        >
+                          <option value="" selected>Select a Time Slot</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-danger addShowButton"
+                        data-bs-dismiss="modal"
+                      >
+                        Add
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-light btn-outline-dark"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- main content container ends-->
+      </div>
+    </main>
+    <script src="/assets/js/manageShows.js"></script>
+  </body>
+</html>
