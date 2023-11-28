@@ -11,24 +11,37 @@ token = localStorage.getItem('token');
 userInfo = JSON.parse(userInfo);
 token = JSON.parse(token);
 let subject_info = {};
-console.log(userInfo, 123);
-if(!userInfo && !token){
- alert("you are  not a loggedin ");
-  window.location.replace("http://localhost/week7/logIn.html");
-  
-
-}
 
 
-if(userInfo.user_types_id ==2){
+
+
+if (userInfo) {
+
+  $('#logInButton').empty();
+
+
+  if(userInfo.user_types_id !=1){
 
    alert("you are  not a admin ");
   window.location.replace("http://localhost/week7/logIn.html");
   
 }
+}
+
+else {
+
+ alert("you are  not logged in to this page  ");
+  $('#logOutButton').empty();
+
+}
+
+console.log(userInfo, 123);
+let userId=userInfo.id;
+
+
 
 let formData = {
-    user_id: userInfo.id,
+    user_id: userId,
     token: token
 }
 
@@ -52,6 +65,11 @@ $.ajax({
         console.log('Request failed with status: ' + status);
     }
 });
+
+
+subject_Info.user_id=userId;
+subject_Info.token=token;
+
 
 $.ajax({
     url: 'api/getSubjects.php',
@@ -147,6 +165,10 @@ function logout() {
 
 
 }
+function login() {
+  window.location.replace("http://localhost/week7/logIn.html");
+}
+
 
 
 
@@ -293,7 +315,11 @@ function showTest(subject_name, subject_id) {
 
     $('#showTestModalToggleLabel').text(subject_name);
     let formData = {
-        subject_id: subject_id
+        
+        subject_id: subject_id,
+          user_id: userId,
+          token: token
+        
 
     }
 
@@ -342,7 +368,9 @@ function viewTest(exam_name, exam_id) {
 
     $('#viewTestModalToggleLabel').text(exam_name);
     let formData = {
-        exam_id: exam_id
+        exam_id: exam_id,
+           user_id: userId,
+    token: token
 
 
     }

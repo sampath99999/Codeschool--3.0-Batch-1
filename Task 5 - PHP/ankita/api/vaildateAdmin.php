@@ -5,13 +5,13 @@ $status=true;
 $userId=$_POST['user_id'];
 $token=$_POST['token'];
 
-if(!$userId || !$token){
+if(!$userId &&  !$token){
  $response=["status"=>false,"message"=> "Not a valid User"];
     echo json_encode($response);
  return;
 
 }
-date_default_timezone_set('Asia/Kolkata'); // Set Indian Standard Time
+date_default_timezone_set('Asia/Kolkata'); 
 
 $currentDateTime = date("Y-m-d H:i:s");
 

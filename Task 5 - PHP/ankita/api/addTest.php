@@ -1,11 +1,20 @@
 <?php
 
 require_once "DBConnction.php";
-$status = true;
+
 $subject_id = $_POST['id'];
 $examName = $_POST['ExamName'];
 $qustions_Count = $_POST['qustionCount'];
 $qustions = $_POST['qustions'];
+$userId=$_POST['user_id'];
+$token=$_POST['token'];
+
+if(!$userId && !$token){
+ $response=["status"=>false,"message"=> "Not a valid User"];
+    echo json_encode($response);
+ return;
+
+}
 
 
  if(! is_numeric($subject_id)){
@@ -26,6 +35,14 @@ $qustions = $_POST['qustions'];
 
 
 try {
+ $checkVaildToken=$pdo->prepare("select * from session_token where user_tokan=? and users_id=?");
+$checkVaildToken->execute([$token,$userId]);
+$isVaildToken= $checkVaildToken->fetchAll(PDO::FETCH_ASSOC);
+   if(count($isVaildToken)==0){
+    $response=["status"=>false,"message"=> "Session  Time Expired"];
+    echo json_encode($response);
+    return;
+   }
 
     $pdo->beginTransaction();
 

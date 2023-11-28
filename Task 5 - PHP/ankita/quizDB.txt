@@ -1,0 +1,34 @@
+create database quiz;
+
+
+create table user_types (id serial primary key,type varchar(64),created_at timestamp default now(),updated_at timestamp default now());
+
+
+create table users (id serial primary key,user_types_id int references user_types(id),username varchar(128),password varchar(256),email varchar(128),phone varchar(10),status int,created_at timestamp default now(),updated_at timestamp default now());
+
+
+create table  session_token(id serial primary key ,users_id int references users(id),user_tokan bigint,expire_time timestamp default now()+interval'2hours');
+ 
+ 
+ insert into user_types(type) values ('admin'),('user');
+ 
+ 
+ insert into users (user_types_id,username,password,email,phone,status) values (1,'angela','f495b400db54e6dec5bf2a7f6d40fd56','angela@gmail.com','1234567890',1),(2,'ankita','1138dd6fdda5d617dfe218898ee02077','john@gmail.com','9876543210',1);
+   
+   
+   
+   create table subjects (id serial primary key ,name varchar(128),image varchar(128),status int ,created_at timestamp default now(),updated_at timestamp default now());
+    insert into subjects(name,image,status) values('C','images/c.jpg',1),('Python','images/python.jpg',1),('DSA','images/dsa.jpg',1),('C++','images/c++.png',1),('MYSQL','images/mysql.png',1),('AI','images/ai.jpg',1),('ML','images/ml.jpg',1),('Cryptography','images/Cryptography.jpg',1),('Java','images/java.jpg',1);
+   
+   create table subject_exam (id serial primary key,subject_id int references subjects(id),exam_name varchar(128),total_no_of_qustions int,status int ,created_at timestamp default now(),updated_at timestamp default now());
+   
+   insert into subject_exam (subject_id,exam_name,total_no_of_qustions,status) values(1,'test1',10,1),(3,'test2',15,1);
+   
+   
+   create table qustions(id serial primary key ,subject_exam_id int references subject_exam(id),qustion_name text,created_at timestamp default now(),updated_at timestamp default now());
+   
+   create table answers(id serial primary key ,qustion_id int references qustions(id),option_name text,is_answer boolean ,created_at timestamp default now(),updated_at timestamp default now());
+
+
+
+

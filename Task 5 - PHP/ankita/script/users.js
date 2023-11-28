@@ -12,19 +12,27 @@ token = localStorage.getItem('token');
 userInfo = JSON.parse(userInfo);
 token = JSON.parse(token);
 
-if(!userInfo && !token){
- alert("you are  not a loggedin ");
+
+if (userInfo) {
+
+  $('#logInButton').empty();
+
+
+  if(userInfo.user_types_id !=2){
+
+    alert("you are  not a user ");
   window.location.replace("http://localhost/week7/logIn.html");
   
-
+}
 }
 
-if(userInfo.user_types_id ==1){
+else {
+   alert("you are  not logged in to this page  ");
+ 
+  $('#logOutButton').empty();
 
-   alert("you are  not a user ");
-  window.location.replace("http://localhost/week7/logIn.html");
-  
 }
+let userId=userInfo.id;
 
 let formData = {
     user_id: userInfo.id,
@@ -51,6 +59,8 @@ $.ajax({
 
 
 
+subject_Info.user_id=userId;
+subject_Info.token=token;
 
 
 
@@ -116,7 +126,9 @@ function showTest(subject_name, subject_id) {
 
 
     let formData = {
-        subject_id: subject_id
+        subject_id: subject_id,
+           user_id: userId,
+    token: token
 
     }
 
@@ -140,6 +152,10 @@ function showTest(subject_name, subject_id) {
 }
 function showTestModal(testList) {
 
+if(!testList){
+
+alert("No test found!")}
+
     $('#showTest').empty();
 
     for (let i = 0; i < testList.length; i++) {
@@ -151,7 +167,7 @@ function showTestModal(testList) {
                                     <td scope="row">${i + 1}</td>
                                     <td>${testList[i].exam_name}</td>
                                     <td> <button class="btn btn-primary text-white"  onclick="attemptTest('${testList[i].exam_name}',${testList[i].id});"  data-bs-toggle="modal"
-                            data-bs-target="#attemptTestModal">View</button></td>
+                            data-bs-target="#attemptTestModal">Attempt Test</button></td>
                                 </tr>
         `)
     };
@@ -159,10 +175,15 @@ function showTestModal(testList) {
 
 let qustionList = [];
 function attemptTest(exam_name, exam_id) {
+ answer = {}
+ rightAnswer = [];
+resetExam();
 
     $('#attemptTestModalToggleLabel').text(exam_name);
     let formData = {
-        exam_id: exam_id
+        exam_id: exam_id,
+         user_id: userId,
+    token: token
 
     }
 
@@ -256,6 +277,10 @@ function logout() {
 
 }
 
+function login() {
+  window.location.replace("http://localhost/week7/logIn.html");
+}
+
 let answer = {}
 let rightAnswer = [];
 function recordAnswer(questionId, optionId) {
@@ -264,7 +289,6 @@ function recordAnswer(questionId, optionId) {
     }
     answer[questionId] = { question_id: questionId, option_id: optionId };
 
-    console.log(answer)
 }
 
 function submitAnswer() {
@@ -300,9 +324,10 @@ function submitAnswer() {
  $("#attemptTest input").prop("disabled", true);
 showAnswer();
 $('#resultModal').empty();
-$('#resultModal').append(` <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+$('#resultModal').append(` <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="resetExam();" >Close</button>
 `);
-
+ answer = {}
+ rightAnswer = [];
 
 }
 
@@ -313,4 +338,13 @@ for (let i in rightAnswer){
 
 $(`#rightAnswer${i}`).text("ANSWER.  "+ rightAnswer[i].option);
 }
+}
+
+
+function resetExam(){
+$('#resultModal').empty();
+$('#resultModal').append(`  <button class="btn btn-primary" onclick="submitAnswer();" id="addQuestionsButton">
+                            NEXT
+                        </button>
+`);
 }
