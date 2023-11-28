@@ -1,0 +1,10 @@
+.heading{
+    width: 450px;
+    margin-left: 500px;
+}
+.index{
+    margin-left: 100px;
+}
+.index:hover{
+    border: 2px solid black;
+}
