@@ -1,0 +1,8 @@
+.gradient-color{
+    background: rgb(156,197,251);
+    background: linear-gradient(149deg, rgba(156,197,251,1) 7%, rgba(210,195,252,1) 97%);
+    height: 100vh;
+}
+.box{
+    box-sizing: border-box;
+}

@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+<body>
+    <div class="row g-0  justify-content-center gradient-color align-items-center fullScreen rounded-3 d-flex   " >
+        <div class="col-3 d-none d-lg-block " style="height: 80%;">
+            <img class="w-100 h-100" src="./assets/images/flyingMan.jpg" alt="">
+        </div>
+        <div class="col-12 col-lg-4 d-flex  justify-content-center  bg-white" style="height: 80%;" >
+            <div class=" rounded-end-5 bg-white m-auto w-75" >
+            <h3 class="fw-3">Login</h3>
+            <label for="email" class="">email</label>
+            <input type="email" class=" form-control " id="email" name="email">
+            <label for="password" class="">Confirm Password</label>
+            <input type="text" class="form-control " id="password" name="password">
+            <a href="./Register.html" class="">Don't have an account signUp?</a>
+            <div class="text-center m-3"> 
+                <a class="btn btn-dark border border-white px-4" onclick="login()">login</a>
+            </div>
+            <div id="submit_validate"></div>
+            </div>
+        </div>    
+    </div>
+</body>
+<script src="./assets/js/Login.js"></script>
+</html>
