@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-rfsU8vBZLIFhDDr5JF0FmUTjBAe9zQJtn1xAd2/4+67iLXdOhVZ5t9zZoL4zcu3l"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main class="header">
+      <!-- navigation bar -->
+      <nav class="container-fluid navbar-container">
+        <div class="container bg-transparent">
+          <nav class="navbar navbar-expand-lg bg-transparent">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="/assets/img/logo.png" class="img-fluid logo" alt="" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="input-group w-50">
+                  <input
+                    placeholder="Search for Movies, Events, Plays, Sports and Activities"
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                  />
+                </div>
+
+                <ul class="navbar-nav nav-buttons m-sm-auto">
+                  <li class="nav-item">
+                    <div class="dropdown city-dropdown">
+                      <button
+                        class="bg-transparent text-white dropdown-toggle"
+                        type="button"
+                        id="dropdownMenu2"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        Hyderabad
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenu2"
+                      >
+                        <button class="dropdown-item" type="button">
+                          Delhi
+                        </button>
+                        <button class="dropdown-item" type="button">
+                          Bangalore
+                        </button>
+                        <button class="dropdown-item" type="button">
+                          Kolkata
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </nav>
+
+      <!-- navigation bar ends -->
+
+      <div class="container-fluid">
+        <div class="container-fluid hero row">
+          <div
+            class="container d-flex justify-content-center align-items-center"
+          >
+            <div
+              class="user-card d-flex justify-content-center align-items-center"
+            >
+              <div class="card-body">
+                <h3 class="card-title">User</h3>
+                <a href="templates/userLogin.html" class="btn"
+                  >Login</a
+                >
+                <a href="templates/userRegister.html" class="btn ">Register</a>
+              </div>
+            </div>
+
+            <div
+              class="admin-card d-flex justify-content-center align-items-center"
+            >
+              <div class="card-body">
+                <h3 class="card-title">Admin</h3>
+                <a href="./templates/adminLogin.html" class="btn "
+                  >Login</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
