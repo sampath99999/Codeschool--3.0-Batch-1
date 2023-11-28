@@ -1,0 +1,43 @@
+body{
+    width: 100%;
+}
+tr td .option1{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: black;
+    float: left;
+    margin-left: 3px;
+    position: relative;
+    left: 18px;
+    top: -5px;
+}
+tr td .option2{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+  float: left;
+  margin-left: 3px;
+  position: relative;
+  left: 18px;
+  top: -5px;
+}
+tr td .option3{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: blue;
+  float: left;
+  margin-left: 3px;
+  position: relative;
+  left: 18px;
+  top: -5px;
+}
+button{
+    border: 0px solid black;
+}
+#choice{
+    border: 0px solid black;
+    background-color: white;
+}

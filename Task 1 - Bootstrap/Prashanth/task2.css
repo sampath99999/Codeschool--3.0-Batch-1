@@ -1,0 +1,91 @@
+body{
+    height: 100vh;
+    place-items: center;
+}
+.head{
+    position: fixed;
+    background-color: white;
+    top: 0px;
+    z-index: 20;
+}
+.slider{
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+.slide-track{
+    display: flex;
+    width: calc(250px * 18);
+    animation: scroll 150s linear infinite;
+}
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px * 9));
+    }
+}
+.slide{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+img{
+    width: 100%;
+    padding: 10px;
+    transition: transform 3s;
+}
+img:hover{
+    transform: translateZ(20px);
+    cursor: pointer;
+}
+.image{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.section h2{
+    font-size:24; 
+    font-weight:700; 
+    line-height:1px; 
+    color: #c2b7b1;
+    display: grid;
+    justify-content: center;
+}
+.logos{
+    width: 300px;
+}
+.logos:hover{
+    width: 330px;
+    border-bottom: 2px solid red;
+}
+.aos-init ul li{
+    list-style-type: none;
+    border-bottom: 1px solid aqua;
+}
+ul li h5{
+    cursor: pointer;
+}
+ul li h5:hover{
+    color: red;
+}
+.bi-chevron-down{
+    position: relative;
+    top: -35px;
+    left: -20px;
+}
+.address{
+    width: 550px;
+    border-top: 4px solid red;
+    border-bottom: 4px solid red;
+    box-shadow: 0px 0px 4px black;
+    z-index: 0;
+}
