@@ -1,0 +1,63 @@
+QUERIES QUESTION:
+1.Select all the Movies which are not running currently
+2.Select the Movies which have highest bookings
+3.Select all the theater branches with current running movie
+
+
+1.Select all the Movies which are not running currently:
+
+SELECT
+    M.MovieID,
+    M.Title,
+    M.Genre,
+    M.ReleaseDate,
+    M.Duration
+FROM
+    Movies M
+LEFT JOIN
+    TheaterBranchMovieShows T ON M.MovieID = T.MovieID
+WHERE
+    T.MovieID IS NULL;
+
+2.Select the Movies which have highest bookings:
+
+SELECT
+    M.MovieID,
+    M.Title,
+    M.Genre,
+    M.ReleaseDate,
+    M.Duration,
+    COUNT(B.BookingID) AS NumberOfBookings
+FROM
+    Movies M
+JOIN
+    TheaterBranchMovieShows T ON M.MovieID = T.MovieID
+LEFT JOIN
+    SlotSeats S ON T.ShowID = S.ShowID
+LEFT JOIN
+    BookingAgainstSlots BAS ON S.SeatID = BAS.SeatID
+LEFT JOIN
+    Bookings B ON BAS.BookingID = B.BookingID
+GROUP BY
+    M.MovieID, M.Title, M.Genre, M.ReleaseDate, M.Duration
+ORDER BY
+    NumberOfBookings DESC;
+
+
+3.Select all the theater branches with current running movie:
+
+SELECT
+ TB.BranchID,
+ TB.BranchName,
+ TB.Location,
+ M.Title AS CurrentMovie
+FROM
+  TheaterBranches TB
+JOIN  
+  TheaterBranchMovieShows TBS ON TB.BranchID=TBS.BranchID
+JOIN  
+  Movies M ON TBS.MovieID=M.MovieID
+WHERE 
+  TBS.ShowDate >=CURRENT_DATE
+
+

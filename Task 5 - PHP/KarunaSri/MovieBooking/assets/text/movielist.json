@@ -1,0 +1,51 @@
+[
+
+    
+    {
+"id":1,
+"movie":"Saptha Dhati",
+"rating":"Drama",
+"image":"./assets/images/movie1.avif",
+"imdb_url":"https://www.imdb.com/title/tt0111161/"
+},
+{
+"id":2,
+"movie":"Trolls",
+"rating":"Action",
+"image":"./assets/images/movie6.avif",
+"imdb_url":"https://www.imdb.com/title/tt0068646/"},
+{
+"id":3,
+"movie":"MangalaVaram",
+"rating":"Drama",
+"image":"./assets/images/movie3.avif",
+"imdb_url":"https://www.imdb.com/title/tt0468569/"},
+{
+"id":4,
+"movie":"Keda Kola",
+"rating":"Action",
+"image":"./assets/images/movie4.avif",
+"imdb_url":"https://www.imdb.com/title/tt0110912/"},
+{
+"id":5,
+"movie":"Tiger",
+"rating":"Thriller",
+"image":"./assets/images/movie2.avif",
+"imdb_url":"https://www.imdb.com/title/tt0167260/"},
+{
+"id":6,
+"movie":"Spark",
+"rating":"Drama",
+"image":"./assets/images/movie5.avif",
+"imdb_url":"https://www.imdb.com/title/tt0060196/"},
+{"id":7,
+"movie":"SpiderMan",
+"rating":"Action",
+"image":"./assets/images/movie7.avif",
+"imdb_url":"https://www.imdb.com/title/tt0137523/"},
+{"id":8,
+"movie":"The Lord",
+"rating":"Drama",
+"image":"./assets/images/movie9.avif",
+"imdb_url":"https://www.imdb.com/title/tt0120737/"}
+]
