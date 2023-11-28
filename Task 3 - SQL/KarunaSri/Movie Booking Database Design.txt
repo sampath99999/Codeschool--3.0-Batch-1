@@ -1,0 +1,174 @@
+Movie Booking Database Design:
+
+CREATE SEQUENCE movie_id_seq START WITH 501;
+CREATE SEQUENCE branch_id_seq START WITH 101;
+CREATE SEQUENCE show_id_seq START WITH 1001;
+CREATE SEQUENCE slot_id_seq START WITH 2001;
+CREATE SEQUENCE book_id_seq START WITH 3001;
+CREATE SEQUENCE booking_id_seq START WITH 4001;
+
+CREATE TABLE Theaters (
+    TheaterID SERIAL PRIMARY KEY,
+    TheaterName VARCHAR(255),
+    Address VARCHAR(255),
+ 
+);
+
+CREATE TABLE TheaterBranches (
+    BranchID SERIAL DEFAULT nextval('branch_id_seq'),
+    TheaterID INT,
+    BranchName VARCHAR(255),
+    Location VARCHAR(255),
+    Capacity INT,
+    PRIMARY KEY (BranchID),
+    FOREIGN KEY (TheaterID) REFERENCES Theaters(TheaterID)
+);
+
+CREATE TABLE Movie (
+    MovieID SERIAL PRIMARY KEY,
+    Title VARCHAR(255),
+    Genre VARCHAR(50),
+    ReleaseDate DATE,
+    Duration INT,
+    Image VARCHAR(255)
+);
+
+SET DEFAULT nextval('show_id_seq')
+CREATE TABLE TheaterBranchMovieShows (
+    ShowID SERIAL ,
+    BranchID INT,
+    MovieID INT,
+    ShowTime TIME,
+    ShowDate DATE,
+    PRIMARY KEY(ShowID),
+    FOREIGN KEY (BranchID) REFERENCES TheaterBranches(BranchID),
+    FOREIGN KEY (MovieID) REFERENCES Movies(MovieID)
+);
+
+CREATE TABLE SlotSeats (
+    SeatID SERIAL PRIMARY KEY,
+    ShowID INT,
+    SeatNumber VARCHAR(10),
+    Status VARCHAR(20),
+    FOREIGN KEY (ShowID) REFERENCES TheaterBranchMovieShows(ShowID)
+);
+
+CREATE TABLE Bookings (
+    BookingID SERIAL PRIMARY KEY,
+    ShowID INT,
+    User_ID INT, 
+    PaymentMethod VARCHAR(50),
+    BookingTime TIME,
+    TotalPrice DECIMAL(10, 2),
+    FOREIGN KEY (ShowID) REFERENCES TheaterBranchMovieShows(ShowID),
+    FOREIGN KEY (User_ID) REFERENCES Users(User_ID)
+);
+
+CREATE TABLE BookingAgainstSlots (
+    BookingSlotID SERIAL PRIMARY KEY,
+    BookingID INT,
+    SeatID INT,
+    FOREIGN KEY (BookingID) REFERENCES Bookings(BookingID),
+    FOREIGN KEY (SeatID) REFERENCES SlotSeats(SeatID)
+);
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY,
+    UserName VARCHAR(255),
+    Email VARCHAR(255),
+    Password VARCHAR(255),
+    RegistrationDate DATETIME,
+    PhoneNumber VARCHAR(20)
+);
+
+
+-- Theaters table
+INSERT INTO Theaters (TheaterName, Address)
+VALUES
+('Cinemax', '123 Main Street'),
+('Starplex', '456 City Plazo'),
+('MoviePlex', '789 Hitech City'),
+('FilmCity',   '101 FilmCity'),
+( 'MovieMax',   '373 AMR Planet Mall'),
+( 'AMB Cinemas',  '999 Gachibowli');
+
+-- TheaterBranches table
+INSERT INTO TheaterBranches (TheaterID, BranchName, Location,Capacity)
+VALUES
+( 1, 'Cinemax A', 'City Center',500),
+(1, 'Cinemax B', 'Mall Plaza',500),
+( 2, 'Starplex X', 'DilsukNagar',500),
+( 3, 'MoviePlex C', 'DilsukNagar',500),
+( 3, 'MoviePlex D', 'HitechCity',500),
+( 4, 'FilmCity Y', 'Madhapur',500),
+( 4, 'FilmCity Z', 'FilmCity',500),
+( 5, 'MovieMax X', 'Ameerpet',500),
+(5, 'MovieMax I', 'Punjagutta',500);
+
+-- Movies table
+INSERT INTO Movies (MovieID, Title, Genre, ReleaseDate, Duration)
+VALUES
+ (501, 'Bhagavanth Kesari', 'Action/Drama', 2022-01-01, 120),
+ (502,'Skanda','Action/Romantic',2023-11-01, 160),
+ (503,' Custody','Action/Drama',2023-05-12, 120),
+ (504,'Peddha Kapu 1', 'Action/Drama',2023-07-12, 140),
+ (505,'Dasara ','Action/Drama',2023-10-12, 150),
+ (506,'Tiger Nageswara Rao','Drama/Crime',2023-11-10, 180),
+ (507,'Leo ','Action/Drama',2023-10-01, 150),
+ (508,'Japan ','Drama/Thriller',2023-09-12, 180),
+ (509,'ChandraMukhi-2 ','Action/Drama',2023-11-01, 140);
+
+
+
+-- TheaterBranchMovieShows table
+INSERT INTO TheaterBranchMovieShows ( BranchID, MovieID, ShowTime, ShowDate)
+VALUES
+( 101, 501, '18:00:00', '2023-11-15'),
+( 102, 502, '20:00:00', '2023-11-16'),
+( 103, 503, '19:30:00', '2023-11-17'),
+( 104, 504, '21:15:00', '2023-11-18'),
+( 105,  504,'18:00:00','2023-11-16'),
+( 106, 505, '18:00:00', '2023-10-12'),
+( 107,  506,'11:00:00', '2023-11-12'),
+( 108,  507,'14:00:00 ','2023-10-03'),
+( 109,  508,'18:00:00 ','2023-09-12');
+
+-- SlotSeats table
+INSERT INTO SlotSeats ( ShowID, SeatNumber, Status)
+VALUES
+( 1010, 'A1', 'Booked'),
+( 1010, 'A2', 'Booked'),
+( 1010, 'B1', 'Booked'),
+( 1010, 'B2', 'Booked'),
+( 1012, 'C1', 'Available'),
+( 1012, 'C2', 'Available'),
+( 1013, 'D1', 'Available'),
+(1013, 'D2', 'Available'),
+( 1014, 'E1', 'Available'),
+( 1014, 'E2', 'Available');
+
+-- Bookings table
+INSERT INTO Bookings ( ShowID, User_ID, PaymentMethod, BookingTime, TotalPrice)
+VALUES
+( 1010, 11, 'Credit Card', '2023-11-15 14:30:00', 25.00),
+( 1012, 3, 'PayPal', '2023-11-16 15:45:00', 30.00),
+( 1013, 7, 'Credit Card', '2023-11-17 16:00:00', 22.50),
+( 1014, 9, 'PayPal', '2023-11-18 17:30:00', 28.00);
+
+-- BookingAgainstSlots table
+INSERT INTO BookingAgainstSlots ( BookingID, SeatID)
+VALUES
+(3004, 2011),
+( 3004, 2013),
+(3005, 2015),
+(3006, 2017),
+(3007, 2018),
+(3007, 2019);
+
+-- Users table
+INSERT INTO Users (User_ID, UserName, Email, Password, RegistrationDate,  PhoneNumber)
+VALUES
+(100, 'john_doe', 'john.doe@email.com', 'hashed_password_123', '2023-01-15 08:30:00', '123-456-7890'),
+(101, 'jane_smith', 'jane.smith@email.com', 'hashed_password_456', '2023-02-20 12:45:00','987-654-3210'),
+(102, 'alice_green', 'alice.green@email.com', 'hashed_password_789', '2023-03-05 09:15:00','111-222-3333'),
+(103, 'bob_jones', 'bob.jones@email.com', 'hashed_password_012', '2023-04-10 11:30:00','444-555-6666');
+

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shows</title>
+    <!-- Bootstrap CSS-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./assets/styles/mtbs.css" />
+  </head>
+  <body>
+   
+        <div
+          class="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                  Update Theaters
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <label for="tid">Theater ID</label>
+                  <input type="text" id="tid" name="tid" class="form-control" />
+                  <label for="tname">Theater Name</label>
+                  <input
+                    type="text"
+                    id="tname"
+                    name="tname"
+                    class="form-control"
+                  />
+                  <label for="taddress">Theater Name</label>
+                  <input
+                    type="text"
+                    id="taddress"
+                    name="taddress"
+                    class="form-control"
+                  />
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="updateShow()"
+                >
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mt-3">
+          
+         
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                Add Show
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="container mt-3">
+                <form id="addTheaterForm">
+                  <p id="para"></p>
+                  <div class="form-group mb-4 w-50 m-auto">
+                    <label for="showName">Show Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="showName"
+                      name="showName"
+                      placeholder="Show Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mb-4 w-50 m-auto">
+                    <label for="showtime">Show Time:</label>
+                    <input
+                      type="time"
+                      class="form-control"
+                      id="showTime"
+                      name="showtime"
+                      placeholder="Show Time"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mb-4 w-50 m-auto">
+                    <label for="showdate">Show Date:</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="showDate"
+                      name="showdate"
+                      placeholder="Show Date"
+                      required
+                    />
+                  </div>
+                  <div class="form-group mb-4 w-50 m-auto">
+                    <label for="capacity">Capacity:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="capacity"
+                      name="capacity"
+                      placeholder="Capacity"
+                      required
+                    />
+                  </div>
+                  <div class="w-50 m-auto">
+                    <button
+                      type="button"
+                      class="btn btn-primary ms-auto"
+                      onclick="addShow()"
+                    >
+                      Add Show
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <div class="container mt-3">
+      <div class="m-2">  <h3>Show List</h3>
+        <button
+        class="btn btn-success"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+      >
+        Add Show
+      </button></div>
+     
+       <ul id="showList"></ul>
+        <div class="table responsive">
+
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Show ID</th>
+                <th scope="col">Branch ID</th>
+                <th scope="col">TheaterID</th>
+                <th scope="col">Show Time</th>
+                <th scope="col">Show Date</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+            <tbody id="showtable"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+
+  <!-- Bootstrap JavaScript  & jQuery-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Javascript -->
+  <script src="./assets/javascript/Shows.js"></script>
+</html>
