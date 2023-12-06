@@ -4,11 +4,25 @@ background: #00074b;
 
 }
 
-.title-font{
-font-size: 15px;
 
+#sideBar a {
+    text-decoration: none;
+    color: white;
 }
-.side-font{
-font-size: 13px;
 
+#sideBar div:hover {
+    background-color: grey;
+    transition: 0.5s;
+    border-left: 7px solid yellow;
+}
+
+#sideBar div{
+    padding: 4% 7%;
+border-bottom: 1px solid rgb(207, 197, 197);
+}
+
+#sideBar a .active {
+    background-color: grey;
+    transition: 0.5s;
+    border-left: 7px solid yellow;
 }

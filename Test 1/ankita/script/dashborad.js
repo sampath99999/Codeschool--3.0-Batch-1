@@ -1,25 +1,25 @@
 
-function sidebar(){
+function sidebar() {
 
-document.getElementById('sideBar').classList.toggle('d-none');
-document.getElementById('mainContent').classList.toggle('col-12');
+    $('#sideBar').toggleClass('d-none');
+    $('#mainContent').toggleClass('col-12');
 
 
 }
 
 
-function addEmployee(){
- window.location.replace("http://localhost/testday/addEmployee.html");
+function addEmployee() {
+    window.location.replace("http://localhost/testday/addEmployee.html");
 
 }
 let userInfo;
 userInfo = localStorage.getItem('user_info');
-userInfo = JSON.parse(userInfo );
+userInfo = JSON.parse(userInfo);
 
-console.log(userInfo,1234);
+console.log(userInfo, 1234);
 let token;
 token = localStorage.getItem('token');
-token = JSON.parse(token );
+token = JSON.parse(token);
 
 
 // if(userInfo==0){
@@ -30,24 +30,33 @@ token = JSON.parse(token );
 // }
 if (userInfo) {
 
-  $('#logInButton').empty();
+    $('#logInButton').empty();
 
-  $('#registerButton').empty();
+    $('#registerButton').empty();
+    console.log(userInfo.username, 456);
+    $('#user').empty();
+    $('#user').text(userInfo.username);
 
 
- 
 
 
- 
-  
+
 }
 
 
 else {
 
- alert("you are  not logged in to this page  ");
- window.location.replace("http://localhost/testday/logIn.html");
-  $('#logOutButton').empty();
+    Swal.fire({
+        title: 'Error!',
+        text: 'You Are  Not Logged In ',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+    })
+
+    // alert("You Are  Not Logged In   ");
+      window.location.replace("http://localhost/testday/logIn.html");
+
+    $('#logOutButton').empty();
 
 }
 
@@ -61,7 +70,13 @@ function register() {
 function logout() {
     localStorage.removeItem('user_info');
     localStorage.removeItem('token');
-    alert("logout successfully");
+    Swal.fire({
+
+        text: 'Log Out Successfully',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+    })
+    // alert("logout successfully");
     window.location.replace('http://localhost/testday/logIn.html');
 
 
@@ -75,12 +90,17 @@ let formData = {
 }
 
 $.ajax({
-    url: 'api/vaildateUser.php',
+    url: 'api/validateUser.php',
     method: 'POST',
     dataType: 'json',
     data: formData,
     success: function (data) {
-        alert(data.message, " ", "success");
+        // Swal.fire({
+
+        //     text: data.message,
+        //     icon: 'success',
+        //     confirmButtonText: 'Ok'
+        // })
         if (!data.status) {
             localStorage.clear();
             window.location.replace("http://localhost/testday/logIn.html");

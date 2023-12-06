@@ -25,75 +25,146 @@ function validateregistation() {
     let name = $("#typeusername").val();
     $("#typeusernameErrorr").text("");
     if (!name) {
-        alert("plz enter the  username");
-        $("#typeusernameError").text("plz enter the  username");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  UserName',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+      
+        $("#typeusernameError").text("Please Enter The  UserName");
         return;
     }
     if (spcialPattern.test(name)) {
-        alert("plz enter the  username without special symbol");
-        $("#typeusernameError").text("plz enter the  username without special symbol");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  User Name Without Any Special Symbol ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+    
+        $("#typeusernameError").text("Please Enter The  User Name Without Any Special Symbol");
         return;
     }
 
     if (name.length > 12) {
-        alert("plz enter the  username lessthan 12 character");
-        $("#typeusernameError").text("plz enter the  username lessthan 12 character");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  User Name Lessthan 12 Character',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+
+        $("#typeusernameError").text("Please Enter The  User Name Lessthan 12 Character");
         return;
     }
     let phoneNo = $("#typePhone").val();
     $("#typePhoneError").text("");
     if (!phoneNo) {
-        alert("plz enter the  phone number");
-        $("#typePhoneError").text("plz enter the  phone number");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  Phone Number ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+      
+        $("#typePhoneError").text("Please Enter The  Phone Number");
         return;
     }
     if (phoneNo.length != 10) {
-        alert("plz enter the 10 digit phone number  ");
-        $("#typePhoneError").text("plz enter the 10 digit phone number ");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The 10 Digit Phone Number  ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+       
+        $("#typePhoneError").text("Please Enter The 10 Digit Phone Number ");
         return;
     }
     if (isNaN(phoneNo)) {
-        alert("enter only numbers");
-        $("#typePhoneError").text("enter only numbers");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter Only Numbers ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+       
+        $("#typePhoneError").text(" Please Enter Only Numbers");
         return;
     }
-    let emailId = $("#TypeEmail").val();
-    $("#TypeEmailError").text("");
+    let emailId = $("#typeEmail").val();
+    $("#typeEmailError").text("");
     if (!emailId) {
-        alert("plz enter the valid email");
-        $("#TypeEmailError").text("plz enter the valid email");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The Valid Email ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        
+        $("#typeEmailError").text("Please Enter The Valid Email");
         return;
     }
     const pattern = /[@.@@ ]/;
     if (!pattern.test(emailId)) {
-        alert("plz enter the valid email with @.com ");
-        $("#TypeEmailError").text("plz enter the valid email with @");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The Valid Email With @.com  ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        
+        $("#typeEmailError").text("Please Enter The Valid Email With @.com");
         return;
     }
 
-    let passWord = $("#TypePassword").val();
-    $("#TypePasswordError").text("");
+    let passWord = $("#typePassword").val();
+    $("#typePasswordError").text("");
     if (!passWord) {
-        alert("plz enter the password");
-        $("#TypePasswordError").text("plz enter the password");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The Password ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        $("#typePasswordError").text("Please Enter The Password");
         return;
     }
     if (passWord.length < 2 || passWord.length > 22) {
-        alert("plz enter the password in between 3 to 21 charcter ");
-        $("#typePasswordError").text("plz enter the password in between 3 to 21 charcter ");
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The Password in Between 3 to 21 Charcter  ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+      
+        $("#typePasswordError").text("Please Enter The Password in Between 3 to 21 Charcter ");
         return;
     }
 
-    let reenterPassword = $("#retypePassword").val();
+    let reEnterPassword = $("#retypePassword").val();
     $("#retypePasswordError").text("");
-    if (!reenterPassword) {
-        alert("plz  re enter the password");
-        $("#retypePasswordError").text("plz  re enter the password");
+    if (!reEnterPassword) {
+ Swal.fire({
+            title: 'Error!',
+            text: 'Please  Re-enter The Password ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+      
+        $("#retypePasswordError").text("Please  Re-enter The Password");
         return;
     }
-    if (reenterPassword != passWord) {
-        alert("plz  re enter the same password");
-        $("#retypePasswordError").text("plz  re enter the same password");
+    if (reEnterPassword != passWord) {
+ Swal.fire({
+            title: 'Error!',
+            text: 'Password Does Not Match ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+       
+        $("#retypePasswordError").text("Password Does Match");
         return;
     }
 
@@ -115,12 +186,30 @@ function validateregistation() {
 
             if (data.status) {
 
+                Swal.fire({
+                    title: data.message,
+                    icon: 'success',
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "Ok",
+                    denyButtonText: ``
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                         window.location.replace("http://localhost/testday/logIn.html");
+                       
+                    }
+                });
 
 
-                alert(data.message, " ", "success");
-                window.location.replace("http://localhost/testday/logIn.html");
+               
             } else {
-                alert(data.message, " ", "error");
+ Swal.fire({
+            title: 'Error!',
+            text: data.message,
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+                
             }
         },
         error: function (err) {

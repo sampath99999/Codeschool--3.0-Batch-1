@@ -1,43 +1,99 @@
+
+
+function addEmployee() {
+    window.location.replace("http://localhost/testday/addEmployee.html");
+
+}
+
+
+function register() {
+    window.location.replace("http://localhost/testday/register.html");
+
+}
+
+function login() {
+    window.location.replace("http://localhost/testday/logIn.html");
+
+}
+
+function logout() {
+    localStorage.removeItem('user_info');
+    localStorage.removeItem('token');
+
+    Swal.fire({
+        title: 'Log Out Successfully ',
+        icon: 'success',
+        showDenyButton: false,
+        showCancelButton: false,
+        confirmButtonText: "Ok",
+        denyButtonText: ``
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.replace("http://localhost/testday/logIn.html");
+
+        }
+    });
+
+
+}
+
+
+
+
+
+
+
 let empDetail = [];
+
+
 let working_status = [];
 let locations = [];
 let working_postions = [];
+
+
 let userInfo;
 userInfo = localStorage.getItem('user_info');
 userInfo = JSON.parse(userInfo);
 
 let token;
-userInfo = localStorage.getItem('token');
+token = localStorage.getItem('token');
 token = JSON.parse(token);
-function sidebar(){
+function sidebar() {
 
-document.getElementById('sideBar').classList.toggle('d-none');
-document.getElementById('mainContent').classList.toggle('col-12');
+    $('#sideBar').toggleClass('d-none');
+    $('#mainContent').toggleClass('col-12');
+
 
 
 }
 
-// if (userInfo) {
+if (userInfo) {
 
-//     $('#logInButton').empty();
+    $('#logInButton').empty();
 
-//     $('#registerButton').empty();
-
-
+    $('#registerButton').empty();
 
 
 
 
 
-// }
 
 
-// else {
+}
 
-    
-//     $('#logOutButton').empty();
 
-// }
+else {
+    Swal.fire({
+
+        text: 'You Are  Not Logged Into This Page ',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+    })
+    // alert("You Are  Not Logged Into This Page  ");
+    window.location.replace("http://localhost/testday/logIn.html");
+    $('#logOutButton').empty();
+
+}
 
 
 $.ajax({
@@ -75,18 +131,18 @@ function addEmpDetails(empDetail) {
         console.log(2345);
 
         $('#tableData').append(`
-       <tr>
+       <tr class="shadow-lg">
 
                                     <td>
                                     ${empDetail[i].empcode}
                                     </td>
-                                    <td> ${empDetail[i].name}</td>
+                                    <td> ${empDetail[i].name.toUpperCase()}</td>
                                     
                                     <td> ${empDetail[i].phone}</td>
                                         <td> ${empDetail[i].email}</td>
-                                    <td> ${empDetail[i].working_status}</td>
-                                    <td> ${empDetail[i].location}</td>
-                                    <td> ${empDetail[i].working_postions}</td>
+                                    <td> ${empDetail[i].working_status.toUpperCase()}</td>
+                                    <td> ${empDetail[i].location.toUpperCase()}</td>
+                                    <td> ${empDetail[i].working_postions.toUpperCase()}</td>
 
                                     
 
@@ -105,7 +161,7 @@ function addWorking_status(working_status) {
     for (let i = 0; i < working_status.length; i++) {
 
         $('#working_status').append(`
-        <option value="${working_status[i].id}">${working_status[i].description}</option>
+        <option value="${working_status[i].id}">${working_status[i].description.toUpperCase()}</option>
         `)
 
     };
@@ -121,7 +177,7 @@ function addLocation(locations) {
     for (let i = 0; i < locations.length; i++) {
 
         $('#location').append(`
-        <option value="${locations[i].id}">${locations[i].description}</option>
+        <option value="${locations[i].id}">${locations[i].description.toUpperCase()}</option>
         `)
 
     };
@@ -136,7 +192,7 @@ function addWorking_postions(working_postions) {
     for (let i = 0; i < working_postions.length; i++) {
 
         $('#working_postion').append(`
-        <option value="${working_postions[i].id}">${working_postions[i].description}</option>
+        <option value="${working_postions[i].id}">${working_postions[i].description.toUpperCase()}</option>
         `)
 
     };
@@ -167,83 +223,178 @@ function addNewEmployee() {
     $("#working_postionError").text("");
     $("#working_statusError").text("");
     if (working_postions_id == " ") {
-        alert("plz  select the  working position");
-        $("#working_postionError").text("plz  select the  working position");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please  Select The  Working position ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please  Select The  Working position");
+        $("#working_postionError").text("Please  Select The  Working Position");
         return;
     }
 
     if (working_status_id == " ") {
-        alert("plz  select the wroking status");
-        $("#working_statusError").text("plz  select the wroking status");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Select The Working Status ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Select The Working Status");
+        $("#working_statusError").text("Please Select The Working Status");
         return;
     }
     if (location_id == " ") {
-        alert("plz  select the location");
-        $("#locationError").text("plz  select the location");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please  Select The Location',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please  Select The Location");
+        $("#locationError").text("Please  Select The Location");
         return;
     }
 
 
     if (!fName) {
-        alert("plz enter the  first name");
-        $("#fNameError").text("plz enter the  first name");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  First Name ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter The  First Name");
+        $("#fNameError").text("Please Enter The  First Name");
         return;
     }
     if (spcialPattern.test(fName)) {
-        alert("plz enter the  sfirst name without special symbol");
-        $("#fNameError").text("plz enter the  first name without special symbol");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  First Name Without Any  Special Symbol ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter The  First Name Without Any  Special Symbol");
+        $("#fNameError").text("Please Enter  The  First Name Without Any  Special Symbol");
         return;
     }
 
     if (fName.length > 12) {
-        alert("plz enter the  first name lessthan 12 character");
-        $("#fNameError").text("plz enter the  first name lessthan 12 character");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter the  First Name LessThan 12 Character ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter the  First Name LessThan 12 Character");
+        $("#fNameError").text("Please Enter the  First Name LessThan 12 Character");
         return;
     }
     if (!lName) {
-        alert("plz enter the  last name");
-        $("#lnameError").text("plz enter the  last name");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  Last Name ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter The  Last Name");
+        $("#lnameError").text("Please Enter The  Last Name");
         return;
     }
     if (spcialPattern.test(lName)) {
-        alert("plz enter the  last name without special symbol");
-        $("#lnameError").text("plz enter the  last name without special symbol");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  Last Name Without Special Symbol ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter The  Last Name Without Special Symbol");
+        $("#lnameError").text("Please Enter The  Last Name Without Special Symbol");
         return;
     }
 
     if (lName.length > 12) {
-        alert("plz enter the  last name lessthan 12 character");
-        $("#lnameError").text("plz enter the  last name  lessthan 12 character");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  Last Name Lessthan 12 Character',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter The  Last Name Lessthan 12 Character");
+        $("#lnameError").text("Please Enter The  Last Name Lessthan 12 Character");
         return;
     }
 
 
 
     if (!phone) {
-        alert("plz enter the  phone number");
-        $("#phoneError").text("plz enter the  phone number");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The  Phone Number ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter The  Phone Number");
+        $("#phoneError").text("Please Enter The  Phone Number");
         return;
     }
     if (phone.length != 10) {
-        alert("plz enter the 10 digit phone number  ");
-        $("#phoneError").text("plz enter the 10 digit phone number ");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The 10 Digit Phone Number ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter The 10 Digit Phone Number  ");
+        $("#phoneError").text("Please Enter The 10 Digit Phone Number ");
         return;
     }
     if (isNaN(phone)) {
-        alert("enter only numbers");
-        $("#phoneError").text("enter only numbers");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Enter Only Numbers ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Enter Only Numbers");
+        $("#phoneError").text("Enter Only Numbers");
+        return;
+    }
+    if (phone.charAt(0) === '0') {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Phone number Should Not Start With Zero',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert('Phone number Should Not Start With Zero');
+        $("#phoneError").text('Phone number Should Not Start With Zero');
         return;
     }
 
     if (!emailId) {
-        alert("plz enter the valid email");
-        $("#emailError").text("plz enter the valid email");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The Valid Email ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter The Valid Email");
+        $("#emailError").text("Please Enter The Valid Email");
         return;
     }
     const pattern = /[@.@@ ]/;
     if (!pattern.test(emailId)) {
-        alert("plz enter the valid email with @.com ");
-        $("#emailError").text("plz enter the valid email with @");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The Valid Email With @.com ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+        // alert("Please Enter The Valid Email With @.com ");
+        $("#emailError").text("Please Enter The Valid Email With @.com ");
         return;
     }
 
@@ -252,7 +403,9 @@ function addNewEmployee() {
         working_status_id: $('#working_status').val(),
         location_id: $('#location').val(),
         emailId: emailId,
-        fName: fName, lName: lName, phone: phone
+        fName: fName,
+        lName: lName,
+        phone: phone
 
     }
 
@@ -264,10 +417,20 @@ function addNewEmployee() {
         dataType: 'json',
         data: formData,
         success: function (data) {
+            Swal.fire({
+                title: data.message,
+                icon: 'success',
+                showDenyButton: false,
+                showCancelButton: false,
+                confirmButtonText: "Ok",
+                denyButtonText: ``
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.replace("http://localhost/testday/employees.html");
 
+                }
+            });
 
-            alert(data.message, " ", "success");
-            window.location.replace("http://localhost/testday/employees.html");
         },
         error: function (status) {
             console.log('Request failed with status: ' + status);
@@ -284,12 +447,19 @@ let formData = {
 }
 
 $.ajax({
-    url: 'api/vaildateUser.php',
+    url: 'api/validateUser.php',
     method: 'POST',
     dataType: 'json',
     data: formData,
     success: function (data) {
-        alert(data.message, " ", "success");
+       if(data.message == "Session  Time Expired"){
+Swal.fire({
+
+                    text: data.message,
+                    icon: 'info',
+                    confirmButtonText: 'Ok'
+                })
+}
         if (!data.status) {
             localStorage.clear();
             window.location.replace("http://localhost/testday/logIn.html");

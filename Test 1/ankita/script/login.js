@@ -1,31 +1,30 @@
 
 
 
-// let userInfo;
-// userInfo = localStorage.getItem('user_info');
-// userInfo = JSON.parse(userInfo );
-// let token;
-// userInfo = localStorage.getItem('token');
-// token = JSON.parse(token );
-// if(userInfo){
-
-//    alert("you are already logged in please cilck log-out to do login ");
-//   window.location.replace("http://localhost/testday/dashBorad.html");
-  
-// }
+let userInfo;
+userInfo = localStorage.getItem('user_info');
+userInfo = JSON.parse(userInfo);
+let token;
+token = localStorage.getItem('token');
+token = JSON.parse(token);
+if (userInfo) {
 
 
-
-
-
-function sidebar(){
-
-document.getElementById('sideBar').classList.toggle('d-none');
-document.getElementById('mainContent').classList.toggle('col-12');
-
+    window.location.replace("http://localhost/testday/dashBorad.html");
 
 }
 
+
+
+
+
+function sidebar() {
+
+    document.getElementById('sideBar').classList.toggle('d-none');
+    document.getElementById('mainContent').classList.toggle('col-12');
+
+
+}
 
 
 
@@ -33,27 +32,44 @@ function validatelogin() {
     let emailId = $("#typeEmail").val();
     $("#typeEmailError").text("");
     if (!emailId) {
-        alert("plz enter the valid email");
-        $("#typeEmailError").text("plz enter the valid email");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The Valid Email ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+
+
+        $("#typeEmailError").text("Please Enter The Valid Email");
     }
     const pattern = /[@.@@ ]/;
     if (!pattern.test(emailId)) {
-        alert("plz enter the valid email with @.com ");
-        $("#typeEmailError").text("plz enter the valid email with @");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The Valid Email With @.com  ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+
+        // alert("Please Enter The Valid Email With @.com ");
+        $("#typeEmailError").text("Please Enter The Valid Email With @.com ");
         return;
     }
     let passWord = $("#typePassword").val();
     $("#typePasswordError").text("");
     if (!passWord) {
-        alert("plz enter the password");
-        $("#typePasswordError").text("plz enter the password");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please Enter The Password ',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+        })
+
+        // alert("Please Enter The Password");
+        $("#typePasswordError").text("Please Enter The Password");
         return;
     }
-if (passWord.length <8 || passWord.length>12) {
-        alert("pasword should be minimum 8 character and maximum 16 character ");
-        $("#typePasswordError").text("pasword should be minimum 8 character and maximum 16 character");
-        return;
-    }
+
 
 
     const formData = {
@@ -71,16 +87,32 @@ if (passWord.length <8 || passWord.length>12) {
         success: function (data) {
 
             if (data.status) {
-                
-                alert(data.message, " ", "success");
 
-              window.location.replace("http://localhost/testday/dashBorad.html");s
-               
-             localStorage.setItem("user_info", JSON.stringify(data.data.validLogInId[0].id));
-                localStorage.setItem("token", JSON.stringify(data.data.token));
-            console.log(data.data.validLogInId[0].id,1234);
+                Swal.fire({
+                    title: data.message,
+                    icon: 'success',
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "Ok",
+                    denyButtonText: ``
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        window.location.replace("http://localhost/testday/dashBorad.html");
+                        localStorage.setItem("user_info", JSON.stringify(data.data.validLogInId[0]));
+                        localStorage.setItem("token", JSON.stringify(data.data.token));
+                    }
+                });
+
+
             } else {
-                alert(data.message, " ", "error");
+                Swal.fire({
+
+                    text: data.message,
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
+
             }
         },
         error: function (err) {

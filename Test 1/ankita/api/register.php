@@ -1,99 +1,83 @@
 <?php
 
 require_once "DBConn.php";
-$status=true;
+$status = true;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 $phone = $_POST['phone'];
 $name = $_POST['name'];
+$hashedPassword = md5($password);
 
 
-
-if(!(array_key_exists('email',$_POST)) || !$_POST['email']){
-    $response=["status"=>false,"message"=> "please enter the valid email"];
-    echo json_encode($response);
-    return;
-  }
-  if(!(array_key_exists('password',$_POST)) || !$_POST['password']){
-     $response=["status"=>false,"message"=> "please enter the valid password"];
-    echo json_encode($response);
-    return;
-  }
-  if(!$status){
-    $response=["status"=>false,"message"=> "please filled the required field"];
-    echo json_encode($response);
-    return;
-   }
-
-if(strlen($name)>12){
-   $response=["status"=>false,"message"=> "please enter the name less than 12 characters"];
-    echo json_encode($response);
-    return;
-}else if(preg_match('/[\'{#~?><>@,.|=_^£$%&*()}+¬-]/',$name)){
-    $response=["status"=>false,"message"=> "name sholud not have any special symbol"];
-    echo json_encode($response);
-    return;
-
+$errorMessage = '';
+if (!(array_key_exists('email', $_POST)) || !$_POST['email']) {
+    $errorMessage .= "Please Enter the valid email \n";
+}
+if (!(array_key_exists('password', $_POST)) || !$_POST['password']) {
+    $errorMessage .= "Please Enter the valid password \n";
 }
 
-if(strlen($phone)!= 10){
-    $response=["status"=>false,"message"=> "please enter 10 digit phone Number"];
-    echo json_encode($response);
-    return;
-}else if(! is_numeric($phone)){
-    $response=["status"=>false,"message"=> "please enter only number"];
-    echo json_encode($response);
-    return;
-
-}
-
-
-if(strlen($email)>64){
-    $response=["status"=>false,"message"=> "email not valid please enter within 64 character"];
+if (strlen($errorMessage) != 0) {
+    $response = ["status" => false, "message" => nl2br($errorMessage)];
     echo json_encode($response);
     return;
 }
-    else if(preg_match('/[\'{#~?><>,|=_^£$%&*()}+¬-]/',$email)){
-    $response=["status"=>false,"message"=> "email sholud not contain spceial symbol excluded @"];
+
+if (strlen($name) > 12) {
+    $errorMessage .= "Please Enter the name less than 12 characters \n";
+} else if (preg_match('/[\'{#~?><>@,.|=_^£$%&*()}+¬-]/', $name)) {
+    $errorMessage .= "Name sholud not have any Special Symbol \n";
+}
+
+if (strlen($phone) != 10) {
+    $errorMessage .= "Please Enter 10 digit phone Number\n";
+} else if (!is_numeric($phone)) {
+    $errorMessage .= "Please Enter only number\n";
+}
+
+
+if (strlen($email) > 64) {
+    $errorMessage .= "Email not valid Please enter within 64 character\n";
+} else if (preg_match('/[\'{#~?><>,|=_^£$%&*()}+¬-]/', $email)) {
+    $errorMessage .= "Email sholud not contain spceial symbol excluded @\n";
+}
+
+if (strlen($password) < 4 || strlen($password) > 16) {
+    $errorMessage .= "Pasword should be minimum 8 character and maximum 16 character\n";
+} else if (preg_match('/[\'{#~?><>,|=_^£$%&*()}+¬-]/', $password)) {
+    $errorMessage .= "Password should dont have any spiceial character\n";
+}
+
+if (strlen($errorMessage) != 0) {
+    $response = ["status" => false, "message" => nl2br($errorMessage)];
     echo json_encode($response);
     return;
-    }
-    
-if(strlen($password)<4 ||strlen($password)>16 ){
-    $response=["status"=>false,"message"=> "pasword should be minimum 8 character and maximum 16 character"];
-    echo json_encode($response);
-    return;
-    }
-    else if(preg_match('/[\'{#~?><>,|=_^£$%&*()}+¬-]/',$password)){
-    $response=["status"=>false,"message"=> " password should dont have any spiceial character"];
-    echo json_encode($response);
-    return;
+}
+
+
+try {
+
+    $checkRegisterQuery = "select * from users where email = '" . $email . "' or phone = '" . $phone . "' ";
+
+    $checkRegisterDetails = $pdo->prepare($checkRegisterQuery);
+    $checkRegisterDetails->execute();
+    $isVaildRegister = $checkRegisterDetails->fetchAll(PDO::FETCH_ASSOC);
+    if (count($isVaildRegister) != 0) {
+        $response = ["status" => true, "message" => "Phone Number or Email Exits ", "myResult" => $isVaildRegister];
+        echo json_encode($response);
+        return;
     }
 
+    $query = "insert into users (username,password,email,phone) values ('" . $name . "','" . $hashedPassword . "','" . $email . "','" . $phone . "')";
 
-try{
-  $statement1=$pdo->prepare("select * from users where email=? or phone=?");
-  $statement1->execute([$email,$phone]);
-  $result = $statement1->fetchAll(PDO::FETCH_ASSOC);
-  if(count($result)!=0){
-    $response=["status"=>true,"message"=>"phone no or email exits ","myResult"=>$result];
+    $addRegisterDetails = $pdo->prepare($query);
+    $addRegisterDetails->execute();
+
+    $response = ["status" => true, "message" => "Register Sucessfully", "myResult" => null];
     echo json_encode($response);
-     return;
-  }
-  
-$statement2 = $pdo->prepare("insert into users (username,email,password,phone) values (?,?,?,?); ");
-$statement2->execute([$name,$email,md5($password),$phone]);
-
- $response=["status"=>true,"message"=>"register sucessfully","myResult"=>null];
- echo json_encode($response);
- 
-
+} catch (PDOException ) {
+    $response = ["status" => false, "message" =>"Something Went Wrong"];
+    echo json_encode($response);
+    return;
 }
-catch(PDOException $e){
-    $response=["status"=>false,"message"=> $e->getMessage()];
-  echo json_encode($response);
-  return;
-}
-
-?>
