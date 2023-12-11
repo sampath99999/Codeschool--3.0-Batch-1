@@ -36,7 +36,7 @@ function showSubjects(subjectDetails) {
                             <h5 class="card-title mb-4 fs-5">${subjectDetails[i].name.toUpperCase()}</h5>
 
 
-                            <a  href="${subjectDetails[i].slug}" class="btn btn-outline-white btn-primary " onclick = "setSubjectId(${subjectDetails[i].id})"> Start Learning</a>
+                            <a  href="http://localhost/week8/${subjectDetails[i].slug}" class="btn btn-outline-white btn-primary "> Start Learning</a>
                         </div>
                     </div>
                 </div>
@@ -44,15 +44,9 @@ function showSubjects(subjectDetails) {
 
         `)
     };
-console.log(subjectDetails,567);
+
 
       
 }
 
 
-function setSubjectId(subjectId){
-
-localStorage.clear();
- localStorage.setItem("subjectId",JSON.stringify(subjectId));
-console.log(subjectId,678);
-}
