@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nunito:wght@300&family=Open+Sans:wght@300;400&family=Oswald:wght@600&family=Poppins:wght@200&family=Raleway:wght@300;400;500&display=swap");
+
+body {
+  background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.logo {
+  font-family: "Oswald";
+  text-decoration: none;
+  color: #fff;
+  margin-left:4rem;
+}
+
+.clinica{
+  margin-top: 4rem;
+}
+.loginContainer {
+  background-color: rgba(255, 255, 255, 0.808);
+}
+
+.bgContainer {
+  background-image: url(/assets/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  opacity: 0.8;
+}
+
+.homeBgContainer {
+  background-image: url(/assets/img/homeBg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  opacity: 0.8;
+}
+.adminBgContainer {
+  background-image: url(/assets/img/adminBg.jpg);
+  background-size: cover;
+  height: 140vh;
+  opacity: 0.6;
+}
+.homeContainer {
+  margin: 5rem;
+}
+.optionBox, .dashboardComponent {
+  text-align: center;
+  background-color: rgb(73, 68, 68);
+  height: 10rem;
+  width: 15rem;
+  margin-left: 5rem;
+  border-radius: 20px;
+}
+
+.optionBox a, .dashboardComponent a {
+  text-decoration: none;
+  color: #ffff;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.optionBox a i , .dashboardComponent a i {
+  font-size: 3rem;
+}
+.optionBox:hover, .dashboardComponent:hover {
+  background-color: black;
+  transition: 0.3s;
+}
+@media only screen and (max-width: 600px) {
+  .adminBgContainer{
+    background-image: url();
+
+  }
+  .optionBox {
+    height: 5rem;
+    width: 8rem;
+    margin-left: 0rem;
+    border-radius: 15px;
+  }
+  .optionBox a i {
+    font-size: 1rem;
+  }
+
+  .optionBox a {
+    font-size: small;
+  }
+}
+.modal-backdrop {
+  z-index: -1;
+}
+.adminName,
+.adminIcon {
+  font-size:small;
+  color: #fff;
+}
+.admin {
+  padding: 0px 25px;
+}
+.admin:hover {
+  cursor: pointer;
+  background: #000;
+}
+.searchBar {
+  margin-left: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+.navbar {
+  z-index: 1000;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#sidebar {
+  min-width: 220px;
+  background: #212529; 
+  color: #fff;
+  transition: all 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-x: hidden;
+  padding-top: 80px;
+  z-index: 100;
+}
+
+#sidebar.active {
+  margin-left:-200px;
+}
+
+#sidebarCollapse {
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1100;
+  background-color: #343a40;
+  border-radius: 5px;
+}
+
+#sidebarCollapse:hover {
+  background-color: #343a40;
+  z-index: 1101; /* Ensure the sidebar collapse button is above other elements */
+}
+
+.hamburgerMenu {
+  font-size: larger;
+}
+
+/* #sidebarCollapse:hover {
+  background-color: #333;
+  border-radius: 10px;
+} */
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a {
+  margin: 10px 0px;
+  padding: 10px;
+  font-size: 1.2em;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #000000;
+}
+
+#sidebar ul li a:hover {
+  background: #000;
+  transition: 0.3s;
+}
+.tableContainer {
+  background-color: #ffff;
+  opacity: 1.5;
+  /* position: relative; */
+  /* margin-left: 22rem; */
+  /* color: #ffff; */
+}
+
+.dashBoardDataSpan{
+  font-weight: bolder;
+  font-size:4rem;
+}
+.dashboardComponent{
+  min-height: 20rem;
+  
+}
+.tableContainer{
+    z-index: 1000;
+
+  padding-top: 30rem;
+}
