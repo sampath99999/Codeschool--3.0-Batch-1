@@ -1,0 +1,12 @@
+.matter{
+    margin:10px 40px;
+}
+.img{
+    margin : 10px 5px;
+}
+.img1{
+    margin:10px 40px;   
+}
+#show:hover{
+    display: block;
+}

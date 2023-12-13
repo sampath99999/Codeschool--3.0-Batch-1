@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.aboutus {
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.aboutusinfo {
+  font-size: 25px;
+  font-style: italic;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-image: url("");
+}
+
+.achievements {
+  margin-top: 50px;
+}
+
+.carouselimg-1 {
+  height: 500px;
+}

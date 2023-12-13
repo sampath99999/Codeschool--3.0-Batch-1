@@ -1,0 +1,86 @@
+<?php
+// Include your database connection file here
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Handle the form submission and add the show to the database
+    $branchID = $_POST['branchID'];
+    $movieID = $_POST['movieID'];
+    $showTime = $_POST['showTime'];
+    $showDate = $_POST['showDate'];
+
+    // Your database insertion code here
+    // Example: mysqli_query($connection, "INSERT INTO TheaterBranchMovieShows (BranchID, MovieID, ShowTime, ShowDate) VALUES ('$branchID', '$movieID', '$showTime', '$showDate')");
+    
+    // Return success or error response
+    $response = ['status' => 'success', 'message' => 'Show added successfully'];
+    echo json_encode($response);
+} else {
+    // Handle invalid requests
+    http_response_code(400);
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request']);
+}
+?>
+
+
+<div class="list-group my-3">
+          <a
+            href="#"
+            class="list-group-item list-group-flush list-group-item-action second-text active"
+            ><i class="bi bi-kanban-fill me-2"></i> Dashboard</a
+          >
+          <a
+            href="addMovie.html"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="fa-solid fa-film me-2"></i> Movies</a
+          >
+
+          <a
+            href="events.html"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="bi bi-calendar2-event me-2"></i>Events</a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="fa-solid fa-baseball-bat-ball me-2"></i>Sports</a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="fas fa-comment-dots me-2"></i>Chat</a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action bg-transparent second-text fw-bold"
+            ><i class="fas fa-map-marker-alt me-2"></i>Location</a
+          >
+          <a
+            href="#"
+            onclick="logout();"
+            class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"
+            ><i class="fas fa-power-off me-2"></i>Logout</a
+          >
+        </div>
+
+
+
+  <div class="dropdown">
+          <button
+            class="btn btn-secondary btn-lg dropdown-toggle"
+            type="button"
+            id="movie-dropdown"
+            data-bs-toggle="dropdown"
+          >
+            Dashboard
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdown">
+            <li>
+              <a class="dropdown-item" href="#">Load Another Page</a>
+            </li>
+
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </div>
+        </div>
