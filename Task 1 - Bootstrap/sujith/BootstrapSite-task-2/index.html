@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">Ninestars</a>
+        <button
+          class="navbar-toggler hidden-lg-up"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" aria-current="page"
+                >Home <span class="visually-hidden">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Team</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownId"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Dropdown</a
+              >
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="#">Action 1</a>
+                <a class="dropdown-item" href="#">Action 2</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item px-2 rounded-pill bg-warning">
+              <a class="nav-link text-white" href="#">Get Started</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="main-top bg-warning-subtle mt-5 p-4">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          <div
+            class="order-2 order-lg-1 col-12 col-lg-6 d-flex flex-column justify-content-start"
+          >
+            <h1 class="h1 fw-bolder mb-2">
+              Better digital experience with Ninestars
+            </h1>
+            <p class="h4 text-secondary fw-light mb-2">
+              We are team of talented designers making websites with Bootstrap
+            </p>
+            <div class="mt-3">
+              <a
+                class="h5 px-4 py-2 bg-warning rounded-1 text-decoration-none text-white fw-light"
+                href=""
+                >Get Started</a
+              >
+            </div>
+          </div>
+          <div class="order-1 order-lg-2 col-12 col-lg-6">
+            <img src="/image/hero-img.svg" width="100%" height="100%" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-top-2 py-5">
+      <div class="container">
+        <div class="row justify-content-between align-items-center g-1">
+          <div class="col-12 col-lg-6">
+            <img src="./image/about-img.svg" alt="" width="80%" height="80%" />
+          </div>
+          <div class="col-12 col-lg-6">
+            <h3 class="h2 fw-bold">Voluptatem dignissimos provident quasi</h3>
+            <p class="text-secondary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
+              aute irure dolor in reprehenderit
+            </p>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <div class="h1">
+                  <i class="bi bi-newspaper text-warning"></i>
+                </div>
+                <h4 class="h5 fw-bold">Corporis voluptates sit</h4>
+                <p class="fs-6 text-secondary">
+                  Consequuntur sunt aut quasi enim aliquam quae harum pariatur
+                  laboris nisi ut aliquip
+                </p>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="h1">
+                  <i class="bi bi-box text-warning"></i>
+                </div>
+                <h4 class="h5 fw-bold">Corporis voluptates sit</h4>
+                <p class="fs-6 text-secondary">
+                  Consequuntur sunt aut quasi enim aliquam quae harum pariatur
+                  laboris nisi ut aliquip
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services py-5 bg-warning-subtle">
+      <div class="container text-center">
+        <h2 class="text-secondary fw-bold h4">Services</h2>
+        <p class="h2 fw-bold">Check out the great services we offer</p>
+      </div>
+      <div class="container mt-5">
+        <div class="row g-2">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="text-center shadow p-4 rounded-4 bg-white">
+              <div class="div text-warning h1">
+                <i class="bi bi-dribbble"></i>
+              </div>
+              <h4 class="h5 fw-bold">Lorem Ipsum</h4>
+              <p class="text-secondary">
+                Voluptatum deleniti atque corrupti quos dolores et quas
+                molestias excepturi sint occaecati cupiditate
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="text-center shadow p-4 rounded-4 bg-white">
+              <div class="div text-warning h1">
+                <i class="bi bi-file-earmark-text"></i>
+              </div>
+              <h4 class="h5 fw-bold">Lorem Ipsum</h4>
+              <p class="text-secondary">
+                Voluptatum deleniti atque corrupti quos dolores et quas
+                molestias excepturi sint occaecati cupiditate
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="text-center shadow p-4 rounded-4 bg-white">
+              <div class="div text-warning h1">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <h4 class="h5 fw-bold">Lorem Ipsum</h4>
+              <p class="text-secondary">
+                Voluptatum deleniti atque corrupti quos dolores et quas
+                molestias excepturi sint occaecati cupiditate
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="text-center shadow p-4 rounded-4 bg-white">
+              <div class="div text-warning h1">
+                <i class="bi bi-globe-americas"></i>
+              </div>
+              <h4 class="h5 fw-bold">Lorem Ipsum</h4>
+              <p class="text-secondary">
+                Voluptatum deleniti atque corrupti quos dolores et quas
+                molestias excepturi sint occaecati cupiditate
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio py-5">
+      <div class="container text-center">
+        <h2 class="text-secondary fw-bold h4">portfolio</h2>
+        <p class="h2 fw-bold">Check out our beautifull portfolio</p>
+        <div class="container">
+          <ul class="d-flex flex-row justify-content-center align-items-center">
+            <li class="p-4 fw-bold text-warning">All</li>
+            <li class="p-4 fw-bold">App</li>
+            <li class="p-4 fw-bold">Card</li>
+            <li class="p-4 fw-bold">Web</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="rounded-3">
+              <img
+                class="rounded-3"
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/portfolio/portfolio-1.jpg"
+                alt=""
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div>
+              <img
+                class="rounded-3"
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/portfolio/portfolio-2.jpg"
+                alt=""
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div>
+              <img
+                class="rounded-3"
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/portfolio/portfolio-3.jpg"
+                alt=""
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div>
+              <img
+                class="rounded-3"
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/portfolio/portfolio-4.jpg"
+                alt=""
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div>
+              <img
+                class="rounded-3"
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/portfolio/portfolio-5.jpg"
+                alt=""
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div>
+              <img
+                class="rounded-3"
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/portfolio/portfolio-6.jpg"
+                alt=""
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div>
+              <img
+                class="rounded-3"
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/portfolio/portfolio-7.jpg"
+                alt=""
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div>
+              <img
+                class="rounded-3"
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/portfolio/portfolio-8.jpg"
+                alt=""
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div>
+              <img
+                class="rounded-3"
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/portfolio/portfolio-9.jpg"
+                alt=""
+                width="100%"
+                height="100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="FAQ py-5 bg-warning-subtle">
+      <div class="container text-center">
+        <h2 class="text-secondary fw-bold h4">F.A.Q</h2>
+        <p class="h2 fw-bold">Frequently Asked Questions</p>
+      </div>
+      <div class="container mt-5">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item border-0 bg-warning-subtle">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button bg-warning-subtle border-bottom h5 fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="false"
+                aria-controls="collapseOne"
+              >
+                Non consectetur a erat nam at lectus urna duis?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
+                volutpat lacus laoreet non curabitur gravida. Venenatis lectus
+                magna fringilla urna porttitor rhoncus dolor purus non.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item border-0 bg-warning-subtle">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button bg-warning-subtle border-bottom h5 fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseSix"
+                aria-expanded="false"
+                aria-controls="collapseSix"
+              >
+                Feugiat scelerisque varius morbi enim nunc faucibus a
+                pellentesque?
+              </button>
+            </h2>
+            <div
+              id="collapseSix"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
+                volutpat lacus laoreet non curabitur gravida. Venenatis lectus
+                magna fringilla urna porttitor rhoncus dolor purus non.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item border-0 bg-warning-subtle">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button bg-warning-subtle border-bottom h5 fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsefive"
+                aria-expanded="false"
+                aria-controls="collapsefive"
+              >
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant
+                morbi?
+              </button>
+            </h2>
+            <div
+              id="collapsefive"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
+                volutpat lacus laoreet non curabitur gravida. Venenatis lectus
+                magna fringilla urna porttitor rhoncus dolor purus non.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item border-0 bg-warning-subtle">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button bg-warning-subtle border-bottom h5 fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
+                volutpat lacus laoreet non curabitur gravida. Venenatis lectus
+                magna fringilla urna porttitor rhoncus dolor purus non.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item border-0 bg-warning-subtle">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button bg-warning-subtle border-bottom h5 fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Tempus quam pellentesque nec nam aliquam sem et tortor
+                consequat?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
+                volutpat lacus laoreet non curabitur gravida. Venenatis lectus
+                magna fringilla urna porttitor rhoncus dolor purus non.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item border-0 bg-warning-subtle">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button bg-warning-subtle border-bottom h5 fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Tortor vitae purus faucibus ornare. Varius vel pharetra vel
+                turpis nunc eget lorem dolor?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id
+                volutpat lacus laoreet non curabitur gravida. Venenatis lectus
+                magna fringilla urna porttitor rhoncus dolor purus non.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team py-5">
+      <div class="container text-center">
+        <h2 class="text-secondary fw-bold h4">Team</h2>
+        <p class="h2 fw-bold">Our team is always here to help</p>
+      </div>
+      <div class="container mt-5">
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="">
+              <img
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/team/team-1.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="">
+              <img
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/team/team-2.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="">
+              <img
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/team/team-3.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="">
+              <img
+                src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/team/team-4.jpg"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="companies py-5 bg-warning-subtle">
+      <div class="container text-center">
+        <h2 class="text-secondary fw-bold h4">Clients</h2>
+        <p class="h2 fw-bold">They trusted us</p>
+      </div>
+      <div class="container mt-5">
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+            <li
+              style="
+                height: 1rem;
+                width: 1rem;
+                border-radius: 50%;
+                background-color: #ffc107;
+              "
+              data-bs-target="#carouselId"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="First slide"
+            ></li>
+            <li
+              style="
+                height: 1rem;
+                width: 1rem;
+                border-radius: 50%;
+                background-color: #ffc107;
+              "
+              data-bs-target="#carouselId"
+              data-bs-slide-to="1"
+              aria-label="Second slide"
+            ></li>
+            <li
+              style="
+                height: 1rem;
+                width: 1rem;
+                border-radius: 50%;
+                background-color: #ffc107;
+              "
+              data-bs-target="#carouselId"
+              data-bs-slide-to="2"
+              aria-label="Third slide"
+            ></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row g-2">
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-1.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-2.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-3.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-4.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-5.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-6.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row g-2">
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-1.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-2.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-3.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-4.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-5.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-6.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container">
+                <div class="row g-2">
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-1.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-2.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-3.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-4.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-5.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div class="col-6 col-md-4 col-lg-2">
+                    <img
+                      src="https://bootstrapmade.com/demo/templates/Ninestars/assets/img/clients/client-6.png"
+                      width="50%"
+                      height="50%"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselId"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselId"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-us py-5">
+      <div class="container text-center">
+        <h2 class="text-secondary fw-bold h4">contact-us</h2>
+        <p class="h2 fw-bold">Contact us the get started</p>
+      </div>
+
+      <div class="container mt-5">
+        <div class="row g-3">
+          <div class="col-12 col-md-5">
+            <div
+              class="shadow p-4 bg-white border border-warning border-3 border-start-0 border-end-0"
+            >
+              <div class="address">
+                <i
+                  class="bi bi-geo-alt float-start h3 rounded-pill bg-warning-subtle text-warning p-2"
+                ></i>
+                <h4 class="text-secondary h4 ps-1">Location:</h4>
+                <p class="text-secondary ps-1">
+                  A108 Adam Street, New York, NY 535022
+                </p>
+              </div>
+              <div class="mail">
+                <i
+                  class="bi bi-envelope float-start h3 rounded-pill bg-warning-subtle text-warning p-2"
+                ></i>
+                <h4 class="text-secondary h4 ps-1">E-mail:</h4>
+                <p class="text-secondary ps-1">info@example.com</p>
+              </div>
+              <div class="call">
+                <i
+                  class="bi bi-phone float-start h3 rounded-pill bg-warning-subtle text-warning p-2"
+                ></i>
+                <h4 class="text-secondary h4">Call:</h4>
+                <p class="text-secondary">+19989956921</p>
+              </div>
+              <img src="./image/map.png" width="100%" height="100%" alt="" />
+            </div>
+          </div>
+          <div class="col-12 col-md-7">
+            <div
+              class="shadow p-4 bg-white border border-warning border-3 border-start-0 border-end-0"
+            >
+              <form>
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="name" class="text-secondary fw-medium"
+                      >Your Name</label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      required=""
+                    />
+                  </div>
+                  <div class="form-group col-md-6 mt-3 mt-md-0">
+                    <label for="name" class="text-secondary fw-medium"
+                      >Your Email</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email"
+                      required=""
+                    />
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="name" class="text-secondary fw-medium"
+                    >Subject</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                    required=""
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <label for="name" class="text-secondary fw-medium"
+                    >Message</label
+                  >
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="10"
+                    required=""
+                  ></textarea>
+                </div>
+
+                <div class="text-center mt-3 mb-5">
+                  <button
+                    type="submit"
+                    class="text-bg-warning px-3 py-2 text-decoration-none border border-0 text-white"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newletter py-5 bg-warning-subtle">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-6 text-center">
+            <h2 class="text-secondary fw-bold h4">Join Our Newsletter</h2>
+            <p class="">
+              Tamen quem nulla quae legam multos aute sint culpa legam noster
+              magna
+            </p>
+            <div class="">
+              <input
+                type="text"
+                class="form-control border border-0 shadow d-inline-block w-75"
+              />
+              <input
+                type="submit"
+                class="text-white bg-warning px-3 py-1 rounded-1 border border-0 shadow d-inline-block"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <h3 class="h3 fw-normal">Ninestars</h3>
+              <p class="fw-normal text-secondary">
+                A108 Adam Street <br />
+                New York, NY 535022<br />
+                United States <br /><br />
+                <strong class="text-black">Phone:</strong> +1 5589 55488 55<br />
+                <strong class="text-black">Email:</strong>
+                info@example.com<br />
+              </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <p class="display-4 fs-5 fw-semibold">Useful Links</p>
+              <div>
+                <ul class="d-flex flex-column gap-3">
+                  <li>
+                    <i class="bi bi-chevron-compact-right text-warning"></i>
+                    <a class="text-decoration-none text-secondary" href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-compact-right text-warning"></i>
+                    <a class="text-decoration-none text-secondary" href="#"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-compact-right text-warning"></i>
+                    <a class="text-decoration-none text-secondary" href="#"
+                      >About us</a
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-compact-right text-warning"></i>
+                    <a class="text-decoration-none text-secondary" href="#"
+                      >Terms of service</a
+                    >
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-compact-right text-warning"></i>
+                    <a class="text-decoration-none text-secondary" href="#"
+                      >Privacy policy</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <h4 class="display-4 fs-5 fw-semibold">Our Services</h4>
+              <ul class="d-flex flex-column gap-3">
+                <li>
+                  <i class="bi bi-chevron-right text-warning"></i>
+                  <a class="text-decoration-none text-secondary">Web Design</a>
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right text-warning"></i>
+                  <a class="text-decoration-none text-secondary"
+                    >Web Development</a
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right text-warning"></i>
+                  <a class="text-decoration-none text-secondary"
+                    >Product Management</a
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right text-warning"></i>
+                  <a class="text-decoration-none text-secondary">Marketing</a>
+                </li>
+                <li>
+                  <i class="bi bi-chevron-right text-warning"></i>
+                  <a class="text-decoration-none text-secondary"
+                    >Graphic Design</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+              <h4 class="display-4 fs-5 fw-semibold">Our Social Networks</h4>
+              <p class="fw-normal text-secondary">
+                Cras fermentum odio eu feugiat lide par naso tierra videa magna
+                derita valies
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"
+                  ><i
+                    class="bi bi-twitter me-1 p-2 bg-warning-subtle text-warning rounded rounded-pill"
+                  ></i
+                ></a>
+                <a href="#" class="facebook"
+                  ><i
+                    class="bi bi-facebook me-1 p-2 bg-warning-subtle text-warning rounded rounded-pill"
+                  ></i
+                ></a>
+                <a href="#" class="instagram"
+                  ><i
+                    class="bi bi-instagram me-1 p-2 bg-warning-subtle text-warning rounded rounded-pill"
+                  ></i
+                ></a>
+                <a href="#" class="google-plus"
+                  ><i
+                    class="bi bi-skype me-1 p-2 bg-warning-subtle text-warning rounded rounded-pill"
+                  ></i
+                ></a>
+                <a href="#" class="linkedin"
+                  ><i
+                    class="bi bi-linkedin me-1 p-2 bg-warning-subtle text-warning rounded rounded-pill"
+                  ></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom bg-warning-subtle">
+        <div class="container py-4 d-flex justify-content-between">
+          <div class="copyright">
+            © Copyright <strong><span>Ninestars</span></strong
+            >. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by
+            <a class="text-decoration-none text-warning">Sujith Gunti</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
