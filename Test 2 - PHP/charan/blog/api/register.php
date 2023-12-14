@@ -58,6 +58,7 @@ $stmt->bindParam("password", $password, PDO::PARAM_STR);
 $stmt->execute();
 if ($stmt->rowCount() > 0) {
     sendResponse(true, "Registered Successfully");
+    
 }
 
 sendResponse(false, "User registration failed");
