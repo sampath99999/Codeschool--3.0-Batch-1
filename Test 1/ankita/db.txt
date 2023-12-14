@@ -1,0 +1,58 @@
+create database employeesdetails;
+
+
+
+create table location (id serial primary key, description varchar(64),created_at timestamp default now(),updated_at timestamp default now());
+
+
+create table working_status (id serial primary key, description varchar(64),created_at timestamp default now(),updated_at timestamp default now());
+
+
+create table working_postions (id serial primary key, description varchar(64),created_at timestamp default now(),updated_at timestamp default now());
+
+
+create sequence empcode_sq start with 300001 increment by 1;
+
+
+
+
+
+create table employees( id serial primary key ,empcode int default nextval('empcode_sq') check (empcode >= 300001 and empcode < 4000000) ,f_name varchar(32),l_name varchar(64),phone varchar(32),email varchar(128),working_status_id int references working_status (id),working_postions_id int references working_postions(id),location_id int references location(id),net int,created_at timestamp default now(),updated_at timestamp default now());
+
+
+create table users (id serial primary key,username varchar(128),password varchar(256),email varchar(128),phone varchar(10),created_at timestamp default now(),updated_at timestamp default now());
+
+
+create table  session_table(id serial primary key ,users_id int references users(id),user_tokan bigint,expire_time timestamp default now()+interval'2hours');
+
+
+insert into users (username,password,email,phone) values ('angela','f495b400db54e6dec5bf2a7f6d40fd56','angela@gmail.com','1234567890'),('ankita','1138dd6fdda5d617dfe218898ee02077','john@gmail.com','9876543210');
+   
+   
+
+
+insert into location (description) values ('hyderabad') ,('bbsr'),('mumbai'),('delhi'),('kochi'),('pune'),('bhopal');
+
+
+
+insert into working_status(description) values ('working'),('expired'),('retired'),('suspended');
+
+
+
+insert into working_postions (description) values ('developer'),('tester'),('maneger'),('tech-lead'),('devops-eng'), ('ui-designer');
+
+
+
+
+insert into employees (f_name,l_name,phone,email,working_status_id,working_postions_id ,location_id)
+values ('john','ebraham','9856072678','john@gmail',1,1,3),
+('nick','sam','6789766072','john@gmail',1,3,5),
+('subha','darshini','8985072345','john@gmail',3,4,1),
+('shivani','kumari','9834045345','john@gmail',4,5,2),
+('swastik','ranjan','7656232123','john@gmail',2,2,4),
+('suchi','smita','8856342456','john@gmail',4,2,3),
+('kisore','charan','7682072234','john@gmail',2,1,1),
+('lal','bahadur','9845382223','john@gmail',1,2,4),
+('sussri','sovita','6388283345','john@gmail',1,1,3),
+('lalita','sovita','2346456072','john@gmail',1,3,1),
+('swarna','lata','6856772234','john@gmail',1,5,3);
