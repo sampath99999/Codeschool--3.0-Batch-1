@@ -1,0 +1,139 @@
+*{
+    transition: all 0.3s ease;
+}
+.body{
+    overflow: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Poppins',sans-serif;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(255, 192, 23);
+    color: black;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+.header-title img{
+    width: 50px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+.header-title a, h1{
+    text-decoration: none;
+    color:black;
+    margin-bottom: 0px;
+    padding: 0px;
+    
+}
+
+.header-menu ul{
+    list-style: none;
+    margin-bottom: 0px;
+}
+.header-menu li{
+    padding: 7px 12px;
+    cursor: pointer;
+}
+.header-menu .menu-button{
+    background-color: black;
+    border-radius: 20px;
+    color: rgb(255, 192, 23);
+    padding: 7px 20px 9px 20px !important;
+    margin-left:5px;
+    margin-right:5px;
+}
+.header-menu li:hover{
+    color:white;
+}
+.header-menu .menu-button:hover{
+    color:white;
+    background-color: black;
+}
+.main-content{
+    background-color: rgb(255, 192, 23);
+    min-height: 100vh;
+    margin-top: 70px;
+    margin: 48px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+
+}
+.post-container{
+    margin:60px;
+    background-color: rgb(255, 192, 23);
+    backdrop-filter:blur(5px);
+    padding:10px;
+    border: 2px solid black;
+    
+}
+.post-container h1{
+    margin: 12px;
+}
+.post-container button{
+    margin:10px;
+    background-color: black;
+    color:rgb(255, 192, 23);
+}
+.post-container button:hover{
+    background-color: black;
+    color:white;
+}
+.post{
+    width: 98.5%;
+    padding: 20px;
+    background-color: black;
+    color:white;
+    margin:10px;
+}
+.post-title{
+    margin-bottom: 10px;
+}
+.post-title h1{
+    color:rgb(255, 192, 23);
+
+}
+.post-title span{
+    font-size: 24px;
+    color:darkorange;
+}
+.post-title img{
+    width: 50px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+.post-content p{
+    color:white;
+}
+.post-footer i{
+    font-size: 33px;
+    color:rgb(255, 192, 23);
+    cursor: pointer;
+}
+.post-footer span{
+    margin-left: 10px;
+    font-size: 25px;
+    color:rgb(255, 192, 23  );
+    cursor: pointer;
+}
+.modal-content{
+    background-color: rgb(255, 192, 23);
+}
+.modal-header{
+    border-bottom: 1px solid black;
+}
+.modal-body{
+    border-bottom: 1px solid black;
+}
+.modal-footer{
+    border:0px;
+}

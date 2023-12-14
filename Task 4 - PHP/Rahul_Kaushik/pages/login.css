@@ -1,0 +1,79 @@
+body{
+    color: lightblue;
+}
+
+.register-background{
+    width: auto;
+    height: 845px;
+    background-color: rgb(58, 57, 57);
+    
+}
+.register-box{
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+    background-color: #1a2c42;
+    padding: 50px;
+}
+.register-box input{
+    width: 300px
+}
+.register-box button{
+    margin-top: 48px;
+}
+.register-box span{
+    font-size: 10px;
+    color: red;
+}
+#password-error p{
+    font-size: 10px;
+    color: red;
+}
+header{
+    padding: 10px 50px;
+    background-color: #1a2c42;
+    color: black;
+}
+.header-content>div{
+    height: 100%;
+}
+.header-content h1{
+    margin: 0;
+    font-family: 'Raleway',sans-serif;
+    color:aliceblue;
+}
+
+.header-content i{
+    font-size: 30px;
+}
+.header-content h2{
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+.header-content a:hover{
+    color:lightblue;
+}
+.register-box a{
+    text-decoration: none;
+    color:black;
+}
+.register-box a:hover{
+    color:gray;
+}
+.header-content a{
+    text-decoration: none;
+    color:rgb(28, 28, 138);
+}
+label{
+    color:lightblue;
+}   
+.radio-buttons{
+    width:300px !important;
+}
+#customer{
+    width: 50px;
+}
+#admin{
+    width: 50px;
+}

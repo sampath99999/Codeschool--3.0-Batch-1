@@ -1,0 +1,122 @@
+*{
+    transition: all 0.3s ease;
+}
+.body{
+    overflow: hidden;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Poppins',sans-serif;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(255, 192, 23);
+    color: black;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+.header-title img{
+    width: 50px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+.header-title a, h1{
+    text-decoration: none;
+    color:black;
+    margin-bottom: 0px;
+    padding: 0px;
+    
+}
+
+.header-menu ul{
+    list-style: none;
+    margin-bottom: 0px;
+}
+.header-menu li{
+    padding: 7px 12px;
+    cursor: pointer;
+}
+.menu-link{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+.menu-link:hover{
+    color: white;
+}
+.header-menu .menu-button{
+    background-color: black;
+    border-radius: 20px;
+    color: rgb(255, 192, 23);
+    padding: 7px 20px 9px 20px !important;
+}
+.header-menu li:hover{
+    color:white;
+}
+.header-menu .menu-button:hover{
+    color:white;
+    background-color: black;
+}
+.main-content{
+    background-image: url('../assets/images/keyboard.jpg');
+    min-height: 100vh;
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-color: black; */
+
+    margin: 48px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.post-container{
+    margin:60px;
+    background-color: rgb(255, 192, 23);
+    backdrop-filter:blur(5px);
+    padding:10px;
+    border: 2px solid black;
+    
+}
+.post{
+    width: 98.5%;
+    padding: 20px;
+    background-color: black;
+    color:white;
+    margin:10px;
+}
+.post-title{
+    margin-bottom: 10px;
+}
+.post-title h1{
+    color:rgb(255, 192, 23);
+
+}
+.post-title img{
+    width: 50px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+.post-content p{
+    color:white;
+}
+.post-footer i{
+    font-size: 33px;
+    color:rgb(255, 192, 23);
+    cursor: pointer;
+}
+.post-footer span{
+    margin-left: 10px;
+    font-size: 25px;
+    color:rgb(255, 192, 23  );
+    cursor: pointer;
+}

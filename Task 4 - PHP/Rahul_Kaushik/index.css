@@ -1,0 +1,104 @@
+body{
+    background-color: rgb(58, 57, 57);
+    
+}
+label{
+    color:lightblue;
+}
+section{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+footer{
+    padding: 10px 50px;
+    background-color: #1a2c42;
+    color: black;
+}
+header{
+    padding: 10px 50px;
+    background-color: #1a2c42;
+    color: black;
+}
+.header-content>div{
+    height: 100%;
+}
+.header-content h1{
+    margin: 0;
+    font-family: 'Raleway',sans-serif;
+    color:aliceblue;
+}
+
+.header-content i{
+    font-size: 30px;
+}
+.header-content h2{
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+.header-content a:hover{
+    color:lightblue;
+}
+.header-content a{
+    text-decoration: none;
+    color:rgb(28, 28, 138);
+}
+.card{
+    width: 201px;
+    height:auto;
+    padding: 5px 0px;
+    border-radius: 0px;
+    background-color: rgb(58, 57, 57);
+    color:black;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    
+}
+.card img{
+    width:100px;
+   
+}
+.card h4{
+    width: 200px;
+    margin-bottom: 0px;
+    color:rgb(170, 178, 180);
+}
+.card p{
+    width: 200px;
+    margin-bottom: 0px;
+    color:rgb(126, 141, 146);
+    line-height: 1.2;
+}
+.card h6{
+    color:rgb(184, 187, 189);
+
+}
+.product-box{
+    width: 500px;
+    height: auto;
+    border-radius: 20px;
+    background-color: #1a2c42;
+    padding: 50px;
+}
+
+.product-box  div{
+    margin-top: 20px;
+}
+.product-box  button{
+    margin-top: 20px;
+}
+.product-box h2{
+    color: lightblue;
+}
+
+.product-box input{
+    width: 300px;
+}
+.card h4{
+    width: 180px;
+    height: 27px;
+    line-height: 1;
+    margin-bottom: 0px;
+    overflow:hidden;
+}
