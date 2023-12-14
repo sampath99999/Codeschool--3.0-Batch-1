@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/Login.js"></script>
+    <link rel="stylesheet" href="assets/css/userDashboard.css" />
+    <link rel="stylesheet" href="assets/css/admindashboard.css" />
+    <script src="assets/js/userDashboard.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-danger">
+      <div class="container-fluid">
+        <button
+          class="btn"
+          button=""
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a
+          class="navbar-brand me-auto text-light fs-3 fw-bold font-style"
+          href="#"
+          >KickCulture</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-light fw-bold fs-3 font-style"
+                aria-current="page"
+                href="#"
+                onclick="logout()"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container my-4 font-style">
+      <h1>Welcome, <span id="name"></span></h1>
+      <p class="my-3">
+        Being a sneakerhead is a lifestyle marked by a profound passion for
+        sneakers and an immersive connection with sneaker culture. At the core
+        of this identity is a wealth of knowledge encompassing sneaker brands,
+        models, releases, and the historical significance of iconic designs.
+        Sneakerheads often go beyond mere admiration, evolving into avid
+        collectors with a penchant for limited editions, rare releases, and
+        vintage pairs. Their appreciation extends to the intricate details of
+        design, including colorways and innovative concepts, reflecting a keen
+        eye for aesthetics.Community engagement is a crucial aspect, as
+        sneakerheads actively participate in forums, social media discussions,
+        and attend events, fostering a sense of camaraderie within the broader
+        sneaker enthusiast community. This passion seamlessly integrates with
+        their fashion sense, allowing them to stylishly incorporate sneakers
+        into diverse outfits, creating distinctive and fashionable looks.
+      </p>
+    </div>
+    <div class="font-style">
+      <h2 class="text-center">Check out the Blog posted by our SneakerHeads</h2>
+    </div>
+    <div class="container my-3">
+      <div id="cardContainer" class="row"></div>
+    </div>
+  </body>
+</html>

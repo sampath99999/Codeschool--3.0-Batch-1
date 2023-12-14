@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button
+          class="btn"
+          button=""
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="#">Pixelvide</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                onclick="logout()"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="p-5 m-1">
+      <h1>Welcome, <span id="name"></span></h1>
+    </div>
+    <div
+      class="offcanvas offcanvas-start bg-success"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="offcanvasWithBothOptions"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header">
+        <h5
+          class="offcanvas-title text-light"
+          id="offcanvasWithBothOptionsLabel"
+        >
+          Shop Me
+        </h5>
+        <button
+          type="button"
+          class="btn-dismiss"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <img
+                src="data:image/jpeg;base64,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"
+                class="img-fluid profile-img"
+                alt=""
+              />
+            </div>
+            <div class="text-center text-light my-2 admin-name">Admin Name</div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col my-5">
+              <div class="d-flex">
+                <i class="fa-solid fa-house mt-1 ms-5 my-3 fs-5"></i>
+                <p class="ms-5 fs-4 text-light fw-2">Home</p>
+              </div>
+              <div class="d-flex">
+                <i class="fa-solid fa-list-check mt-1 ms-5 my-3 fs-4"></i>
+                <p
+                  class="btn-toggler text-danger ms-5 home fs-5 text-light fw-2"
+                  onclick="task()"
+                >
+                  Task
+                </p>
+              </div>
+              <div class="d-flex">
+                <i class="fa-solid fa-user mt-1 ms-5 my-2 fs-5"></i>
+                <p
+                  class="btn-toggler text-danger mt-1 ms-5 home fs-5 text-light fw-2"
+                >
+                  Users
+                </p>
+              </div>
+              >
+              <div class="d-flex">
+                <i class="fa-solid fa-bag-shopping ms-5 my-1 fs-5"></i>
+                <p
+                  class="btn-toggler text-danger mb-5 ms-5 home fs-5 text-light fw-2"
+                >
+                  Orders
+                </p>
+              </div>
+              <div class="d-flex">
+                <i class="fa-solid fa-gear mt-1 ms-5 my-2 fs-5"></i>
+                <p class="btn-toggler text-danger ms-5 fs-5 text-light fw-2">
+                  Account
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5 ms-5 fs-1 fw-bold" id="welcomeback"></div>
+    <div class="container" id="completedTask">
+      <div class="row">
+        <div class="col-4">
+          <div class="card mb-3 bg-success" style="width: 18rem">
+            <div class="card-body my-4">
+              <h5 class="card-title text-light">Completed Task</h5>
+              <div class="d-flex card-text">
+                <p
+                  class="ms-5 my-5 fs-4 fw-2 text-light text-center completedtask"
+                >
+                  0
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card mb-3 bg-success" style="width: 18rem">
+            <div class="card-body my-4">
+              <h5 class="card-title text-light">InProgress</h5>
+              <div class="d-flex card-text">
+                <p
+                  class="ms-5 my-5 fs-4 fw-2 text-light text-center inprogresstask"
+                >
+                  0
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card mb-3 bg-success" style="width: 18rem">
+            <div class="card-body my-4">
+              <h5 class="card-title text-light">Incomplete</h5>
+              <div class="d-flex card-text">
+                <p
+                  class="ms-5 my-5 fs-4 fw-2 text-light text-center incompletetask"
+                >
+                  0
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>
+        <button
+          class="btn btn-primary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseWidthExample"
+          aria-expanded="false"
+          aria-controls="collapseWidthExample"
+        >
+          Check your Task Assignment here
+        </button>
+      </p>
+      <div style="min-height: 120px">
+        <div class="collapse collapse-horizontal" id="collapseWidthExample">
+          <div class="card card-body" style="width: 1000px">
+            <table class="my-5">
+              <thead>
+                <tr>
+                  <th>Task name</th>
+                  <th>Task Description</th>
+                </tr>
+              </thead>
+              <tbody id="display"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script src="assets/js/dashboard.js"></script>
+</html>

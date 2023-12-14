@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Heebo:wght@600&family=Montserrat:wght@100&family=Noto+Sans:wght@100&family=Nunito+Sans:wght@200&family=Playfair+Display&family=Playpen+Sans:wght@200;400&family=Poppins:wght@200;300&family=Roboto:wght@100&family=Silkscreen&display=swap");
+
+body {
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdGQMkVCaByHRCfLAsNlMNwjgIcdNdTEZxArl7_piYpfVU1y1XQKfCtubEqyH7vkN6zp4&usqp=CAU"); */
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.font-style {
+  font-family: "Dancing Script", cursive;
+  font-family: "Heebo", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Playfair Display", serif;
+  font-family: "Playpen Sans", cursive;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Silkscreen", sans-serif;
+}
