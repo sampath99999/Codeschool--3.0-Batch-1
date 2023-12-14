@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add product</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+
+  <script src="https://kit.fontawesome.com/eb66556e4c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning mb-5">
+    <a class="navbar-brand ps-5" href="#"><strong>POST MANAGEMENT SYSTEM</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto pe-5">
+        <li class="nav-item active">
+          <a class="nav-link fw-bold text-dark" href="./dashboard.html"> HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-dark" href="#">POSTS</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container w-75 pt-3 mt-5">
+    <form id="myform" method="post">
+     
+
+      <div class="form-group">
+        <label for="postimage">POST IMAGE</label>
+        <input type="text" class="form-control" id="postimage" name="postimage" placeholder="Add Post Image" />
+      </div>
+
+      <div class="form-group">
+        <label for="posttitle">POST TITLE</label>
+        <input required type="text" class="form-control" id="posttitle" name="posttitle" placeholder="Enter Post Title" />
+      </div>
+
+      <div class="form-group">
+        <label for="postdescription">POST Description</label>
+        <input type="text" class="form-control" id="postdescription" name="postdescription" placeholder="Add Post Description" />
+      </div>
+
+
+
+      <button type="submit" class="btn btn-primary mt-3" onclick="addposts()">
+        <i class="fa-solid fa-plus"></i> &nbsp;Publish Post
+      </button>
+    </form>
+  </div>
+
+  <script src="./assets/js/addposts.js"></script>
+</body>
+
+</html>
