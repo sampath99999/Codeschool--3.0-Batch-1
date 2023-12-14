@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBORAD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="stylesheet/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+     <section>
+        <nav class="navbar navbar-expand-lg navbar-light bkg-color">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white " href="#">
+                    <img src="images/logo2.png" width="30" height="30" class="d-inline-block" alt="">
+                    EMPLOYEE MANAGEMENT &nbsp;&nbsp;&nbsp;
+                    <i class="bi bi-list text-white fs-4" onclick="sidebar();"></i>
+
+                </a>
+
+                <a class="navbar-brand text-white" href="#">
+                    <button class="btn btn-sm btn-danger " onclick="logout();">Log-Out</button>
+
+                </a>
+        </nav>
+
+    </section>
+
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-12 p-0 bkg-color  min-vh-100" id="sideBar">
+            
+                <div><a href="dashBorad.html"><i class="bi bi-house-door-fill"></i> &nbsp;&nbsp;Dashborad</a></div>
+                <div> <a href="employees.html" class="nav-link text-white"> <i class="bi bi-people-fill"></i>&nbsp;&nbsp;Employees </a> </div>
+            </div>
+            <div class="col-10 bg-light  min-vh-100" id="mainContent">
+
+                <section class="mt-5">
+                    <div class="m-4 p-4 shadow">
+                        <section class="min-vw-50 mt-5">
+                            <div class="container-fluid ">
+                                <div class="row d-flex justify-content-center align-items-center h-100">
+                                    <div class="col-md-9 col-lg-4 order-md-1 order-2">
+                                        <img src="images/welcome2.png" class="rounded-1 w-100  " alt="Sample image">
+                                    </div>
+                                    <div class="col-md-8 col-lg-4  mt-5 order-md-2 order-1 offset-xl-1 d-flex">
+
+                                        <h1 class="ps-5 mt-5">HI   </h1>
+                                        <h1 class="ps-3 mt-5" id="user">Users </h1>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                    </div>
+
+
+
+
+
+                </section>
+
+            </div>
+    </section>
+
+
+    </div>
+
+    </div>
+    </section>
+
+
+
+
+
+
+
+</body>
+<script src="script/dashborad.js"></script>
+
+</html>
