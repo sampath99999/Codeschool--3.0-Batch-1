@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDEMPPLOYEE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="stylesheet/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+   <section>
+        <nav class="navbar navbar-expand-lg navbar-light bkg-color">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white " href="#">
+                    <img src="images/logo2.png" width="30" height="30" class="d-inline-block" alt="">
+                    EMPLOYEE MANAGEMENT &nbsp;&nbsp;&nbsp;
+                    <i class="bi bi-list text-white fs-4" onclick="sidebar();"></i>
+
+                </a>
+
+                <a class="navbar-brand text-white" href="#">
+                    <button class="btn btn-sm btn-danger " onclick="logout();">Log-Out</button>
+
+                </a>
+        </nav>
+
+    </section>
+
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-12 p-0 bkg-color  min-vh-100" id="sideBar">
+
+                <div><a href="dashBorad.html"><i class="bi bi-house-door-fill"></i> &nbsp;&nbsp;Dashborad</a></div>
+                <div> <a href="employees.html" class="nav-link text-white"> <i class="bi bi-people-fill"></i>&nbsp;&nbsp;Employees </a> </div>
+
+            </div>
+            <div class="col-md-10 col-12 bg-light  min-vh-100 " id="mainContent">
+                <section class="mt-5">
+                    <div class="m-4 p-4 shadow">
+                        <section class="min-vw-50 mt-5">
+                            <div class="container-fluid  ">
+                                <div class="m-2 p-2 ">
+                                    <h5>Add Employees Details</h5>
+                                    <div class="bg-light w-75 px-3">
+                                        <div class="d-flex ">
+                                            <div class="form-outline mb-3">
+                                                <label class="form-label fw-bold" for="form3Example4">First Name</label>
+                                                <input type="text" id="fName" class="form-control form-control-lg"
+                                                    placeholder="Enter first Name" />
+
+                                                <p id="fNameError" class="text-danger"></p>
+                                            </div>
+                                            <div class="form-outline ms-2 mb-3">
+                                                <label class="form-label fw-bold" for="form3Example4">Last Name</label>
+                                                <input type="text" id="lname" class="form-control form-control-lg"
+                                                    placeholder="Enter last Name" />
+
+                                                <p id="lnameError" class="text-danger"></p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-outline mb-3">
+                                            <label class="form-label fw-bold" for="form3Example4">Working
+                                                Postions</label>
+                                            <select class="form-select" style="width: 67%;"
+                                                aria-label="Default select example" id="working_postion"></select>
+                                            <p id="working_postionError" class="text-danger"></p>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <label class="form-label fw-bold" for="form3Example4">Working
+                                                Status</label>
+                                            <select class="form-select" style="width: 67%;"
+                                                aria-label="Default select example" id="working_status"></select>
+                                            <p id="working_statusError" class="text-danger"></p>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <label class="form-label fw-bold" for="form3Example4">Locations</label>
+                                            <select class="form-select" style="width: 67%;"
+                                                aria-label="Default select example" id="location"></select>
+
+                                            <p id="locationError" class="text-danger"></p>
+                                        </div>
+
+
+
+
+
+
+
+                                        <div class="d-flex">
+                                            <div class="form-outline mb-3">
+                                                <label class="form-label fw-bold" for="form3Example4">Email</label>
+                                                <input type="text" id="email" class="form-control form-control-lg"
+                                                    placeholder="Enter Email Here" />
+
+                                                <p id="emailError" class="text-danger"></p>
+                                            </div>
+                                            <div class="form-outline ms-2 mb-3">
+                                                <label class="form-label fw-bold" for="form3Example4">Phone
+                                                    Number</label>
+                                                <input type="number" id="phone" class="form-control form-control-lg"
+                                                    placeholder="Enter Phone Number" />
+
+                                                <p id="phoneError" class="text-danger"></p>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="text-center text-lg-start mt-4 p-md-5 p-3 align-items-center">
+                                            <button class="btn  btn-lg btn-primary text-white btn-block px-2 px-md-5"
+                                                onclick="addNewEmployee();" style="margin-left: 30%;">ADD</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </section>
+
+
+
+                    </div>
+
+            </div>
+    </section>
+
+
+
+
+
+
+
+</body>
+
+<script src="script/employee.js"></script>
+
+</html>
