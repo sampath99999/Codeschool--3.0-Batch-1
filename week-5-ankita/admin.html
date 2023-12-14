@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheet/style.css" />
+</head>
+
+<body>
+    <section>
+        <nav class="navbar navbar-expand-sm bkg-color">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand"><img src="images/logo.png" alt="logo" style="width: 50px; height: 50px"
+                        class="rounded-pill" /></a>
+
+
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="logOutButton">
+
+                        <button class="btn mx-lg-2 btn-danger " onclick="logout();">Log-Out</button>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+
+
+    <section class="bg-image min-vh-100  min-vw-100" style="
+    background-image: url('images/background.jpeg');
+     ">
+
+
+
+
+        <div class="row" id="subject">
+            <div class="   col-sm-10 col-md-4 mt-5 ms-5 ms-md-0">
+
+                <div class="ms-3 p-2">
+                    <div class=" card shadow-1-strong w-75" style="background:rgba(0, 0, 0, 0.5);">
+                        <div class="p-4">
+                            <img src="images/c.jpg" class="card-img-top" alt="Fissure in Sandstone" height="150px" />
+                        </div>
+                        <div class="card-body text-white">
+                            <h5 class="card-title mb-4 fs-5">C Programming</h5>
+
+                            <a class="btn btn-outline-light ms-md-2 me-md-5" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalToggle1">Add Test</a>
+                            <a class="btn btn-outline-light ms-5" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalToggle1001">Show Test</a>
+                        </div>
+                    </div>
+
+                    <!---->
+
+                    <!---->
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="modal fade" id="examNameModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="subjectName"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label fw-bold" for="form3Example3">Exam Name</label>
+                            <input type="text" id="ExamName" class="form-control form-control-lg"
+                                placeholder="Enter the name of a exam" />
+
+                            <p id="ExamNameError" class="text-danger"></p>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label fw-bold" for="form3Example3">Number of Qustions</label>
+                            <input type="number" id="NoOfQustions" class="form-control form-control-lg"
+                                placeholder="Enter the no. of qustions" />
+
+                            <p id="NoOfQustionsError" class="text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" onclick=" getTestDetails();">
+                            NEXT
+                        </button>
+                        <button class="btn d-none" id="addQustionBtn" data-bs-toggle="modal"
+                            data-bs-target="#addQustionModal">
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--modal-->
+        <div class="modal fade" id="showTestModal" aria-hidden="true" aria-labelledby="showTestModalToggleLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="showTestModalToggleLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Serial No.</th>
+                                    <th scope="col">ExamName</th>
+                                    <th scope="col">Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="showTest">
+                                <tr>
+
+
+                                    <td scope="row">1</td>
+                                    <td>test</td>
+                                    <td> <button class="btn btn-primary text-white">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--modal-->
+        <div class="modal fade" id="addQustionModal" aria-hidden="true" aria-labelledby="addQustionModalToggleLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addQustionModalToggleLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                            id="modalClose"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-outline mb-4">
+                            <label class="form-label fw-bold" for="form3Example3">Qustion Name</label>
+                            <input type="text" id="qustions" class="form-control form-control-lg"
+                                placeholder="enter the qustions" />
+
+                            <p id="qustionsError" class="text-danger"></p>
+                        </div>
+
+                        <div>
+                            <table class="table  table-hover  table-striped table-bordered ">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th scope="col">Serial_No</th>
+                                        <th scope="col">Options</th>
+                                        <th scope="col">Choose Answer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center">
+                                        <th scope="row">1</th>
+                                        <td><input type="text" id="options1" class="form-control form-control-lg"
+                                                placeholder="option 1 " /></td>
+                                        <td><input class="form-check-input" type="radio" id="option1Radio"
+                                                name="AnswerCheckBox"></td>
+
+                                    </tr>
+                                    <tr class="text-center">
+                                        <th scope="row">2</th>
+                                        <td><input type="text" id="options2" class="form-control form-control-lg"
+                                                placeholder="option 2 " /></td>
+                                        <td><input class="form-check-input" type="radio" id="option2Radio"
+                                                name="AnswerCheckBox"></td>
+
+                                    </tr>
+                                    <tr class="text-center">
+                                        <th scope="row">3</th>
+                                        <td><input type="text" id="options3" class="form-control form-control-lg"
+                                                placeholder="option 3 " /></td>
+                                        <td><input class="form-check-input" type="radio" id="option3Radio"
+                                                name="AnswerCheckBox"></td>
+
+                                    </tr>
+
+                                    <tr class="text-center">
+                                        <th scope="row">4</th>
+                                        <td><input type="text" id="options4" class="form-control form-control-lg"
+                                                placeholder="option 4 " /></td>
+                                        <td><input class="form-check-input" type="radio" id="option4Radio"
+                                                name="AnswerCheckBox"></td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer" >
+                        <button class="btn btn-primary" onclick="addQuestions();" id="addQuestionsButton">
+                            NEXT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--viewmodal-->
+        <div class="modal fade" id="viewTestModal" aria-hidden="true" aria-labelledby="viewTestModalToggleLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewTestModalToggleLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="viewTest">
+
+                        <div class=" mb-3">
+                            <div class="d-flex"><span>Q.</span>
+                                <div class="text-white">hftfvhyiu</div>
+                            </div>
+
+                        </div>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Serial No.</th>
+                                    <th scope="col">QustionName</th>
+                                    <th scope="col">Answer</th>
+                                    <th scope="col">isAnswer</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="viewOption">
+                                <tr>
+
+
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+</body>
+<script src="script/admin.js"></script>
+
+</html>
