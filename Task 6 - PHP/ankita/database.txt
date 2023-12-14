@@ -1,0 +1,46 @@
+create database course;
+
+create table subjects (id serial primary key ,name varchar(256),image varchar(1024),slug varchar(1024) unique ,created_at timestamp default now(),updated_at timestamp default now());
+
+
+
+create table menu(id serial primary key,subjectsId int references subjects(id),name varchar(1024),slug varchar(1024) unique ,priority int,created_at timestamp default now(),updated_at timestamp default now());
+
+
+create table components( id serial primary key,menuId int references menu(id),title text,description text,created_at timestamp default now(),updated_at timestamp default now());
+
+
+
+
+
+insert into subjects (name,image,slug) values ('c programming','images/c.jpg','cProgramDefault.html' ),('python','images/python.jpg','pythonDefault.html' ),('java','images/java.jpg','javaDefault.html' );
+
+
+insert into menu (subjectsId,name,slug,priority) values (1,'c home','cProgramDefault.html',1),(1,'c constant','cProgramConstants.html',2),(1,'c comment','cProgramComments.html',3), 
+(2,'python home','pythonDefault.html',1),(2,'python constant','pythonConstants.html',2),(2,'python comment','pythonComments.html',3), 
+(3,'java home','javaDefault.html',1),(3,'java constant','javaConstants.html',2),(3,'java comment','javaComments.html',3);
+
+
+
+insert into components(menuId,title,description) values (1,'What is C ?','C is a general-purpose programming language created by Dennis Ritchie at the Bell Laboratories in 1972.It is a very popular language, despite being old. The main reason for its popularity is because it is a fundamental language in the field of computer science.C is strongly associated with UNIX, as it was developed to write the UNIX operating system.'),
+
+(2,'Constants in C','A constant is a name given to the variable whose values canot be altered or changed. A constant is very similar to variables in the C programming language, but it can hold only a single variable during the execution of a program. It means that once we assign value to the constant, then we cant change it throughout the execution of a program- it stays fixed.'),
+
+(3,'C Comments','The comments in C are human-readable explanations or notes in the source code of a C program.  A comment makes the program easier to read and understand. These are the statements that are not executed by the compiler or an interpreter.It is considered to be a good practice to document our code using comments.'),
+
+(4,'What is Python?','Python is a computer programming language often used to build websites and software, automate tasks, and analyze data. Python is a general-purpose language, not specialized for any specific problems, and used to create various programmes. This versatility and its beginner-friendliness have made it one of the most used programming languages today. In 2020, more than one-third of Indian IT professionals said Python was their preferred programming language [2]. It continues to top lists of the most desired programming languages in the country.'),
+
+
+(5,'Constants in Python','A constant is a type of variable that holds values that cannot be changed. In reality, we rarely use constants in Python. Constants are usually declared and assigned to a different module/file. Example: #Declare constants in a separate file called constant.py PI = 3.14 GRAVITY = 9.8'),
+
+
+(6,'What Are Comments in Python Used For?','Comments in Python are identified with a hash symbol, #, and extend to the end of the line. Hash characters in a string are not considered comments, however. There are three ways to write a comment - as a separate line, beside the corresponding statement of code, or as a multi-line comment block.'),
+
+
+(7,'What is Java?','Java is a multi-platform, object-oriented, and network-centric language that can be used as a platform in itself. It is a fast, secure, reliable programming language for coding everything from mobile apps and enterprise software to big data applications and server-side technologies.'),
+
+
+(8,'What is Constant in Java?','Constant in Java is an entity that cannot be changed once assigned. Constant in Java makes the primitive data types immutable. Syntax: static final datatype identifier_name = value; The constants are used in Java to make the program easy to understand and readable.'),
+
+
+(9,'Comments in Java','In a program, comments are like indents one makes, they are used so that it is easier for someone who isnot familiar with the language to be able to understand the code. It will also make the job easier for you, as a coder, to find errors in the code since you will be easily able to find the location of the bug. Comments are ignored by the compiler while compiling a code, which makes the job more complex in the long run when they have to go through so much code to find one line.');
