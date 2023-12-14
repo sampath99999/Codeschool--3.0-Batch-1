@@ -1,0 +1,26 @@
+.blue-bg{
+    background-color: hsl(208, 47%, 21%);
+}
+.side-bar-width{
+    width: 20%;
+}
+.bg-image{
+    background-image: url("https://d20exy1ygbh3sg.cloudfront.net/fms/images/newUi/header-bg.jpg");
+}
+.full-screen{
+    height: 100vh;
+}
+.sideBar {
+    transition: margin-left  2s ease-out;
+}
+
+.show-sidebar {
+    margin-left: -25%;
+}
+.scrollable{
+    position: fixed;
+    height: 100px;
+    overflow-y: scroll;
+    height: 100%;
+    width: 80%;
+}

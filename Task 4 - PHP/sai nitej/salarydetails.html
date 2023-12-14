@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assests/css/salarydetails.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/9c64b1e3d4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="d-flex full-screen container-fluid px-0">
+        <div class="blue-bg w-25 h-100 container-fluid d-none d-lg-block px-0 sideBar">
+            <div class="container-fluid">
+                <img src="./assests/images/ifmis-logo.png" alt="">
+            </div>
+            <ul class="text-white list-unstyled ">
+                <li class="my-4 ms-2"><a href="./dashboard.html" class="text-decoration-none text-white ">Home</a></li>
+                <li class="my-4 ms-2"><a href="./employeeDetails.html" class="text-decoration-none text-white ">Employee</a></li>
+                <li class="my-4 ms-2"><a href="./salarydetails.html" class="text-decoration-none text-white ">Salary</a></li>
+            </ul>
+        </div>
+        <div class="container-fluid px-0">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary bg-image">
+                <div class="container-fluid">
+                    <button class="btn m-2 " id="menuButton" onclick="sidebar()">
+                        <i class="fa-solid fa-bars fs-3" style="color: #ffffff;"></i>
+                    </button>
+                    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+          <div class="collapse navbar-collapse me-4" id="collapsibleNavId">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <div class="dropdown open">
+                                  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bi bi-person-circle"></i>
+                                    <span id="profileName"></span>
+                                  </button>
+                                  <div class="dropdown-menu" aria-labelledby="triggerId">
+                                    <button class="dropdown-item" href="#">profile</button>
+                                  </div>
+                                </div>
+                              </li>
+                            <li class="nav-item ">
+                                <button class="btn  nav-link text-white" onclick="logout()">Logout</button>
+                            </li>
+                        </ul>
+            </nav>
+            <div class="table-responsive mt-4 scrollable ">
+                <table class="table" id="productsDetails">
+                  <thead class="text-center ">
+                    <tr class="text-secondary">
+                      <th scope="row">SL.NO</th>
+                      <th>Name</th>
+                      <th class="">Month</th>
+                      <th class="">Year</th>
+                      <th class="">Paid-on</th>
+                      <th class="">Gross</th>
+                      <th class="">Net</th>
+                      <th class="">Deduction</th>
+                    </tr>
+                  </thead>
+                  <tbody id="salaryTable">
+                    <tr class="bg-white">
+                      <th class="py-3 text-center" scope="row">1</th>
+                      <td class="py-3 text-center">sujith</td>
+                      <td class="py-3 text-center">2001-10-12</td>
+                      <td class="py-3 text-center">2001-10-12</td>
+                      <td class="py-3 text-center">male</td>
+                      <td class="py-3 text-center">Working</td>
+                      <td class="py-3 text-center">Software Developer</td>
+                      <td class="py-3 text-center">hyderabad</td>
+                      <td class="py-3 text-center">
+                        <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModall">View</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="d-flex justify-content-around gap-2">
+              <div>
+                <p class="text-secondary fs-6 my-0 py-0">Employee Name:</p>
+                <p class="fw-semibold d-inline"><span id="viewName"></span></p>
+                <p class="text-secondary fs-6 my-0 py-0 mt-3">Location:</p>
+                <p class="fw-semibold"><span id="viewLocation"></span></p>
+                <p class="fw-semibold my-0 py-0">EARNINGS:</p>
+                <table class="table table-striped my-0 py-0">
+                  <thead>
+                    <tr>
+                      <th>Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody id="viewEarings"></tbody>
+                </table>
+                <p class="fw-semibold mt-2 py-0">
+                  Net Salary: <span id="viewNet"></span>
+                </p>
+              </div>
+              <div>
+                <p class="text-secondary fs-6 my-0 py-0">Working Status:</p>
+                <p class="fw-semibold" id="viewStatus"><span></span></p>
+                <p class="text-secondary fs-6 my-0 py-0 mt-3">
+                  Working position:
+                </p>
+                <p class="fw-semibold"><span id="viewPosition"></span></p>
+                <p class="fw-semibold my-0 py-0">DEDUCTIONS:</p>
+                <table class="table table-striped my-0 py-0">
+                  <thead>
+                    <tr>
+                      <th>Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody id="viewDeduction"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="./assests/JS/SalaryDetail.js"></script>
+</body>
+</html>
