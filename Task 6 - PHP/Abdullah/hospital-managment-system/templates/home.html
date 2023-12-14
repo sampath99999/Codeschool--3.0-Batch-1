@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="homeBgContainer">
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark"
+        aria-label="Fifth navbar example"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand logo" href="#">Clinica</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample05"
+            aria-controls="navbarsExample05"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link disabled"
+                  href="#"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Disabled</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="dropdown05"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Dropdown</a
+                >
+                <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <!-- The Modal -->
+      <!-- AddAppointmentModal HTML -->
+      <div
+        class="modal fade"
+        id="addAppointmentModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Enter Appointment Details</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="doctor" class="form-label">Doctor</label>
+                <select
+                  class="form-select doctor"
+                  id="doctor"
+                  name="doctor"
+                  required
+                >
+                  <option value="" selected disabled>Select Doctor</option>
+                  <!-- Doctors will be dynamically added here -->
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="appointmentDate" class="form-label">Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="appointmentDate"
+                  name="appointmentDate"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="appointmentTime" class="form-label">Time</label>
+                <select
+                  class="form-select"
+                  id="appointmentTime"
+                  name="appointmentTime"
+                  required
+                >
+                  <option value="" selected disabled>Select Time</option>
+                  <option value="11:00 AM">11:00 AM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                  <option value="9:00 PM">9:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary scheduleAppointment"
+                data-bs-dismiss="modal"
+              >
+                Schedule
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- home content -->
+
+      <!-- get prescription modal -->
+
+      <!-- Button to Open the Modal -->
+
+      <!-- The Modal -->
+      <div class="modal fade" id="getPrescription">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Prescription</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body getPrescriptionModal">
+              <!-- dynamic render -->
+              <!-- "
+              <p>Name: " + prescriptionData[0].name + "</p>
+              " + "
+              <p>Date: " + prescriptionData[0].date + "</p>
+              " + "
+              <p>Age: " + prescriptionData[0].age + "</p>
+              " + "
+              <p>Medicines: " + prescriptionData[0].medicines + "</p>
+              " + "
+              <p>Remarks: " + prescriptionData[0].remarks + "</p>
+              " -->
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- -------------------------- -->
+
+      <!-- add appointment modal -->
+      <div
+        class="homeContainer g-5 row d-flex justify-content-center align-items-start flex-column"
+      >
+        <div
+          class="addAppointment optionBox col-4 d-flex justify-content-center align-items-center flex-column"
+        >
+          <a
+            href=""
+            data-bs-toggle="modal"
+            data-bs-target="#addAppointmentModal"
+            class="addAppointmentModal"
+          >
+            <i class="bi bi-bag-plus-fill"></i>
+            <p><b>Book an appointment</b></p>
+          </a>
+        </div>
+        <div
+          class="optionBox col-4 d-flex justify-content-center align-items-center flex-column"
+        >
+          <a
+            href=""
+            data-bs-toggle="modal"
+            data-bs-target="#getPrescription"
+            class="getPrescription"
+          >
+            <i class="bi bi-prescription2"></i>
+            <p><b>Get Prescription</b></p>
+          </a>
+        </div>
+        <div
+          class="getBill optionBox col-4 d-flex justify-content-center align-items-center flex-column"
+        >
+          <a href="" data-bs-toggle="modal" data-bs-target="#getBill">
+            <i class="bi bi-receipt"></i>
+            <p><b>Get Bill</b></p>
+          </a>
+        </div>
+      </div>
+      <!-- get bill -->
+
+      <!-- The Modal -->
+      <div class="modal fade" id="getBill">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Bill Details</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body getBillModal">
+              <!-- Dynamic content will be inserted here -->
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/assets/js/home.js"></script>
+  </body>
+</html>

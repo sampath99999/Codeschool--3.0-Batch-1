@@ -1,0 +1,38 @@
+patient
+	id (pk)
+	name
+	phone
+	email
+	password
+	bloodGroup
+	gender
+	token
+	
+Doctor
+	id  (pk)
+	name
+	phone
+	email
+	specialization
+	gender
+
+appointment
+	id  (pk)
+	patient_id (fk)
+	doctor_id  (fk)
+	time
+	date
+	
+prescription
+	id  (pk)
+	appointment_id  (fk)
+	medicines
+	remarks
+	
+bill
+	id (pk)
+	appointment_id (fk)
+	date
+	time
+	amount
+	
