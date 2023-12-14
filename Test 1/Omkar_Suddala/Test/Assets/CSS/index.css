@@ -1,0 +1,51 @@
+.sideBg {
+  background: url("https://i1.wp.com/fashionablymale.net/wp-content/uploads/2012/11/esquireyann3.jpg");
+  background-size: 100% 100vh;
+
+  object-fit: fill;
+}
+
+.signUp {
+  height: 100vh;
+}
+.cards {
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 190px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.productImages {
+  width: 120px;
+}
+.productImage {
+  max-height: fit-content;
+}
+.productPrice {
+  position: relative;
+}
+.actualPrice {
+  position: absolute;
+  right: 50px;
+  bottom: 0px;
+}
+.offerPrice {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.productTitle {
+  margin: 0 0 4px 0;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  font-weight: 400;
+  overflow: hidden;
+  display: block;
+  width: 200px;
+  max-height: 4rem;
+  -webkit-line-clamp: 1;
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
